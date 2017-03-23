@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnGV = new System.Windows.Forms.Button();
@@ -51,25 +57,19 @@
             this.sửaThôngTinToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLGiangDay = new System.Windows.Forms.ToolStripMenuItem();
             this.HuongDanItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TaiKhoanItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.QLGiangDay = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,6 +85,62 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(768, 414);
             this.panel1.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.button3);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Location = new System.Drawing.Point(346, 249);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(204, 156);
+            this.panel5.TabIndex = 5;
+            // 
+            // button3
+            // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(46, 7);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(133, 125);
+            this.button3.TabIndex = 1;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(65, 135);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 16);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Hướng dẫn";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Location = new System.Drawing.Point(139, 253);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(204, 156);
+            this.panel4.TabIndex = 4;
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(34, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(133, 125);
+            this.button2.TabIndex = 2;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(31, 131);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(141, 16);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Quản Lý Giảng Dạy";
             // 
             // label4
             // 
@@ -228,6 +284,7 @@
             this.GiaoVienItem.Name = "GiaoVienItem";
             this.GiaoVienItem.Size = new System.Drawing.Size(69, 20);
             this.GiaoVienItem.Text = "Giáo Viên";
+            this.GiaoVienItem.Click += new System.EventHandler(this.GiaoVienItem_Click);
             // 
             // danhSáchToolStripMenuItem1
             // 
@@ -258,6 +315,13 @@
             this.tìmKiếmToolStripMenuItem3.Name = "tìmKiếmToolStripMenuItem3";
             this.tìmKiếmToolStripMenuItem3.Size = new System.Drawing.Size(158, 22);
             this.tìmKiếmToolStripMenuItem3.Text = "Tìm Kiếm";
+            this.tìmKiếmToolStripMenuItem3.Click += new System.EventHandler(this.tìmKiếmToolStripMenuItem3_Click);
+            // 
+            // QLGiangDay
+            // 
+            this.QLGiangDay.Name = "QLGiangDay";
+            this.QLGiangDay.Size = new System.Drawing.Size(115, 20);
+            this.QLGiangDay.Text = "Quản lý giảng dạy";
             // 
             // HuongDanItem
             // 
@@ -299,68 +363,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Copyright by Nhom 4 -THUC TAP NHOM 2017";
             // 
-            // QLGiangDay
-            // 
-            this.QLGiangDay.Name = "QLGiangDay";
-            this.QLGiangDay.Size = new System.Drawing.Size(115, 20);
-            this.QLGiangDay.Text = "Quản lý giảng dạy";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(139, 253);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(204, 156);
-            this.panel4.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(31, 131);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 16);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Quản Lý Giảng Dạy";
-            // 
-            // button2
-            // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(34, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 125);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.button3);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(346, 249);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(204, 156);
-            this.panel5.TabIndex = 5;
-            // 
-            // button3
-            // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(46, 7);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 125);
-            this.button3.TabIndex = 1;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(65, 135);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 16);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Hướng dẫn";
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,6 +376,10 @@
             this.Text = "Main";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -382,10 +388,6 @@
             this.menuStrip1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

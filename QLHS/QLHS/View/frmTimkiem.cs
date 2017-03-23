@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLHS
+namespace QLHS.View
 {
-    public partial class Main : Form
+    public partial class frmTimkiem : Form
     {
-        public Main()
+        public frmTimkiem()
         {
             InitializeComponent();
-        }
-
-        private void GiaoVienItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tìmKiếmToolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -72,6 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\frmTimkiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTimkiem.Designer.cs">
+      <DependentUpon>frmTimkiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\XemThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,7 +110,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\frmTimkiem.resx">
+      <DependentUpon>frmTimkiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\XemThongTin.resx">
       <DependentUpon>XemThongTin.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +137,9 @@
   <ItemGroup>
     <Folder Include="Controller\" />
     <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
