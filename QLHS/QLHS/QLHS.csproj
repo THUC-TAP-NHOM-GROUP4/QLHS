@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\AddGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddGV.Designer.cs">
+      <DependentUpon>AddGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddSinhVien.Designer.cs">
+      <DependentUpon>AddSinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,12 @@
     <Compile Include="View\XemThongTinGV.Designer.cs">
       <DependentUpon>XemThongTinGV.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AddGV.resx">
+      <DependentUpon>AddGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddSinhVien.resx">
+      <DependentUpon>AddSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
