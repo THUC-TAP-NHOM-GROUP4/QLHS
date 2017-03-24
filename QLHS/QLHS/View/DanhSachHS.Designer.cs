@@ -40,14 +40,6 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXem = new System.Windows.Forms.Button();
-            this.columnMa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnDanToc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnTonGiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSach)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +49,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(290, 23);
+            this.label1.Location = new System.Drawing.Point(422, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(164, 18);
             this.label1.TabIndex = 0;
@@ -67,18 +59,9 @@
             // 
             this.dtgDanhSach.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dtgDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDanhSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnMa,
-            this.columnHoTen,
-            this.columnLop,
-            this.columnNgaySinh,
-            this.columnGioiTinh,
-            this.columnDanToc,
-            this.columnTonGiao,
-            this.columnDiaChi});
             this.dtgDanhSach.Location = new System.Drawing.Point(2, 44);
             this.dtgDanhSach.Name = "dtgDanhSach";
-            this.dtgDanhSach.Size = new System.Drawing.Size(774, 357);
+            this.dtgDanhSach.Size = new System.Drawing.Size(918, 357);
             this.dtgDanhSach.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -87,7 +70,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 453);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(778, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(919, 30);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // label2
@@ -104,7 +87,7 @@
             // 
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
             this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiem.Location = new System.Drawing.Point(539, 407);
+            this.btnTimKiem.Location = new System.Drawing.Point(679, 407);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(80, 40);
             this.btnTimKiem.TabIndex = 30;
@@ -116,7 +99,7 @@
             // 
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(696, 407);
+            this.btnThoat.Location = new System.Drawing.Point(836, 407);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(80, 40);
             this.btnThoat.TabIndex = 29;
@@ -128,7 +111,7 @@
             // 
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(617, 407);
+            this.btnLuu.Location = new System.Drawing.Point(757, 407);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(80, 40);
             this.btnLuu.TabIndex = 28;
@@ -140,7 +123,7 @@
             // 
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(460, 407);
+            this.btnXoa.Location = new System.Drawing.Point(600, 407);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(80, 40);
             this.btnXoa.TabIndex = 27;
@@ -152,7 +135,7 @@
             // 
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(381, 407);
+            this.btnSua.Location = new System.Drawing.Point(521, 407);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(80, 40);
             this.btnSua.TabIndex = 26;
@@ -164,7 +147,7 @@
             // 
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(303, 407);
+            this.btnThem.Location = new System.Drawing.Point(443, 407);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(80, 40);
             this.btnThem.TabIndex = 25;
@@ -176,7 +159,7 @@
             // 
             this.btnXem.Image = ((System.Drawing.Image)(resources.GetObject("btnXem.Image")));
             this.btnXem.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnXem.Location = new System.Drawing.Point(224, 407);
+            this.btnXem.Location = new System.Drawing.Point(364, 407);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(80, 40);
             this.btnXem.TabIndex = 24;
@@ -184,52 +167,12 @@
             this.btnXem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXem.UseVisualStyleBackColor = true;
             // 
-            // columnMa
-            // 
-            this.columnMa.HeaderText = "Mã Học Sinh";
-            this.columnMa.Name = "columnMa";
-            // 
-            // columnHoTen
-            // 
-            this.columnHoTen.HeaderText = "Họ và Tên";
-            this.columnHoTen.Name = "columnHoTen";
-            // 
-            // columnLop
-            // 
-            this.columnLop.HeaderText = "Lớp";
-            this.columnLop.Name = "columnLop";
-            // 
-            // columnNgaySinh
-            // 
-            this.columnNgaySinh.HeaderText = "Ngày Sinh";
-            this.columnNgaySinh.Name = "columnNgaySinh";
-            // 
-            // columnGioiTinh
-            // 
-            this.columnGioiTinh.HeaderText = "Giới Tính";
-            this.columnGioiTinh.Name = "columnGioiTinh";
-            // 
-            // columnDanToc
-            // 
-            this.columnDanToc.HeaderText = "Dân Tộc";
-            this.columnDanToc.Name = "columnDanToc";
-            // 
-            // columnTonGiao
-            // 
-            this.columnTonGiao.HeaderText = "Tôn Gíao";
-            this.columnTonGiao.Name = "columnTonGiao";
-            // 
-            // columnDiaChi
-            // 
-            this.columnDiaChi.HeaderText = "Địa Chỉ";
-            this.columnDiaChi.Name = "columnDiaChi";
-            // 
             // DanhSachHS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(778, 483);
+            this.ClientSize = new System.Drawing.Size(919, 483);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLuu);
@@ -264,13 +207,5 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnMa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnHoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnNgaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnGioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnDanToc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnTonGiao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnDiaChi;
     }
 }

@@ -1,0 +1,17 @@
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\bin\Debug\QLHS.exe.config
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\bin\Debug\QLHS.exe
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\bin\Debug\QLHS.pdb
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.csprojResolveAssemblyReference.cache
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.View.AddGV.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.View.AddSinhVien.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.View.DangNhap.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.View.DanhSachGV.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.View.DanhSachHS.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.Main.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.Properties.Resources.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.View.frmTimkiem.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.View.XemThongTinHS.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.View.XemThongTinGV.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.csproj.GenerateResource.Cache
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.exe
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\New folder (2)\QLHS\QLHS\QLHS\obj\Debug\QLHS.pdb

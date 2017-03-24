@@ -83,14 +83,14 @@
             this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(768, 414);
+            this.panel1.Size = new System.Drawing.Size(919, 477);
             this.panel1.TabIndex = 0;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.button3);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(346, 249);
+            this.panel5.Location = new System.Drawing.Point(446, 253);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(204, 156);
             this.panel5.TabIndex = 5;
@@ -118,7 +118,7 @@
             // 
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(139, 253);
+            this.panel4.Location = new System.Drawing.Point(239, 257);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(204, 156);
             this.panel4.TabIndex = 4;
@@ -146,7 +146,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(257, 58);
+            this.label4.Location = new System.Drawing.Point(357, 62);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(202, 16);
             this.label4.TabIndex = 3;
@@ -156,7 +156,7 @@
             // 
             this.panel3.Controls.Add(this.btnGV);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(346, 84);
+            this.panel3.Location = new System.Drawing.Point(446, 88);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(204, 156);
             this.panel3.TabIndex = 2;
@@ -184,7 +184,7 @@
             // 
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(139, 80);
+            this.panel2.Location = new System.Drawing.Point(239, 84);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(204, 156);
             this.panel2.TabIndex = 1;
@@ -220,7 +220,7 @@
             this.TaiKhoanItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(768, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(919, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -348,9 +348,9 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 420);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 480);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(768, 33);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(919, 33);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // label1
@@ -367,7 +367,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 453);
+            this.ClientSize = new System.Drawing.Size(919, 513);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
