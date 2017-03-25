@@ -1,0 +1,24 @@
+c:\users\thanhhuong\documents\visual studio 2015\Projects\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+c:\users\thanhhuong\documents\visual studio 2015\Projects\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+c:\users\thanhhuong\documents\visual studio 2015\Projects\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+c:\users\thanhhuong\documents\visual studio 2015\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache
+c:\users\thanhhuong\documents\visual studio 2015\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Form1.resources
+c:\users\thanhhuong\documents\visual studio 2015\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+c:\users\thanhhuong\documents\visual studio 2015\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.Cache
+c:\users\thanhhuong\documents\visual studio 2015\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+c:\users\thanhhuong\documents\visual studio 2015\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+c:\users\thanhhuong\documents\visual studio 2015\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.AddGV.resources
+c:\users\thanhhuong\documents\visual studio 2015\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.AddHocSinh.resources
+c:\users\thanhhuong\documents\visual studio 2015\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DangNhap.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.AddGV.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.AddHocSinh.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DangNhap.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Form1.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+E:\STUDY\MTA\3_Third_Year\TheSecond\Thực tập nhóm\Tuan 2\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.Cache
