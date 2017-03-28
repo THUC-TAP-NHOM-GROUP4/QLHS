@@ -44,7 +44,7 @@
             this.linklabelQLGD = new System.Windows.Forms.LinkLabel();
             this.button3 = new System.Windows.Forms.Button();
             this.linklabelQLGV = new System.Windows.Forms.LinkLabel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnGiangDay = new System.Windows.Forms.Button();
             this.linklabelQLHS = new System.Windows.Forms.LinkLabel();
             this.btnGV = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -62,6 +62,7 @@
             this.btnXemDSHS = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tpQLGiangDay = new System.Windows.Forms.TabPage();
             this.tpQLGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSachGV)).BeginInit();
             this.tpTrangChu.SuspendLayout();
@@ -157,6 +158,7 @@
             this.btnXoaDSGV.Text = "Xóa";
             this.btnXoaDSGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaDSGV.UseVisualStyleBackColor = true;
+            this.btnXoaDSGV.Click += new System.EventHandler(this.btnXoaDSGV_Click);
             // 
             // btnSuaDSGV
             // 
@@ -169,6 +171,7 @@
             this.btnSuaDSGV.Text = "Sửa";
             this.btnSuaDSGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaDSGV.UseVisualStyleBackColor = true;
+            this.btnSuaDSGV.Click += new System.EventHandler(this.btnSuaDSGV_Click);
             // 
             // btnThemDSGV
             // 
@@ -181,6 +184,7 @@
             this.btnThemDSGV.Text = "Thêm";
             this.btnThemDSGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemDSGV.UseVisualStyleBackColor = true;
+            this.btnThemDSGV.Click += new System.EventHandler(this.btnThemDSGV_Click);
             // 
             // btnXemDSGV
             // 
@@ -201,7 +205,7 @@
             this.tpTrangChu.Controls.Add(this.linklabelQLGD);
             this.tpTrangChu.Controls.Add(this.button3);
             this.tpTrangChu.Controls.Add(this.linklabelQLGV);
-            this.tpTrangChu.Controls.Add(this.button2);
+            this.tpTrangChu.Controls.Add(this.btnGiangDay);
             this.tpTrangChu.Controls.Add(this.linklabelQLHS);
             this.tpTrangChu.Controls.Add(this.btnGV);
             this.tpTrangChu.Controls.Add(this.button1);
@@ -234,6 +238,7 @@
             this.linklabelQLGD.TabIndex = 13;
             this.linklabelQLGD.TabStop = true;
             this.linklabelQLGD.Text = "Quản Lý Giảng Dạy";
+            this.linklabelQLGD.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklabelQLGD_LinkClicked);
             // 
             // button3
             // 
@@ -256,14 +261,15 @@
             this.linklabelQLGV.Text = "Quản Lý Giáo Viên";
             this.linklabelQLGV.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklabelQLGV_LinkClicked);
             // 
-            // button2
+            // btnGiangDay
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(356, 265);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 125);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnGiangDay.Image = ((System.Drawing.Image)(resources.GetObject("btnGiangDay.Image")));
+            this.btnGiangDay.Location = new System.Drawing.Point(356, 265);
+            this.btnGiangDay.Name = "btnGiangDay";
+            this.btnGiangDay.Size = new System.Drawing.Size(133, 125);
+            this.btnGiangDay.TabIndex = 2;
+            this.btnGiangDay.UseVisualStyleBackColor = true;
+            this.btnGiangDay.Click += new System.EventHandler(this.btnGiangDay_Click);
             // 
             // linklabelQLHS
             // 
@@ -285,6 +291,7 @@
             this.btnGV.Size = new System.Drawing.Size(133, 127);
             this.btnGV.TabIndex = 1;
             this.btnGV.UseVisualStyleBackColor = false;
+            this.btnGV.Click += new System.EventHandler(this.btnGV_Click);
             // 
             // button1
             // 
@@ -295,6 +302,7 @@
             this.button1.TabIndex = 1;
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -311,6 +319,7 @@
             this.tabControlChinh.Controls.Add(this.tpTrangChu);
             this.tabControlChinh.Controls.Add(this.tpDSHS);
             this.tabControlChinh.Controls.Add(this.tpQLGV);
+            this.tabControlChinh.Controls.Add(this.tpQLGiangDay);
             this.tabControlChinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlChinh.Location = new System.Drawing.Point(0, 0);
             this.tabControlChinh.Name = "tabControlChinh";
@@ -418,6 +427,7 @@
             this.btnSuaDSHS.Text = "Sửa";
             this.btnSuaDSHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaDSHS.UseVisualStyleBackColor = true;
+            this.btnSuaDSHS.Click += new System.EventHandler(this.btnSuaDSHS_Click);
             // 
             // btnThemDSHS
             // 
@@ -463,6 +473,15 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(950, 25);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
+            // tpQLGiangDay
+            // 
+            this.tpQLGiangDay.Location = new System.Drawing.Point(4, 22);
+            this.tpQLGiangDay.Name = "tpQLGiangDay";
+            this.tpQLGiangDay.Size = new System.Drawing.Size(942, 502);
+            this.tpQLGiangDay.TabIndex = 3;
+            this.tpQLGiangDay.Text = "QL Giảng dạy";
+            this.tpQLGiangDay.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,7 +517,7 @@
         private System.Windows.Forms.LinkLabel linklabelQLGD;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.LinkLabel linklabelQLGV;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGiangDay;
         private System.Windows.Forms.LinkLabel linklabelQLHS;
         private System.Windows.Forms.Button btnGV;
         private System.Windows.Forms.Button button1;
@@ -525,6 +544,7 @@
         private System.Windows.Forms.Button btnSuaDSGV;
         private System.Windows.Forms.Button btnThemDSGV;
         private System.Windows.Forms.Button btnXemDSGV;
+        private System.Windows.Forms.TabPage tpQLGiangDay;
     }
 }
 
