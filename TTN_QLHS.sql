@@ -107,26 +107,21 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Lophocphan](
-	[Ma] [varchar](20) NOT NULL,
-	[Ten] [nvarchar](50) NOT NULL,
-	[Hocki] [char](5) NULL,
-	[NgayBD] [date] NULL,
-	[NgayKT] [date] NULL,
-	[Ngaythi] [date] NULL,
-	[Siso] [int] NULL,
-	[Thu] [char](10) NULL,
-	[Tiet] [int] NULL,
-	[Namhoc] [char](5) NULL,
-	[Monma] [varchar](20) NULL,
-	[Giaovienma] [varchar](20) NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[Ma] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
+	[Ma] varchar(20) primary key  NOT NULL,
+	Ten nvarchar(50) NOT NULL,
+	[Hocki] char(5) NULL,
+	[NgayBD] date NULL,
+	[NgayKT] date NULL,
+	[Ngaythi] date NULL,
+	[Siso] int NULL,
+	[Thu] char(10) NULL,
+	[Tiet] int NULL,
+	[Namhoc] char(5) NULL,
+	[Monma] varchar(20) NULL,
+	[Giaovienma] varchar(20) NULL,
+	FOREIGN KEY(Monma) REFERENCES Monhoc(Ma),
+	FOREIGN KEY(Giaovienma) REFERENCES Giaovien(Ma)
+	)
 SET ANSI_PADDING OFF
 GO
 
@@ -221,7 +216,7 @@ FOREIGN KEY(Lopma) REFERENCES Lophocphan(Ma)
 			-- LỚP HỌC PHẦN
 			INSERT INTO Lophocphan VALUES('L001',N'Nguyễn Văn A','1','8/15/2016','','','35','2016-2017','4','3-6','MH001','GV001'),
 			                             ('L002',N'Nguyễn Văn B','1','8/15/2016','','','35','2016-2017','3','3-6','MH002','GV003'),
-										 ('L003',N'Nguyễn Văn C','1','8/15/2016','','','35','2016-2017','2','3-6','MH003','GV002')
+										 ('L003',N'Nguyễn Văn C','1','8/15/2016','','','35','2016-2017','2','3-6','MH001','GV002')
 
 				-- ĐIỂM
 		INSERT INTO Diem VALUES('6','7','8','','L001','SV001'),
