@@ -121,7 +121,7 @@
   <data name="label9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAAB6
-        JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAACXBIWXMAAAsQAAALEAGtI711AAAJOUlE
+        JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAACXBIWXMAAAsPAAALDwGS+QOlAAAJOUlE
         QVRYR62XB1RVVxaGHzzEEhRRio4FBERQwRoBMRJHUUchFkjUccLMWrbYggXFGAxFnDhGREVAQgfpIiID
         kaJIV4o0AZUuIIKFDgrKP/uchLeeL5hZWclb61v33Ls4+//P3vucexEA4Li7u/8mUgLBXCkpqZ2EM3FN
         WkoqT1pa2pNwJdYKpaWFQ81jDGoMhWgw1EQGBd9K4oUkikFIHNLSDGkOiUMolG4RCoXnZYRCJckY4oKS
@@ -164,4 +164,16 @@
         d0hISA1tY/bKXvSLuNBMIBD8D9NIDQazA0MgAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="erptxtTen.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="erpEmail.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>121, 17</value>
+  </metadata>
+  <metadata name="erpVaiTro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>220, 17</value>
+  </metadata>
+  <metadata name="erpBoMon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
 </root>

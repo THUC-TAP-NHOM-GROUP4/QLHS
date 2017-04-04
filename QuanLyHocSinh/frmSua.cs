@@ -45,11 +45,11 @@ namespace QuanLyHocSinh
             
             
             hs.DienThoai = txtDienThoai.Text.ToString().Trim();
-            hs.DoiTuong = txtDoiTuong.Text.ToString().Trim();
+            hs.DanToc = txtDoiTuong.Text.ToString().Trim();
             hs.LopMa = "L001";
             hs.Email = txtEmail.Text.ToString().Trim();
 
-            control.Sua(hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.Email, hs.DoiTuong, hs.DienThoai, hs.LopMa);
+            control.Sua(hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.Email, hs.DanToc, hs.DienThoai, hs.LopMa);
             MessageBox.Show("Thành công");
         }
 

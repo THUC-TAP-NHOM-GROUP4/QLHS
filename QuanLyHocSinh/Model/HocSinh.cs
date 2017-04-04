@@ -13,8 +13,9 @@ namespace QuanLyHocSinh.Model
         public int GioiTinh { get; set; }
         public DateTime NgaySinh { get; set; }
         public String Email { get; set; }
-        public String DoiTuong { get; set; }
+        public String DanToc { get; set; }
         public String DienThoai { get; set; }
         public String LopMa { get; set; }
+        public string DiaChi { get; set; }
     }
 }
