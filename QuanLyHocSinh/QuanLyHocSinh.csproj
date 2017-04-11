@@ -48,10 +48,10 @@
   <ItemGroup>
     <Compile Include="Controller\Controllers.cs" />
     <Compile Include="Controller\DataAccess.cs" />
-    <Compile Include="frmSua.cs">
+    <Compile Include="View\frmSua.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSua.Designer.cs">
+    <Compile Include="View\frmSua.Designer.cs">
       <DependentUpon>frmSua.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\GiaoVien.cs" />
@@ -82,7 +82,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmSua.resx">
+    <EmbeddedResource Include="View\frmSua.resx">
       <DependentUpon>frmSua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddGV.resx">
