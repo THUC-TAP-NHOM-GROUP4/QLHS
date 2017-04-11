@@ -28,7 +28,7 @@ namespace QuanLyHocSinh
             dgvHocSinh.Columns["ma"].HeaderText = "Mã";
             dgvHocSinh.Columns["ten"].HeaderText = "Họ tên";
             dgvHocSinh.Columns["ngaysinh"].HeaderText = "Ngày sinh";
-            dgvHocSinh.Columns["doituong"].HeaderText = "Đối tượng";
+           
             dgvHocSinh.Columns["gioitinh"].HeaderText = "Giới tính";
             dgvHocSinh.Columns["Lopma"].HeaderText = "Mã lớp học phần";
             dgvHocSinh.Columns["email"].HeaderText = "Email";

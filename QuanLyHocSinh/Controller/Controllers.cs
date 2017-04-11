@@ -16,9 +16,7 @@ namespace QuanLyHocSinh.Controller
         DataAccess da = new DataAccess();
         public HocSinh[] getListHocSinh()
         {
-            DataTable table = da.Query("select hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.DanToc , hs.Sodienthoai , hs.Email "
-                        + " hs.Sodienthoai, lhp.ma as [Lopma] from HocSinh hs inner join lophocphan lhp " 
-                        + " on hs.Lopma = lhp.ma");
+            DataTable table = da.Query("select hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.Sodienthoai , hs.Email, hs.Sodienthoai, lhp.ma as [Lopma] from Sinhvien hs inner join lophocphan lhp on hs.Lopma = lhp.ma");
             int n = table.Rows.Count;
             int i;
             if (n == 0) return null;
@@ -44,7 +42,7 @@ namespace QuanLyHocSinh.Controller
             {
                 hs.NgaySinh = ns;
             }
-            hs.DanToc = row["DanToc"].ToString().Trim();
+          
             hs.LopMa = row["Lopma"].ToString().Trim();
             hs.DienThoai = row["Sodienthoai"].ToString().Trim();
             hs.Email = row["email"].ToString().Trim();
