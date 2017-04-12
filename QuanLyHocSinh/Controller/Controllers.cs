@@ -51,9 +51,7 @@ namespace QuanLyHocSinh.Controller
 
         public GiaoVien[] getListGiaoVien()
         {
-            DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma , gv.nhiemvu, gv.anh "
-                        + "  bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm "
-                        + " on gv.Bomonma  = bm.ma");
+            DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma , gv.nhiemvu, gv.anh,bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma");
             int n = table.Rows.Count;
             int i;
             if (n == 0) return null;
@@ -101,7 +99,16 @@ namespace QuanLyHocSinh.Controller
         }
 
         // mâ- tên- gioitinh-ngaysinh - email - doituong,sodienthoai, lopma
-
+        public void XoaHS(string ma)
+        {
+            da.NonQuery("delete SinhVien  where ma='" + ma + "'");
+        }
+     
+        public void XoaGV(string ma)
+        {
+            da.NonQuery("delete GiaoVien where  ma='" + ma+"'");
+        }
+      
         public bool ThemHS(HocSinh hs)
         {
 
