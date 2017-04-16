@@ -34,6 +34,7 @@ Luong MONEY,
 Nhiemvu NVARCHAR(30),
 Vaitro TEXT,
 Bomonma VARCHAR(20),
+Trangthai bit,
 CONSTRAINT fk_gv FOREIGN KEY(Bomonma) REFERENCES Bomon(Ma)
 )
 
@@ -103,10 +104,10 @@ FOREIGN KEY(Hocsinhma) REFERENCES Hocsinh(Ma)
 
 
 		-- BANG GIAO VIEN
-		INSERT INTO Giaovien VALUES('GV001',N'Nguyen Van A',N'1','4/3/1987','NVA@gmail.com','NVA1234','123456','anh1','120',N'giảng dạy','012345679','aasg',N'thạc sĩ',N'Từ liêm - Hà Nội',N'giáo viên','BM001'),
-		                           ('GV002',N'Nguyen Van B',N'1','4/3/1987','NVA@gmail.com','NVA1234','123456','anh1','120',N'giảng dạy','012345679','aasg',N'thạc sĩ',N'Từ liêm - Hà Nội',N'giáo viên','BM002'),
-								   ('GV003',N'Nguyen Van C',N'1','4/3/1987','NVA@gmail.com','NVA1234','123456','anh1','120',N'giảng dạy','012345679','aasg',N'thạc sĩ',N'Từ liêm - Hà Nội',N'giáo viên','BM003'),
-								   ('GV004',N'Nguyen Van D',N'1','4/3/1987','NVA@gmail.com','NVA1234','123456','anh1','120',N'giảng dạy','012345679','aasg',N'thạc sĩ',N'Từ liêm - Hà Nội',N'giáo viên','BM004')
+		INSERT INTO Giaovien VALUES('GV001',N'Nguyen Van A',N'1','4/3/1987','NVA@gmail.com','anh1','120',N'giảng dạy',N'giáo viên','BM001',1),
+		                           ('GV002',N'Nguyen Van B',N'1','4/3/1987','NVA@gmail.com','anh1','120',N'giảng dạy',N'giáo viên','BM002',0),
+								   ('GV003',N'Nguyen Van C',N'1','4/3/1987','NVA@gmail.com','anh1','120',N'giảng dạy',N'giáo viên','BM003',1),
+								   ('GV004',N'Nguyen Van D',N'1','4/3/1987','NVA@gmail.com','anh1','120',N'giảng dạy',N'giáo viên','BM004',1)
 
 		-- BANG LỚP HỌC PHẦN
 		INSERT INTO Lophocphan VALUES('L001',N'Nguyễn Văn A','1','8/15/2016','6/1/2017','5/3/2017','34','2016-2017','3','4-6','MH001','GV001'),
@@ -115,10 +116,10 @@ FOREIGN KEY(Hocsinhma) REFERENCES Hocsinh(Ma)
 									 ('L004',N'Nguyễn Văn D','1','8/15/2016','6/1/2017','5/3/2017','34','2016-2017','3','4-6','MH004','GV004')
 
 		-- BANG SINH VIÊN
-		INSERT INTO Hocsinh VALUES('SV001',N'Nguyễn Văn A','1','4/3/1997','NVA@gmail.com','Sinh viên','012345322','L001'),
-		                           ('SV002',N'Nguyễn Văn B','1','4/3/1997','NVA@gmail.com','Sinh viên','012345322','L002'),
-								   ('SV003',N'Nguyễn Văn C','1','4/3/1997','NVA@gmail.com','Sinh viên','012345322','L003'),
-								   ('SV004',N'Nguyễn Văn D','1','4/3/1997','NVA@gmail.com','Sinh viên','012345322','L004')
+		INSERT INTO Hocsinh VALUES('SV001',N'Nguyễn Văn A','1','4/3/1997','kinh','abc','NVA@gmail.com','012345322','L001'),
+		                           ('SV002',N'Nguyễn Văn B','1','4/3/1997','kinh','abc','NVA@gmail.com','012345322','L002'),
+								   ('SV003',N'Nguyễn Văn C','1','4/3/1997','kinh','abc','NVA@gmail.com','012345322','L003'),
+								   ('SV004',N'Nguyễn Văn D','1','4/3/1997','kinh','abc','NVA@gmail.com','012345322','L004')
 
 
 		-- BẢNG ĐIỂM
