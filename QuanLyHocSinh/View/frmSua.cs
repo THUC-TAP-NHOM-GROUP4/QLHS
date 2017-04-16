@@ -16,13 +16,13 @@ namespace QuanLyHocSinh
     {
         Controllers control = new Controllers();
         HocSinh hs = new HocSinh();
-        string str;
+      private string str { get; set; }
 
         public frmSua()
         {
             InitializeComponent();
         }
-        public frmSua(string str)
+         public frmSua(string str)
         {
             InitializeComponent();
             this.str = str;
@@ -55,7 +55,7 @@ namespace QuanLyHocSinh
 
         private void frmSua_Load(object sender, EventArgs e)
         {
-            string[] str1 = str.Split('_');
+            string[] str1 = this.str.Split('_');
             txtMa.Text = str1[0];
             txtTen.Text = str1[1];
             if (str[2].ToString() == "1")
