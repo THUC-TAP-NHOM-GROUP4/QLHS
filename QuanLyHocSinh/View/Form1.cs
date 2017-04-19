@@ -81,10 +81,23 @@ namespace QuanLyHocSinh
             //tabControlChinh.TabPages.Add(tpQLGV);
             tabControlChinh.SelectedTab = tpQLGV;
         }
-
+        private string str { get; set; }
+        HocSinh hc = new HocSinh();
         private void dtgDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            hc.Ma = dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[0].Value.ToString().Trim();
+            hc.Ten = dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[1].Value.ToString().Trim();
+              hc.NgaySinh = DateTime.Parse(dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[3].Value.ToString().Trim());
+            hc.GioiTinh = int.Parse(dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[2].Value.ToString().Trim());
+            hc.Email= dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[4].Value.ToString().Trim();
+            hc.DienThoai = dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[6].Value.ToString().Trim();
+            hc.LopMa = dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[7].Value.ToString().Trim();
+          
+            str = hc.Ma + hc.Ten +hc.GioiTinh+hc.NgaySinh+ hc.Email +hc.DienThoai+hc.LopMa;
 
+
+
+           
         }
 
         private void btnThoatDSHS_Click(object sender, EventArgs e)
@@ -146,18 +159,8 @@ namespace QuanLyHocSinh
 
         private void btnSuaDSHS_Click(object sender, EventArgs e)
         {
-            string s = dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[0].Value.ToString() + "_"
-                        + dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[1].Value.ToString() + "_"
-                        + dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[2].Value.ToString() + "_"
-                        + dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[3].Value.ToString() + "_"
-                        + dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[4].Value.ToString() + "_"
-                        + dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[5].Value.ToString() + "_"
-                        + dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[6].Value.ToString() + "_"
-                        + dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[7].Value.ToString();
-
-           
-           
-            frmSua = new frmSua(s);
+        
+            frmSua = new frmSua(str);
             frmSua.ShowDialog();
             dgvHocSinh.DataSource = control.getListHocSinh();
         }
