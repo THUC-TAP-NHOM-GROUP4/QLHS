@@ -159,7 +159,6 @@ on gv.Bomonma = bm.Ma*/
                         + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[7].Value.ToString();
 
            
-           
             frmUpdate_hs = new frmUpdate_hs(s);
             frmUpdate_hs.ShowDialog();
             dtgDanhSachHS.DataSource = control.getListHocSinh();
