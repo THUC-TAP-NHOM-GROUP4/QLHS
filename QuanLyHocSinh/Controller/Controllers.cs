@@ -16,7 +16,7 @@ namespace QuanLyHocSinh.Controller
         DataAccess da = new DataAccess();
         public HocSinh[] getListHocSinh()
         {
-            DataTable table = da.Query("select hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.Sodienthoai , hs.Email, hs.Sodienthoai, lhp.ma as [Lopma] from Sinhvien hs inner join lophocphan lhp on hs.Lopma = lhp.ma");
+            DataTable table = da.Query("select hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.Sodienthoai , hs.Email, hs.Sodienthoai, lhp.ma as [Lopma] from Hocsinh hs inner join Lophocphan lhp on hs.Lopma = lhp.ma");
             int n = table.Rows.Count;
             int i;
             if (n == 0) return null;
@@ -51,7 +51,7 @@ namespace QuanLyHocSinh.Controller
 
         public GiaoVien[] getListGiaoVien()
         {
-            DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma , gv.nhiemvu, gv.anh,bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma");
+            DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma , gv.nhiemvu, gv.anh,bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where gv.trangthai=1");
             int n = table.Rows.Count;
             int i;
             if (n == 0) return null;
@@ -63,7 +63,7 @@ namespace QuanLyHocSinh.Controller
             return list;
 
         }
-
+       
 
         public GiaoVien getGiaoVien(DataRow row)
         {
@@ -101,12 +101,12 @@ namespace QuanLyHocSinh.Controller
         // mâ- tên- gioitinh-ngaysinh - email - doituong,sodienthoai, lopma
         public void XoaHS(string ma)
         {
-            da.NonQuery("delete SinhVien  where ma='" + ma + "'");
+            da.NonQuery("delete Hocsinh where ma='" + ma + "'");
         }
      
         public void XoaGV(string ma)
         {
-            da.NonQuery("delete GiaoVien where  ma='" + ma+"'");
+            da.NonQuery("update GiaoVien set trangthai=0 where  ma='" + ma+"'");
         }
       
         public bool ThemHS(HocSinh hs)

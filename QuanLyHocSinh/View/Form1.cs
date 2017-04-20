@@ -142,7 +142,7 @@ namespace QuanLyHocSinh
                 {
                    
                     control.XoaGV(rowID);
-                    update_FormMain();
+                    dtgDanhSachGV.DataSource = control.getListGiaoVien();
                 }
             }
         }
