@@ -51,7 +51,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabControlChinh = new System.Windows.Forms.TabControl();
             this.tpDSHS = new System.Windows.Forms.TabPage();
-            this.dtgDanhSach = new System.Windows.Forms.DataGridView();
+            this.dtgDanhSachHS = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.btnTimKiemDSHS = new System.Windows.Forms.Button();
             this.btnThoatDSHS = new System.Windows.Forms.Button();
@@ -60,15 +60,15 @@
             this.btnSuaDSHS = new System.Windows.Forms.Button();
             this.btnThemDSHS = new System.Windows.Forms.Button();
             this.btnXemDSHS = new System.Windows.Forms.Button();
+            this.tpQLGiangDay = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tpQLGiangDay = new System.Windows.Forms.TabPage();
             this.tpQLGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSachGV)).BeginInit();
             this.tpTrangChu.SuspendLayout();
             this.tabControlChinh.SuspendLayout();
             this.tpDSHS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSachHS)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -330,7 +330,7 @@
             // tpDSHS
             // 
             this.tpDSHS.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tpDSHS.Controls.Add(this.dtgDanhSach);
+            this.tpDSHS.Controls.Add(this.dtgDanhSachHS);
             this.tpDSHS.Controls.Add(this.label3);
             this.tpDSHS.Controls.Add(this.btnTimKiemDSHS);
             this.tpDSHS.Controls.Add(this.btnThoatDSHS);
@@ -346,15 +346,15 @@
             this.tpDSHS.TabIndex = 1;
             this.tpDSHS.Text = "Danh sách học sinh";
             // 
-            // dtgDanhSach
+            // dtgDanhSachHS
             // 
-            this.dtgDanhSach.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dtgDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDanhSach.Location = new System.Drawing.Point(2, 24);
-            this.dtgDanhSach.Name = "dtgDanhSach";
-            this.dtgDanhSach.Size = new System.Drawing.Size(944, 406);
-            this.dtgDanhSach.TabIndex = 42;
-            this.dtgDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDanhSach_CellContentClick);
+            this.dtgDanhSachHS.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dtgDanhSachHS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDanhSachHS.Location = new System.Drawing.Point(2, 24);
+            this.dtgDanhSachHS.Name = "dtgDanhSachHS";
+            this.dtgDanhSachHS.Size = new System.Drawing.Size(944, 406);
+            this.dtgDanhSachHS.TabIndex = 42;
+            this.dtgDanhSachHS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDanhSachHS_CellContentClick);
             // 
             // label3
             // 
@@ -453,6 +453,15 @@
             this.btnXemDSHS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXemDSHS.UseVisualStyleBackColor = true;
             // 
+            // tpQLGiangDay
+            // 
+            this.tpQLGiangDay.Location = new System.Drawing.Point(4, 22);
+            this.tpQLGiangDay.Name = "tpQLGiangDay";
+            this.tpQLGiangDay.Size = new System.Drawing.Size(942, 502);
+            this.tpQLGiangDay.TabIndex = 3;
+            this.tpQLGiangDay.Text = "QL Giảng dạy";
+            this.tpQLGiangDay.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -473,15 +482,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(950, 25);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // tpQLGiangDay
-            // 
-            this.tpQLGiangDay.Location = new System.Drawing.Point(4, 22);
-            this.tpQLGiangDay.Name = "tpQLGiangDay";
-            this.tpQLGiangDay.Size = new System.Drawing.Size(942, 502);
-            this.tpQLGiangDay.TabIndex = 3;
-            this.tpQLGiangDay.Text = "QL Giảng dạy";
-            this.tpQLGiangDay.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,6 +490,8 @@
             this.ClientSize = new System.Drawing.Size(950, 553);
             this.Controls.Add(this.tabControlChinh);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.MaximumSize = new System.Drawing.Size(966, 592);
+            this.MinimumSize = new System.Drawing.Size(966, 592);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -502,7 +504,7 @@
             this.tabControlChinh.ResumeLayout(false);
             this.tpDSHS.ResumeLayout(false);
             this.tpDSHS.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSachHS)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -524,7 +526,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabControl tabControlChinh;
         private System.Windows.Forms.TabPage tpDSHS;
-        private System.Windows.Forms.DataGridView dtgDanhSach;
+        private System.Windows.Forms.DataGridView dtgDanhSachHS;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnTimKiemDSHS;
         private System.Windows.Forms.Button btnThoatDSHS;

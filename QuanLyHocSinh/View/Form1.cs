@@ -14,7 +14,8 @@ namespace QuanLyHocSinh
     public partial class Form1 : Form
     {
         Controllers control = new Controllers();
-        frmSua frmSua = new frmSua();
+        frmUpdate_hs frmUpdate_hs = new frmUpdate_hs();
+        frmUpdate_gv frmUpdate_gv = new frmUpdate_gv();
         public Form1()
         {
             InitializeComponent();
@@ -22,21 +23,42 @@ namespace QuanLyHocSinh
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dtgDanhSach.DataSource = control.getListHocSinh();
-            dtgDanhSach.Columns["ma"].HeaderText = "Mã";
-            dtgDanhSach.Columns["ten"].HeaderText = "Họ tên";
-            dtgDanhSach.Columns["ngaysinh"].HeaderText = "Ngày sinh";
-            dtgDanhSach.Columns["doituong"].HeaderText = "Đối tượng";
-            dtgDanhSach.Columns["gioitinh"].HeaderText = "Giới tính";
-            dtgDanhSach.Columns["Lopma"].HeaderText = "Mã lớp học phần";
-            dtgDanhSach.Columns["email"].HeaderText = "Email";
-            dtgDanhSach.Columns["DienThoai"].HeaderText = "Điện thoại";
-            dtgDanhSach.Columns["ma"].Width = 60;
-            dtgDanhSach.Columns["ten"].Width = 150;
-            dtgDanhSach.Columns["email"].Width = 150;
-            dtgDanhSach.Columns["gioitinh"].Width = 50;
-            dtgDanhSach.Columns["ngaysinh"].Width = 100;
-            dtgDanhSach.Columns["Lopma"].Width = 150;
+            //GV
+            dtgDanhSachHS.DataSource = control.getListHocSinh();
+            dtgDanhSachHS.Columns["ma"].HeaderText = "Mã";
+            dtgDanhSachHS.Columns["ten"].HeaderText = "Họ tên";
+            dtgDanhSachHS.Columns["ngaysinh"].HeaderText = "Ngày sinh";
+            dtgDanhSachHS.Columns["doituong"].HeaderText = "Đối tượng";
+            dtgDanhSachHS.Columns["gioitinh"].HeaderText = "Giới tính";
+            dtgDanhSachHS.Columns["Lopma"].HeaderText = "Mã lớp học phần";
+            dtgDanhSachHS.Columns["email"].HeaderText = "Email";
+            dtgDanhSachHS.Columns["DienThoai"].HeaderText = "Điện thoại";
+            dtgDanhSachHS.Columns["ma"].Width = 60;
+            dtgDanhSachHS.Columns["ten"].Width = 150;
+            dtgDanhSachHS.Columns["email"].Width = 150;
+            dtgDanhSachHS.Columns["gioitinh"].Width = 50;
+            dtgDanhSachHS.Columns["ngaysinh"].Width = 100;
+            dtgDanhSachHS.Columns["Lopma"].Width = 150;
+            /*select gv.ma, gv.Ten, gv.Gioitinh, gv.Ngaysinh, gv.Email, gv.Luong, gv.Nhiemvu, gv.Vaitro, 
+gv.Taikhoan, gv.Matkhau, gv.Hocham, gv.Hocvi, gv.sodt, gv.diachi, bm.ten from giaovien gv inner join Bomon bm
+on gv.Bomonma = bm.Ma*/
+            //HS
+            dtgDanhSachGV.DataSource = control.getListGiaoVien();
+            dtgDanhSachGV.Columns["ma"].HeaderText = "Mã";
+            dtgDanhSachGV.Columns["ten"].HeaderText = "Họ tên";
+            dtgDanhSachGV.Columns["gioitinh"].HeaderText = "Giới tính";
+            dtgDanhSachGV.Columns["ngaysinh"].HeaderText = "Ngày sinh";
+            dtgDanhSachGV.Columns["email"].HeaderText = "Email";
+            dtgDanhSachGV.Columns["luong"].HeaderText = "Lương";
+            dtgDanhSachGV.Columns["nhiemvu"].HeaderText = "Nhiệm vụ";
+            dtgDanhSachGV.Columns["vaitro"].HeaderText = "Vai trò";
+            dtgDanhSachGV.Columns["taikhoan"].HeaderText = "Tài khoản";
+            dtgDanhSachGV.Columns["matkhau"].HeaderText = "Mật khẩu";
+            dtgDanhSachGV.Columns["hocham"].HeaderText = "Học hàm";
+            dtgDanhSachGV.Columns["hocvi"].HeaderText = "Học vị";
+            //dtgDanhSachGV.Columns["sodt"].HeaderText = "Số điện thoại";
+            dtgDanhSachGV.Columns["diachi"].HeaderText = "Địa chỉ";
+           // dtgDanhSachGV.Columns["tenbm"].HeaderText = "Tên bộ môn";
         }
 
         private void linklabelQLHS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -57,11 +79,6 @@ namespace QuanLyHocSinh
             //tpQLGV.Controls.Add(browser);
             //tabControlChinh.TabPages.Add(tpQLGV);
             tabControlChinh.SelectedTab = tpQLGV;
-        }
-
-        private void dtgDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnThoatDSHS_Click(object sender, EventArgs e)
@@ -86,6 +103,27 @@ namespace QuanLyHocSinh
 
         private void btnSuaDSGV_Click(object sender, EventArgs e)
         {
+            string s =    dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[0].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[1].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[2].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[3].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[4].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[5].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[7].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[8].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[9].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[10].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[11].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[12].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[13].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[14].Value.ToString() + "_"
+                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[15].Value.ToString();
+
+
+
+            frmUpdate_gv = new frmUpdate_gv(s);
+            frmUpdate_gv.ShowDialog();
+            dtgDanhSachGV.DataSource = control.getListGiaoVien();
            
         }
 
@@ -111,20 +149,25 @@ namespace QuanLyHocSinh
 
         private void btnSuaDSHS_Click(object sender, EventArgs e)
         {
-            string s = dtgDanhSach.Rows[dtgDanhSach.CurrentRow.Index].Cells[0].Value.ToString() + "_"
-                        + dtgDanhSach.Rows[dtgDanhSach.CurrentRow.Index].Cells[1].Value.ToString() + "_"
-                        + dtgDanhSach.Rows[dtgDanhSach.CurrentRow.Index].Cells[2].Value.ToString() + "_"
-                        + dtgDanhSach.Rows[dtgDanhSach.CurrentRow.Index].Cells[3].Value.ToString() + "_"
-                        + dtgDanhSach.Rows[dtgDanhSach.CurrentRow.Index].Cells[4].Value.ToString() + "_"
-                        + dtgDanhSach.Rows[dtgDanhSach.CurrentRow.Index].Cells[5].Value.ToString() + "_"
-                        + dtgDanhSach.Rows[dtgDanhSach.CurrentRow.Index].Cells[6].Value.ToString() + "_"
-                        + dtgDanhSach.Rows[dtgDanhSach.CurrentRow.Index].Cells[7].Value.ToString();
+            string s = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[0].Value.ToString() + "_"
+                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[1].Value.ToString() + "_"
+                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[2].Value.ToString() + "_"
+                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[3].Value.ToString() + "_"
+                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[4].Value.ToString() + "_"
+                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[5].Value.ToString() + "_"
+                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[6].Value.ToString() + "_"
+                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[7].Value.ToString();
 
            
            
-            frmSua = new frmSua(s);
-            frmSua.ShowDialog();
-            dtgDanhSach.DataSource = control.getListHocSinh();
+            frmUpdate_hs = new frmUpdate_hs(s);
+            frmUpdate_hs.ShowDialog();
+            dtgDanhSachHS.DataSource = control.getListHocSinh();
+        }
+
+        private void dtgDanhSachHS_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

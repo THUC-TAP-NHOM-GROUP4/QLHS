@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHocSinh
 {
-    partial class frmSua
+    partial class frmUpdate_hs
     {
         /// <summary>
         /// Required designer variable.
@@ -58,6 +58,7 @@
             this.btnThoat.TabIndex = 122;
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnSua
             // 
@@ -200,7 +201,7 @@
             this.txtDienThoai.Size = new System.Drawing.Size(225, 20);
             this.txtDienThoai.TabIndex = 124;
             // 
-            // frmSua
+            // frmUpdate_hs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -222,7 +223,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "frmSua";
+            this.Name = "frmUpdate_hs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmSua";
             this.Load += new System.EventHandler(this.frmSua_Load);

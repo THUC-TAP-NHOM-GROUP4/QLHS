@@ -12,17 +12,17 @@ using System.Windows.Forms;
 
 namespace QuanLyHocSinh
 {
-    public partial class frmSua : Form
+    public partial class frmUpdate_hs : Form
     {
         Controllers control = new Controllers();
         HocSinh hs = new HocSinh();
         string str;
 
-        public frmSua()
+        public frmUpdate_hs()
         {
             InitializeComponent();
         }
-        public frmSua(string str)
+        public frmUpdate_hs(string str)
         {
             InitializeComponent();
             this.str = str;
@@ -49,7 +49,7 @@ namespace QuanLyHocSinh
             hs.LopMa = "L001";
             hs.Email = txtEmail.Text.ToString().Trim();
 
-            control.Sua(hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.Email, hs.DoiTuong, hs.DienThoai, hs.LopMa);
+            control.update_hs(hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.Email, hs.DoiTuong, hs.DienThoai, hs.LopMa);
             MessageBox.Show("Thành công");
         }
 
@@ -67,6 +67,11 @@ namespace QuanLyHocSinh
             
 
             //mâ - tên - gioitinh - ngaysinh - email - doituong,sodienthoai, lopma
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
