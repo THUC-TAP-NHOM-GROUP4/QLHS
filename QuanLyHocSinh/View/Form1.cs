@@ -25,21 +25,20 @@ namespace QuanLyHocSinh
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dgvHocSinh.DataSource = control.getListHocSinh();
-            dgvHocSinh.Columns["ma"].HeaderText = "Mã";
-            dgvHocSinh.Columns["ten"].HeaderText = "Họ tên";
-            dgvHocSinh.Columns["ngaysinh"].HeaderText = "Ngày sinh";
-           
-            dgvHocSinh.Columns["gioitinh"].HeaderText = "Giới tính";
-            dgvHocSinh.Columns["Lopma"].HeaderText = "Mã lớp học phần";
-            dgvHocSinh.Columns["email"].HeaderText = "Email";
-            dgvHocSinh.Columns["DienThoai"].HeaderText = "Điện thoại";
-            dgvHocSinh.Columns["ma"].Width = 60;
-            dgvHocSinh.Columns["ten"].Width = 150;
-            dgvHocSinh.Columns["email"].Width = 150;
-            dgvHocSinh.Columns["gioitinh"].Width = 50;
-            dgvHocSinh.Columns["ngaysinh"].Width = 100;
-            dgvHocSinh.Columns["Lopma"].Width = 150;
+            dtgDanhSachHS.DataSource = control.getListHocSinh();
+            dtgDanhSachHS.Columns["ma"].HeaderText = "Mã";
+            dtgDanhSachHS.Columns["ten"].HeaderText = "Họ tên";
+            dtgDanhSachHS.Columns["ngaysinh"].HeaderText = "Ngày sinh";
+            dtgDanhSachHS.Columns["gioitinh"].HeaderText = "Giới tính";
+            dtgDanhSachHS.Columns["Lopma"].HeaderText = "Mã lớp học phần";
+            dtgDanhSachHS.Columns["email"].HeaderText = "Email";
+            dtgDanhSachHS.Columns["DienThoai"].HeaderText = "Điện thoại";
+            dtgDanhSachHS.Columns["ma"].Width = 60;
+            dtgDanhSachHS.Columns["ten"].Width = 150;
+            dtgDanhSachHS.Columns["email"].Width = 150;
+            dtgDanhSachHS.Columns["gioitinh"].Width = 50;
+            dtgDanhSachHS.Columns["ngaysinh"].Width = 100;
+            dtgDanhSachHS.Columns["Lopma"].Width = 150;
 
             //
             dtgDanhSachGV.DataSource = control.getListGiaoVien();
@@ -86,19 +85,16 @@ namespace QuanLyHocSinh
         HocSinh hc = new HocSinh();
         private void dtgDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            hc.Ma = dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[0].Value.ToString().Trim();
-            hc.Ten = dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[1].Value.ToString().Trim();
-              hc.NgaySinh = DateTime.Parse(dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[3].Value.ToString().Trim());
-            hc.GioiTinh = int.Parse(dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[2].Value.ToString().Trim());
-            hc.Email= dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[4].Value.ToString().Trim();
-            hc.DienThoai = dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[6].Value.ToString().Trim();
-            hc.LopMa = dgvHocSinh.Rows[dgvHocSinh.CurrentRow.Index].Cells[7].Value.ToString().Trim();
+            hc.Ma = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[0].Value.ToString().Trim();
+            hc.Ten = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[1].Value.ToString().Trim();
+              hc.NgaySinh = DateTime.Parse(dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[3].Value.ToString().Trim());
+            hc.GioiTinh = int.Parse(dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[2].Value.ToString().Trim());
+            hc.Email= dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[4].Value.ToString().Trim();
+            hc.DienThoai = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[6].Value.ToString().Trim();
+            hc.LopMa = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[7].Value.ToString().Trim();
           
             str = hc.Ma + hc.Ten +hc.GioiTinh+hc.NgaySinh+ hc.Email +hc.DienThoai+hc.LopMa;
-
-
-
-           
+            
         }
 
         private void btnThoatDSHS_Click(object sender, EventArgs e)
@@ -160,15 +156,32 @@ namespace QuanLyHocSinh
 
         private void btnSuaDSHS_Click(object sender, EventArgs e)
         {
-        
-            frmSua = new frmSua(str);
+            //Ma, Ten, Gioitinh, Ngaysinh , Email, Doituong, Sodienthoai, Lopma
+            HocSinh hs = new HocSinh();
+            hs.Ma = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[0].Value.ToString();
+            hs.Ten = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[1].Value.ToString();
+            int gioitinh = int.Parse(dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[2].Value.ToString());
+
+            DateTime ns = DateTime.Now;
+            if (DateTime.TryParse(dtgDanhSachGV.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[3].Value.ToString(), out ns))
+            {
+                hs.NgaySinh = ns;
+            }
+            hs.NgaySinh = ns;
+            hs.Email = dtgDanhSachGV.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[4].Value.ToString();
+            hs.DanToc =  dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[5].Value.ToString();
+           
+            hs.DienThoai = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[6].Value.ToString();
+            hs.LopMa = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[7].Value.ToString();
+            hs.DiaChi  = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[8].Value.ToString();
+            frmSua = new frmSua(hs, this);
             frmSua.ShowDialog();
-            dgvHocSinh.DataSource = control.getListHocSinh();
+            dtgDanhSachHS.DataSource = control.getListHocSinh();
         }
 
         public void update_FormMain()
         {
-            dgvHocSinh.DataSource = control.getListHocSinh();
+            dtgDanhSachHS.DataSource = control.getListHocSinh();
         }
 
         private void btnThemDSHS_Click(object sender, EventArgs e)
@@ -182,11 +195,11 @@ namespace QuanLyHocSinh
         private void btnXoaDSHS_Click(object sender, EventArgs e)
         {
 
-            if (this.dgvHocSinh.SelectedRows.Count > 0)
+            if (this.dtgDanhSachHS.SelectedRows.Count > 0)
             {
 
-                int selectedIndex = dgvHocSinh.SelectedRows[0].Index;
-                string rowID = dgvHocSinh[0, selectedIndex].Value.ToString();
+                int selectedIndex = dtgDanhSachHS.SelectedRows[0].Index;
+                string rowID = dtgDanhSachHS[0, selectedIndex].Value.ToString();
                 if (MessageBox.Show("Ban co chac  chan  xoa  hoc sinh ma "+rowID+"", "Xoa hoc sinh", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     control.XoaHS(rowID);

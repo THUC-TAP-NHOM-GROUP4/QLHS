@@ -51,7 +51,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabControlChinh = new System.Windows.Forms.TabControl();
             this.tpDSHS = new System.Windows.Forms.TabPage();
-            this.dgvHocSinh = new System.Windows.Forms.DataGridView();
+            this.dtgDanhSachHS = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.btnTimKiemDSHS = new System.Windows.Forms.Button();
             this.btnThoatDSHS = new System.Windows.Forms.Button();
@@ -68,7 +68,7 @@
             this.tpTrangChu.SuspendLayout();
             this.tabControlChinh.SuspendLayout();
             this.tpDSHS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHocSinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSachHS)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -311,7 +311,7 @@
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(402, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(189, 16);
+            this.label4.Size = new System.Drawing.Size(187, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Quản Lý Học Sinh,Giáo Viên";
             // 
@@ -331,7 +331,7 @@
             // tpDSHS
             // 
             this.tpDSHS.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tpDSHS.Controls.Add(this.dgvHocSinh);
+            this.tpDSHS.Controls.Add(this.dtgDanhSachHS);
             this.tpDSHS.Controls.Add(this.label3);
             this.tpDSHS.Controls.Add(this.btnTimKiemDSHS);
             this.tpDSHS.Controls.Add(this.btnThoatDSHS);
@@ -347,15 +347,15 @@
             this.tpDSHS.TabIndex = 1;
             this.tpDSHS.Text = "Danh sách học sinh";
             // 
-            // dgvHocSinh
+            // dtgDanhSachHS
             // 
-            this.dgvHocSinh.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHocSinh.Location = new System.Drawing.Point(2, 24);
-            this.dgvHocSinh.Name = "dgvHocSinh";
-            this.dgvHocSinh.Size = new System.Drawing.Size(954, 406);
-            this.dgvHocSinh.TabIndex = 42;
-            this.dgvHocSinh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDanhSach_CellContentClick);
+            this.dtgDanhSachHS.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dtgDanhSachHS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDanhSachHS.Location = new System.Drawing.Point(2, 24);
+            this.dtgDanhSachHS.Name = "dtgDanhSachHS";
+            this.dtgDanhSachHS.Size = new System.Drawing.Size(954, 406);
+            this.dtgDanhSachHS.TabIndex = 42;
+            this.dtgDanhSachHS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDanhSach_CellContentClick);
             // 
             // label3
             // 
@@ -473,7 +473,7 @@
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(287, 16);
+            this.label1.Size = new System.Drawing.Size(295, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Copyright by Nhom 4 -THUC TAP NHOM 2017";
             // 
@@ -507,7 +507,7 @@
             this.tabControlChinh.ResumeLayout(false);
             this.tpDSHS.ResumeLayout(false);
             this.tpDSHS.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHocSinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSachHS)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -529,7 +529,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabControl tabControlChinh;
         private System.Windows.Forms.TabPage tpDSHS;
-        private System.Windows.Forms.DataGridView dgvHocSinh;
+        private System.Windows.Forms.DataGridView dtgDanhSachHS;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnTimKiemDSHS;
         private System.Windows.Forms.Button btnThoatDSHS;

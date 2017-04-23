@@ -34,7 +34,7 @@
             this.rdbnam = new System.Windows.Forms.RadioButton();
             this.dtpngaysinh = new System.Windows.Forms.DateTimePicker();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtDoiTuong = new System.Windows.Forms.TextBox();
+            this.txtDantoc = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.txtMa = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -45,6 +45,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDienThoai = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnThoat
@@ -55,9 +57,10 @@
             this.btnThoat.Location = new System.Drawing.Point(269, 345);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(96, 31);
-            this.btnThoat.TabIndex = 122;
+            this.btnThoat.TabIndex = 10;
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnSua
             // 
@@ -67,7 +70,7 @@
             this.btnSua.Location = new System.Drawing.Point(140, 345);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(96, 31);
-            this.btnSua.TabIndex = 121;
+            this.btnSua.TabIndex = 9;
             this.btnSua.Text = "SỬA";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -78,7 +81,7 @@
             this.rbdnu.Location = new System.Drawing.Point(269, 128);
             this.rbdnu.Name = "rbdnu";
             this.rbdnu.Size = new System.Drawing.Size(39, 17);
-            this.rbdnu.TabIndex = 106;
+            this.rbdnu.TabIndex = 4;
             this.rbdnu.TabStop = true;
             this.rbdnu.Text = "Nữ";
             this.rbdnu.UseVisualStyleBackColor = true;
@@ -89,7 +92,7 @@
             this.rdbnam.Location = new System.Drawing.Point(153, 130);
             this.rdbnam.Name = "rdbnam";
             this.rdbnam.Size = new System.Drawing.Size(47, 17);
-            this.rdbnam.TabIndex = 103;
+            this.rdbnam.TabIndex = 3;
             this.rdbnam.TabStop = true;
             this.rdbnam.Text = "Nam";
             this.rdbnam.UseVisualStyleBackColor = true;
@@ -99,28 +102,28 @@
             this.dtpngaysinh.Location = new System.Drawing.Point(140, 93);
             this.dtpngaysinh.Name = "dtpngaysinh";
             this.dtpngaysinh.Size = new System.Drawing.Size(225, 20);
-            this.dtpngaysinh.TabIndex = 102;
+            this.dtpngaysinh.TabIndex = 2;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(140, 158);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(225, 20);
-            this.txtEmail.TabIndex = 111;
+            this.txtEmail.TabIndex = 5;
             // 
-            // txtDoiTuong
+            // txtDantoc
             // 
-            this.txtDoiTuong.Location = new System.Drawing.Point(140, 194);
-            this.txtDoiTuong.Name = "txtDoiTuong";
-            this.txtDoiTuong.Size = new System.Drawing.Size(225, 20);
-            this.txtDoiTuong.TabIndex = 109;
+            this.txtDantoc.Location = new System.Drawing.Point(140, 194);
+            this.txtDantoc.Name = "txtDantoc";
+            this.txtDantoc.Size = new System.Drawing.Size(225, 20);
+            this.txtDantoc.TabIndex = 6;
             // 
             // txtTen
             // 
             this.txtTen.Location = new System.Drawing.Point(140, 58);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(225, 20);
-            this.txtTen.TabIndex = 97;
+            this.txtTen.TabIndex = 1;
             // 
             // txtMa
             // 
@@ -128,7 +131,7 @@
             this.txtMa.Location = new System.Drawing.Point(140, 23);
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(225, 20);
-            this.txtMa.TabIndex = 96;
+            this.txtMa.TabIndex = 0;
             // 
             // label14
             // 
@@ -189,22 +192,40 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(37, 200);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 123;
-            this.label3.Text = "Đối tượng";
+            this.label3.Text = "Dân tộc";
             // 
             // txtDienThoai
             // 
             this.txtDienThoai.Location = new System.Drawing.Point(140, 230);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(225, 20);
-            this.txtDienThoai.TabIndex = 124;
+            this.txtDienThoai.TabIndex = 7;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(140, 265);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(225, 20);
+            this.txtDiaChi.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(37, 269);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 125;
+            this.label4.Text = "Địa chỉ";
             // 
             // frmSua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(402, 407);
+            this.Controls.Add(this.txtDiaChi);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDienThoai);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnThoat);
@@ -213,7 +234,7 @@
             this.Controls.Add(this.rdbnam);
             this.Controls.Add(this.dtpngaysinh);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtDoiTuong);
+            this.Controls.Add(this.txtDantoc);
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.txtMa);
             this.Controls.Add(this.label14);
@@ -239,7 +260,7 @@
         private System.Windows.Forms.RadioButton rdbnam;
         private System.Windows.Forms.DateTimePicker dtpngaysinh;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtDoiTuong;
+        private System.Windows.Forms.TextBox txtDantoc;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.TextBox txtMa;
         private System.Windows.Forms.Label label14;
@@ -250,5 +271,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDienThoai;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.Label label4;
     }
 }
