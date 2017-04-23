@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyHocSinh.Model;
+using QuanLyHocSinh.View;
 
 namespace QuanLyHocSinh
 {
@@ -197,12 +198,19 @@ namespace QuanLyHocSinh
 
         private void btnTimKiemDSHS_Click(object sender, EventArgs e)
         {
-
+            frmSearch frm = new frmSearch("1");
+                frm.ShowDialog();
         }
 
         private void btnLuuDSHS_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTimKiemDSGV_Click(object sender, EventArgs e)
+        {
+            frmSearch frm = new frmSearch("2");
+            frm.ShowDialog();
         }
     }
 }
