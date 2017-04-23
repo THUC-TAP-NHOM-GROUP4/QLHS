@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace QuanLyHocSinh.Controller
 {
     class Controllers
     {
+
         DataAccess da = new DataAccess();
         public HocSinh[] getListHocSinh()
         {
@@ -47,33 +49,47 @@ namespace QuanLyHocSinh.Controller
             hs.Email = row["email"].ToString().Trim();
             return hs;
         }
-        //hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.Email, hs.DoiTuong, hs.DienThoai, hs.LopMa);
-        public void update_hs(string ma, string ten, int gioitinh,  DateTime ngaysinh, string email,  string doituong, string sodienthoai,  string lopma)
+        public void update_hs(HocSinh hs)
         {
-            /*Update HocSinh set ten=N'Nguyễn Văn A', ngaysinh='28/03/2017 12:00:00 SA',
-             *  gioitinh='1', ', dienthoai= 6456454 ,email= '456 , lopma= where ma ='SV001'*/
-            da.NonQuery("Update SinhVien  set ten=N'" + ten + "', " + " ngaysinh='" + ngaysinh + "', gioitinh="
-                + gioitinh + ", sodienthoai= '" + sodienthoai + "'  ,email= '" + email
-                + "' , lopma=  '" + lopma + "' where ma ='" + ma + "'");
+            SqlParameter[] para =
+             {
+                new SqlParameter("ma", hs.Ma),
+                new SqlParameter("ten", hs.Ten),
+                new SqlParameter("gioitinh", hs.GioiTinh),
+                new SqlParameter("ngaysinh", hs.NgaySinh),
+                new SqlParameter("email", hs.Email),
+                new SqlParameter("doituong", hs.DoiTuong),
+                new SqlParameter("sodt", hs.DienThoai),
+                new SqlParameter("lopma", hs.LopMa),
+            };
+            da.Query("updateHS", para);
         }
 
-        public void update_gv(string ma, string ten, int gioitinh, DateTime ngaysinh, string email, double luong, 
-            string nhiemvu, string vaitro, string taikhoan, string matkhau, string hocham, string hocvi, string sodt,
-            string diachi, string tenbm)
+        public void update_gv(GiaoVien gv)
         {
-            da.NonQuery("Update GiaoVien set ten = N'" + ten + "', gioitinh = '" + gioitinh + "', email = N'" + email +  "', "
-                + " luong = " + luong + ", nhiemvu = N'" + nhiemvu + "', vaitro= N'" + vaitro + "', taikhoan = N'" + taikhoan 
-                + "', matkhau = N'" + matkhau + "', hocham = N'" + hocham + "', hocvi = N'" + hocvi + "', sodt = '" + sodt 
-                + "' diachi = N'" + diachi + "', tenbm = N'"  + ten + "'");
-            /*update GiaoVien set Ten = N'Hoàng Hồng Hạnh', Gioitinh = 1, Ngaysinh = , Email = , Anh = , Luong = 
-Nhiemvu  = ,Vaitro = , Taikhoan = , Matkhau= , Hocham = , Hocvi= , sodt= , bomonma*/
+            SqlParameter[] para =
+                   {
+                new SqlParameter("ma", gv.Ma),
+                new SqlParameter("ten", gv.Ten),
+                new SqlParameter("gioitinh", gv.GioiTinh),
+                new SqlParameter("ngaysinh", gv.NgaySinh),
+                new SqlParameter("email", gv.Email),
+                new SqlParameter("luong",gv.Luong),
+                new SqlParameter("nhiemvu", gv.NhiemVu),
+                new SqlParameter("vaitro",gv.VaiTro),
+                new SqlParameter("taikhoan",gv.TaiKhoan),
+                new SqlParameter("hocham",gv.HocHam),
+                new SqlParameter("hocvi",gv.HocVi),
+                new SqlParameter("sodt", gv.SoDienThoai),
+                new SqlParameter("diachi", gv.DiaChi),
+                new SqlParameter("bomonma", gv.BoMonMa),
+            };
+            da.Query("updateGV", para);
         }
-        // mâ- tên- gioitinh-ngaysinh - email - doituong,sodienthoai, lopma
-
         public GiaoVien[] getListGiaoVien()
         {
             DataTable table = da.Query("select gv.ma, gv.Ten, gv.Gioitinh, gv.Ngaysinh, gv.Email, gv.Luong, gv.Nhiemvu, "
-                        + " gv.Vaitro, gv.Taikhoan, gv.Matkhau, gv.Hocham, gv.Hocvi, gv.sodt, gv.diachi, bm.ten as [tenbm]"
+                        + " gv.Vaitro, gv.Taikhoan, gv.Matkhau, gv.Hocham, gv.Hocvi, gv.sodt as[sodienthoai], gv.diachi, bm.ten as [tenbomon]"
                         + " from giaovien gv inner join Bomon bm on gv.Bomonma = bm.Ma");
             int n = table.Rows.Count;
             int i;
@@ -87,9 +103,6 @@ Nhiemvu  = ,Vaitro = , Taikhoan = , Matkhau= , Hocham = , Hocvi= , sodt= , bomon
         }
         public GiaoVien getGiaoVien(DataRow row)
         {
-            /*select gv.ma, gv.Ten, gv.Gioitinh, gv.Ngaysinh, gv.Email, gv.Luong, gv.Nhiemvu, gv.Vaitro, 
-gv.Taikhoan, gv.Matkhau, gv.Hocham, gv.Hocvi, gv.sodt, gv.diachi, bm.ten from giaovien gv inner join Bomon bm
-on gv.Bomonma = bm.Ma*/
             GiaoVien gv = new GiaoVien();
             gv.Ma = row["ma"].ToString().Trim();
             gv.Ten = row["ten"].ToString().Trim();
@@ -108,15 +121,55 @@ on gv.Bomonma = bm.Ma*/
             gv.Luong = double.Parse(row["luong"].ToString().Trim());
             gv.NhiemVu = row["nhiemvu"].ToString().Trim();
             gv.VaiTro = row["vaitro"].ToString().Trim();
-            gv.VaiTro = row["taikhoan"].ToString().Trim();
-            gv.VaiTro = row["matkhau"].ToString().Trim();
-            gv.VaiTro = row["hocham"].ToString().Trim();
-            gv.VaiTro = row["hocvi"].ToString().Trim();
-            gv.VaiTro = row["sodt"].ToString().Trim();
-            gv.VaiTro = row["diachi"].ToString().Trim();
-            gv.VaiTro = row["tenbm"].ToString().Trim();
+            gv.TaiKhoan = row["taikhoan"].ToString().Trim();
+            gv.MatKhau = row["matkhau"].ToString().Trim();
+            gv.HocHam = row["hocham"].ToString().Trim();
+            gv.HocVi = row["hocvi"].ToString().Trim();
+            gv.SoDienThoai = row["sodienthoai"].ToString().Trim();
+            gv.DiaChi = row["diachi"].ToString().Trim();
+            gv.BoMonMa = row["tenbomon"].ToString().Trim();
 
             return gv;
+        }
+        public String getBoMon(String bomonma)
+        {
+            if (bomonma == "") return "";
+            DataTable table = da.Query("Select ten from bomon where bomon.ma = '" + bomonma+ "'");
+            int n = table.Rows.Count;
+            int i;
+            if(n== 1)
+            {
+                return  table.Rows[0]["ten"].ToString().Trim();
+            }
+           
+            return "";
+        }
+        public List<String> getBoMon()
+        {
+            DataTable table = da.Query("Select ten from bomon ");
+            List<String> listBM = new List<string>();
+            int n = table.Rows.Count;
+            int i;
+            if (n == 0) return new List<string>();
+            for(i = 0; i< n; i++)
+            {
+                listBM.Add(table.Rows[i]["ten"].ToString().Trim());
+            }
+
+            return listBM;
+        }
+        public String getMaBoMon(String tenbomon)
+        {
+            if (tenbomon == "") return "";
+            DataTable table = da.Query("Select ma from bomon where bomon.ten = N'" + tenbomon + "'");
+            int n = table.Rows.Count;
+            int i;
+            if (n == 1)
+            {
+                return table.Rows[0]["ma"].ToString().Trim();
+            }
+
+            return "";
         }
     }
 }

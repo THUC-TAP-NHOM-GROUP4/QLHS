@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyHocSinh.Model
 {
-    class HocSinh
+    public class HocSinh
     {
         public String Ma { get; set; }
         public String Ten { get; set; }

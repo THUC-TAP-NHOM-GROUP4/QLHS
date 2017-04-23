@@ -55,9 +55,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtBoMon = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbbBoMon = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -296,13 +296,6 @@
             this.label11.TabIndex = 151;
             this.label11.Text = "Địa chỉ";
             // 
-            // txtBoMon
-            // 
-            this.txtBoMon.Location = new System.Drawing.Point(261, 435);
-            this.txtBoMon.Name = "txtBoMon";
-            this.txtBoMon.Size = new System.Drawing.Size(225, 20);
-            this.txtBoMon.TabIndex = 13;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -321,12 +314,20 @@
             this.pictureBox1.TabIndex = 142;
             this.pictureBox1.TabStop = false;
             // 
+            // cbbBoMon
+            // 
+            this.cbbBoMon.FormattingEnabled = true;
+            this.cbbBoMon.Location = new System.Drawing.Point(261, 438);
+            this.cbbBoMon.Name = "cbbBoMon";
+            this.cbbBoMon.Size = new System.Drawing.Size(225, 21);
+            this.cbbBoMon.TabIndex = 154;
+            // 
             // frmUpdate_gv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(530, 524);
-            this.Controls.Add(this.txtBoMon);
+            this.Controls.Add(this.cbbBoMon);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.label11);
@@ -356,6 +357,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(546, 563);
+            this.MinimumSize = new System.Drawing.Size(546, 563);
             this.Name = "frmUpdate_gv";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmUpdate_gv";
@@ -396,7 +399,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtBoMon;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbbBoMon;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using QuanLyHocSinh.Controller;
+using QuanLyHocSinh.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,7 @@ namespace QuanLyHocSinh
             InitializeComponent();
         }
 
+       
         private void Form1_Load(object sender, EventArgs e)
         {
             //GV
@@ -56,9 +58,9 @@ on gv.Bomonma = bm.Ma*/
             dtgDanhSachGV.Columns["matkhau"].HeaderText = "Mật khẩu";
             dtgDanhSachGV.Columns["hocham"].HeaderText = "Học hàm";
             dtgDanhSachGV.Columns["hocvi"].HeaderText = "Học vị";
-            //dtgDanhSachGV.Columns["sodt"].HeaderText = "Số điện thoại";
+            dtgDanhSachGV.Columns["sodienthoai"].HeaderText = "Số điện thoại";
             dtgDanhSachGV.Columns["diachi"].HeaderText = "Địa chỉ";
-           // dtgDanhSachGV.Columns["tenbm"].HeaderText = "Tên bộ môn";
+           // dtgDanhSachGV.Columns["tenbomon"].HeaderText = "Tên bộ môn";
         }
 
         private void linklabelQLHS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -102,26 +104,34 @@ on gv.Bomonma = bm.Ma*/
         }
 
         private void btnSuaDSGV_Click(object sender, EventArgs e)
-        {
-            string s =    dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[0].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[1].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[2].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[3].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[4].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[5].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[7].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[8].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[9].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[10].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[11].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[12].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[13].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[14].Value.ToString() + "_"
-                        + dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[15].Value.ToString();
+        { 
+            GiaoVien gv = new GiaoVien();
+            gv.Ma = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[0].Value.ToString();
+            gv.Ten = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[1].Value.ToString();
+            int gioitinh = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[2].Value.ToString());
+           
+            DateTime ns = DateTime.Now;
+            if(DateTime.TryParse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[3].Value.ToString(), out ns)){
+                gv.NgaySinh = ns;
+            }
+            gv.NgaySinh = ns;
+            gv.Email = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[4].Value.ToString();
+            //gv.Anh  = (dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[5].Value.ToString()== null) ? 
+            //    " ": dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[5].Value.ToString();
+            gv.Luong = double.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[6].Value.ToString());
+            gv.NhiemVu =dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[7].Value.ToString();
+            gv.VaiTro= dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[8].Value.ToString();
+            gv.TaiKhoan = (dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[9].Value.ToString());
+            gv.MatKhau= dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[10].Value.ToString();
+            gv.HocHam = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[11].Value.ToString();
+            gv.HocVi = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[12].Value.ToString();
+            gv.SoDienThoai = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[13].Value.ToString();
+            gv.DiaChi = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[14].Value.ToString();
+            gv.BoMonMa = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[15].Value.ToString();
 
+            //ma, ten, gioitinh, ngaysinh, email, anh, luong, nhiemvu, vaitro, taikhoan, matkhau, hocham, hocvi, sodt, diachi, bomonma
 
-
-            frmUpdate_gv = new frmUpdate_gv(s);
+            frmUpdate_gv = new frmUpdate_gv(gv, this);
             frmUpdate_gv.ShowDialog();
             dtgDanhSachGV.DataSource = control.getListGiaoVien();
            
@@ -149,18 +159,23 @@ on gv.Bomonma = bm.Ma*/
 
         private void btnSuaDSHS_Click(object sender, EventArgs e)
         {
-            string s = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[0].Value.ToString() + "_"
-                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[1].Value.ToString() + "_"
-                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[2].Value.ToString() + "_"
-                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[3].Value.ToString() + "_"
-                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[4].Value.ToString() + "_"
-                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[5].Value.ToString() + "_"
-                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[6].Value.ToString() + "_"
-                        + dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[7].Value.ToString();
+            //Ma, Ten, Gioitinh, Ngaysinh , Email, Doituong, Sodienthoai, Lopma
+            HocSinh hs = new HocSinh();
+            hs.Ma = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[0].Value.ToString();
+            hs.Ten = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[1].Value.ToString();
+            int gioitinh = int.Parse(dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[2].Value.ToString());
 
-           
-           
-            frmUpdate_hs = new frmUpdate_hs(s);
+            DateTime ns = DateTime.Now;
+            if (DateTime.TryParse(dtgDanhSachGV.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[3].Value.ToString(), out ns))
+            {
+                hs.NgaySinh = ns;
+            }
+            hs.NgaySinh = ns;
+            hs.DoiTuong = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[5].Value.ToString();
+            hs.DienThoai = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[6].Value.ToString();
+            hs.LopMa= dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[7].Value.ToString();
+
+            frmUpdate_hs = new frmUpdate_hs(hs, this);
             frmUpdate_hs.ShowDialog();
             dtgDanhSachHS.DataSource = control.getListHocSinh();
         }

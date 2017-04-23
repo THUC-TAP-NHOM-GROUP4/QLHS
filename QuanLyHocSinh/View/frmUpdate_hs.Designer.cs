@@ -223,10 +223,12 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(418, 446);
+            this.MinimumSize = new System.Drawing.Size(418, 446);
             this.Name = "frmUpdate_hs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmSua";
-            this.Load += new System.EventHandler(this.frmSua_Load);
+            this.Load += new System.EventHandler(this.frmUpdate_hs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
