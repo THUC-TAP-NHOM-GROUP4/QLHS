@@ -1,9 +1,8 @@
-﻿using QLNS.Controller;
+﻿using QuanLyHocSinh.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,80 +13,142 @@ namespace QuanLyHocSinh.View
 {
     public partial class frmSearch : Form
     {
-        private string str;
-        public frmSearch(string  str)
+        private string str { get; set; }
+        public frmSearch()
         {
+
+            InitializeComponent();
+
+
             this.str = str;
+            dgvdstimkiem.DataSource = da.Query("select *from Hocsinh");
+        }
+        public frmSearch(string str)
+        {
+            
             InitializeComponent();
            
+            
+            this.str = str;
+            
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            if (txttimkiem.Text != "" && txttimkiem.Text != "Nhập tên cần tìm...")
-            {
-                if(str.Equals("1"))
-                dgvdanhsach.DataSource = da.Query("getListGV", new SqlParameter("@ten", txttimkiem.Text));
-                if(str.Equals("0"))
-                    dgvdanhsach.DataSource = da.Query("getListSV", new SqlParameter("@TEN", txttimkiem.Text));
-            }
-            else
-                MessageBox.Show("Vui lòng nhập tên cần tìm");
-        }
-        DataAccess da = new DataAccess();
         private void frmSearch_Load(object sender, EventArgs e)
         {
-            if(str.Equals("0"))
-            {
-                groupBox2.Size = new Size(328, 407);
-                lbvaitro.Text = "Đối tượng";
-                lbnhiemvu.Text = "Lớp";
-                lbbomon.Visible = false;
-                txtbomon.Visible = false;
-                lbanh.Visible = false;
-                dgvdanhsach.DataSource = da.Query("select *from Sinhvien");
+            if(str=="1")
+            {  
+                cbbSearch.Items.Add("Tìm kiếm theo mã");
+                cbbSearch.Items.Add("Tìm kiếm theo tên");
+                cbbSearch.Items.Add("Tìm kiếm theo lớp");
+                cbbSearch.Items.Add("Tìm kiếm theo dân tộc");
+                cbbSearch.Items.Add("Tìm kiếm theo giới tính");
+                cbbSearch.Items.Add("Tìm kiếm theo địa chỉ");
+              
             }
-            if(str.Equals("1"))
+            if(str=="2")
             {
-                groupBox2.Size = new Size(591, 407);
-                lbvaitro.Text = "Vai trò";
-                lbnhiemvu.Text = "Nhiệm vụ";
-                txtbomon.Visible = true;
-                lbbomon.Visible = true;
-                lbanh.Visible = true;
-                dgvdanhsach.DataSource = da.Query("select *from Giaovien");
+              
+                cbbSearch.Items.Add("Tìm kiếm theo mã");
+                cbbSearch.Items.Add("Tìm kiếm theo tên");
+                cbbSearch.Items.Add("Tìm kiếm theo bộ môn");
+                cbbSearch.Items.Add("Tìm kiếm theo dân tộc");
+                cbbSearch.Items.Add("Tìm kiếm theo giới tính");
+                cbbSearch.Items.Add("Tìm kiếm theo địa chỉ");
+               
             }
         }
-
-        private void dgvdanhsach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        DataAccess da;
+        private void btntimkiem_Click(object sender, EventArgs e)
         {
-            if (dgvdanhsach.CurrentRow != null)
+            if(str=="1")
             {
-                txtma.Text = dgvdanhsach.Rows[dgvdanhsach.CurrentRow.Index].Cells[0].Value.ToString().Trim();
-                txtten.Text = dgvdanhsach.Rows[dgvdanhsach.CurrentRow.Index].Cells[1].Value.ToString().Trim();
-                txtsodt.Text = dgvdanhsach.Rows[dgvdanhsach.CurrentRow.Index].Cells[4].Value.ToString().Trim();
-                txtemail.Text = dgvdanhsach.Rows[dgvdanhsach.CurrentRow.Index].Cells[5].Value.ToString().Trim();
-                txtvaitro.Text = dgvdanhsach.Rows[dgvdanhsach.CurrentRow.Index].Cells[6].Value.ToString().Trim();
-                txtnhiemvu.Text = dgvdanhsach.Rows[dgvdanhsach.CurrentRow.Index].Cells[7].Value.ToString().Trim();
-                if (str == "1")
+                if(cbbSearch.Text.Equals("Tìm kiếm theo mã"))
                 {
-                    txtbomon.Text = dgvdanhsach.Rows[dgvdanhsach.CurrentRow.Index].Cells[8].Value.ToString().Trim();
-                    txthocham.Text = dgvdanhsach.Rows[dgvdanhsach.CurrentRow.Index].Cells[10].Value.ToString().Trim();
-                    txthocvi.Text = dgvdanhsach.Rows[dgvdanhsach.CurrentRow.Index].Cells[11].Value.ToString().Trim();
-                    txttaikhoan.Text = dgvdanhsach.Rows[dgvdanhsach.CurrentRow.Index].Cells[12].Value.ToString().Trim();
-                    txtmatkhau.Text = dgvdanhsach.Rows[dgvdanhsach.CurrentRow.Index].Cells[13].Value.ToString().Trim();
+                    
+                    da = new DataAccess();
+                    dgvdstimkiem.DataSource = da.Query("DSHSTHEOMA", new System.Data.SqlClient.SqlParameter("@ma", TXTma.Text));
+                }
+                else if (cbbSearch.Text.Equals("Tìm kiếm theo tên"))
+                {
+                    lbma.Visible = true;
+                    lbma.Text = "Họ và tên";
+                    
+                    da = new DataAccess();
+                    dgvdstimkiem.DataSource = da.Query("DSHSTHEOTEN", new System.Data.SqlClient.SqlParameter("@ten", TXTma.Text));
+                }
+                else if (cbbSearch.Text.Equals("Tìm kiếm theo dân tộc"))
+                {
+
+                    lbma.Text = "Dân tộc";
+                    da = new DataAccess();
+                    dgvdstimkiem.DataSource = da.Query("DSHSTHEODANTOC",new System.Data.SqlClient.SqlParameter("@dantoc",TXTma.Text));
+                }
+                else if (cbbSearch.Text.Equals("Tìm kiếm theo giới tính"))
+                {
+                    lbma.Text = "Giới tính";
+                    da = new DataAccess();
+                    dgvdstimkiem.DataSource = da.Query("DSHSTHEOGIOITINH",new System.Data.SqlClient.SqlParameter("@gioitinh", TXTma.Text));
+                }
+                else if (cbbSearch.Text.Equals("Tìm kiếm theo địa chỉ"))
+                {
+
+                    lbma.Text = "Địa chỉ";
+                    da = new DataAccess();
+                    dgvdstimkiem.DataSource = da.Query("DSHSTHEODIACHI", new System.Data.SqlClient.SqlParameter("@diachi", TXTma.Text));
+                }
+                else if (cbbSearch.Text.Equals("Tìm kiếm theo lớp"))
+                {
+
+                    lbma.Text = "Lớp";
+                    da = new DataAccess();
+                    dgvdstimkiem.DataSource = da.Query("DSHSTHEOLOP", new System.Data.SqlClient.SqlParameter("@lop",TXTma.Text));
                 }
             }
-        }
+            if (str == "2")
+            {
+                if (cbbSearch.Text.Equals("Tìm kiếm theo mã"))
+                {
+                   
+                    da = new DataAccess();
+                    dgvdstimkiem.DataSource = da.Query("DSGVTHEOMA", new System.Data.SqlClient.SqlParameter("@ma", TXTma.Text));
+                }
+                else if (cbbSearch.Text.Equals("Tìm kiếm theo tên"))
+                {
+                   
+                    lbma.Text = "Họ và tên";
+                   
+                    da = new DataAccess();
+                    dgvdstimkiem.DataSource = da.Query("DSGVTHEOTEN", new System.Data.SqlClient.SqlParameter("@ma", TXTma.Text));
+                }
+                else if (cbbSearch.Text.Equals("Tìm kiếm theo dân tộc"))
+                {
 
-        private void txttimkiem_MouseClick(object sender, MouseEventArgs e)
-        {
-            txttimkiem.Text = "";
-        }
+                    lbma.Text = "Dân tộc";
+                    da = new DataAccess();
+                    dgvdstimkiem.DataSource = da.Query("DSGVTHEODANTOC");
+                }
+                else if (cbbSearch.Text.Equals("Tìm kiếm theo giới tính"))
+                {
+                    ;
+                    lbma.Text = "Giới tính";
+                    da = new DataAccess();
+                    dgvdstimkiem.DataSource = da.Query("DSGVTHEOGIOITINH", new System.Data.SqlClient.SqlParameter("@gioitinh", TXTma.Text));
+                }
+                else if (cbbSearch.Text.Equals("Tìm kiếm theo địa chỉ"))
+                {
 
-        private void btnthoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
+                    lbma.Text = "Địa chỉ";
+                    da = new DataAccess();
+                    dgvdstimkiem.DataSource = da.Query("DSGVTHEODIACHI", new System.Data.SqlClient.SqlParameter("@diachi", TXTma.Text));
+                }
+                else if (cbbSearch.Text.Equals("Tìm kiếm theo bộ môn"))
+                {
+
+                    lbma.Text = "Bộ môn";
+                    da = new DataAccess();
+                    dgvdstimkiem.DataSource = da.Query("DSGVTHEOBOMON", new System.Data.SqlClient.SqlParameter("@bomon", TXTma.Text));
+                }
+            }
         }
     }
 }

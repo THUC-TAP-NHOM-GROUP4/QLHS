@@ -121,6 +121,7 @@
             this.btnTimKiemDSGV.Text = "Tìm kiếm";
             this.btnTimKiemDSGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiemDSGV.UseVisualStyleBackColor = true;
+            this.btnTimKiemDSGV.Click += new System.EventHandler(this.btnTimKiemDSGV_Click);
             // 
             // btnThoatDSGV
             // 
@@ -213,7 +214,7 @@
             this.tpTrangChu.Location = new System.Drawing.Point(4, 22);
             this.tpTrangChu.Name = "tpTrangChu";
             this.tpTrangChu.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTrangChu.Size = new System.Drawing.Size(942, 502);
+            this.tpTrangChu.Size = new System.Drawing.Size(962, 502);
             this.tpTrangChu.TabIndex = 0;
             this.tpTrangChu.Text = "Trang Chủ";
             // 
@@ -461,7 +462,7 @@
             // 
             this.tpQLGiangDay.Location = new System.Drawing.Point(4, 22);
             this.tpQLGiangDay.Name = "tpQLGiangDay";
-            this.tpQLGiangDay.Size = new System.Drawing.Size(942, 502);
+            this.tpQLGiangDay.Size = new System.Drawing.Size(962, 502);
             this.tpQLGiangDay.TabIndex = 3;
             this.tpQLGiangDay.Text = "QL Giảng dạy";
             this.tpQLGiangDay.UseVisualStyleBackColor = true;
