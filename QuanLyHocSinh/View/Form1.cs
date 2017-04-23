@@ -17,6 +17,7 @@ namespace QuanLyHocSinh
     {
         Controllers control = new Controllers();
         frmSua frmSua = new frmSua();
+        frmUpdate_gv frmUpdate_gv = new frmUpdate_gv();
         AddHocSinh frm_AddHS;
         public Form1()
         {
@@ -119,7 +120,32 @@ namespace QuanLyHocSinh
 
         private void btnSuaDSGV_Click(object sender, EventArgs e)
         {
+            GiaoVien gv = new GiaoVien();
+            gv.Ma = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[0].Value.ToString();
+            gv.Ten = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[1].Value.ToString();
+            int gioitinh = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[2].Value.ToString());
+
+            DateTime ns = DateTime.Now;
+            if (DateTime.TryParse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[3].Value.ToString(), out ns))
+            {
+                gv.NgaySinh = ns;
+            }
+            gv.NgaySinh = ns;
+            gv.Email = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[4].Value.ToString();
+            //gv.Anh  = (dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[5].Value.ToString()== null) ? 
+            //    " ": dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[5].Value.ToString();
+            gv.Luong = double.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[6].Value.ToString());
+            gv.NhiemVu = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[7].Value.ToString();
+            gv.VaiTro = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[8].Value.ToString();
+            gv.BoMonMa = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[9].Value.ToString();
+            gv.TrangThai = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[10].Value.ToString());
            
+
+            //ma, ten, gioitinh, ngaysinh, email, anh, luong, nhiemvu, vaitro, taikhoan, matkhau, hocham, hocvi, sodt, diachi, bomonma
+
+            frmUpdate_gv = new frmUpdate_gv(gv, this);
+            frmUpdate_gv.ShowDialog();
+            dtgDanhSachGV.DataSource = control.getListGiaoVien();
         }
 
         private void btnThemDSGV_Click(object sender, EventArgs e)

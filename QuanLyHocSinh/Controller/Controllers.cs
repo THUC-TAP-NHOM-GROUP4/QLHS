@@ -54,7 +54,7 @@ namespace QuanLyHocSinh.Controller
         public GiaoVien[] getListGiaoVien()
         {
             DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma , " 
-                + " gv.nhiemvu, gv.anh,bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where gv.trangthai=1");
+                + " gv.nhiemvu, gv.anh,bm.ma as [Bomonma], gv.trangthai from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where gv.trangthai=1");
             int n = table.Rows.Count;
             int i;
             if (n == 0) return null;
@@ -88,6 +88,7 @@ namespace QuanLyHocSinh.Controller
             gv.BoMonMa = row["BoMonMa"].ToString().Trim();
             gv.NhiemVu = row["NhiemVu"].ToString().Trim();
             gv.Anh = row["anh"].ToString().Trim();
+            gv.TrangThai = int.Parse(row["trangthai"].ToString().Trim());
             return gv;
         }
 
@@ -120,13 +121,11 @@ namespace QuanLyHocSinh.Controller
                 new SqlParameter("luong",gv.Luong),
                 new SqlParameter("nhiemvu", gv.NhiemVu),
                 new SqlParameter("vaitro",gv.VaiTro),
-                new SqlParameter("taikhoan",gv.TaiKhoan),
-                new SqlParameter("hocham",gv.HocHam),
-                new SqlParameter("hocvi",gv.HocVi),
-                new SqlParameter("sodt", gv.SoDienThoai),
-                new SqlParameter("diachi", gv.DiaChi),
                 new SqlParameter("bomonma", gv.BoMonMa),
+                new SqlParameter("trangthai", gv.TrangThai),
             };
+            /*  CREATE proc [dbo].[updateGV](@ma varchar(20), @ten nvarchar(50), @gioitinh int, @ngaysinh date, @email varchar(50), 
+ @luong money, @nhiemvu nvarchar(30), @vaitro text, @bomonma varchar(20) , @trangthai int)*/
             da.Query("updateGV", para);
         }
         public void XoaHS(string ma)
@@ -173,6 +172,47 @@ namespace QuanLyHocSinh.Controller
             };
             da.Query("proc_insertGV", paraGV);
             return true;
+        }
+
+        public String getBoMon(String bomonma)
+        {
+            if (bomonma == "") return "";
+            DataTable table = da.Query("Select ten from bomon where bomon.ma = '" + bomonma + "'");
+            int n = table.Rows.Count;
+            int i;
+            if (n == 1)
+            {
+                return table.Rows[0]["ten"].ToString().Trim();
+            }
+
+            return "";
+        }
+        public List<String> getBoMon()
+        {
+            DataTable table = da.Query("Select ten from bomon ");
+            List<String> listBM = new List<string>();
+            int n = table.Rows.Count;
+            int i;
+            if (n == 0) return new List<string>();
+            for (i = 0; i < n; i++)
+            {
+                listBM.Add(table.Rows[i]["ten"].ToString().Trim());
+            }
+
+            return listBM;
+        }
+        public String getMaBoMon(String tenbomon)
+        {
+            if (tenbomon == "") return "";
+            DataTable table = da.Query("Select ma from bomon where bomon.ten = N'" + tenbomon + "'");
+            int n = table.Rows.Count;
+            int i;
+            if (n == 1)
+            {
+                return table.Rows[0]["ma"].ToString().Trim();
+            }
+
+            return "";
         }
     }
 }
