@@ -19,14 +19,49 @@ namespace QuanLyHocSinh
         frmSua frmSua = new frmSua();
         frmUpdate_gv frmUpdate_gv = new frmUpdate_gv();
         AddHocSinh frm_AddHS;
+        AddGV frm_AddGV;
         public Form1()
         {
             InitializeComponent();
+            dtgDanhSachGV.DataSource = control.getListGiaoVien();
+            dtgDanhSachHS.DataSource = control.getListHocSinh();
+        
         }
-
+        public void Loadd()
+        {
+            Load_gv();
+            Load_hs();
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
-            dtgDanhSachHS.DataSource = control.getListHocSinh();
+            dtgDanhSachGV.DataSource = control.getListGiaoVien();
+            
+        }
+        private void Load_gv()
+        {
+           
+            dtgDanhSachGV.Columns["ma"].HeaderText = "Mã";
+            dtgDanhSachGV.Columns["ten"].HeaderText = "Họ tên";
+            dtgDanhSachGV.Columns["ngaysinh"].HeaderText = "Ngày sinh";
+
+            dtgDanhSachGV.Columns["gioitinh"].HeaderText = "Giới tính";
+            dtgDanhSachGV.Columns["vaitro"].HeaderText = "Vai Trò";
+            dtgDanhSachGV.Columns["email"].HeaderText = "Email";
+            //  dtgDanhSachGV.Columns["sodt"].HeaderText = "Điện thoại";
+            dtgDanhSachGV.Columns["Bomonma"].HeaderText = "Mã Bộ Môn";
+            dtgDanhSachGV.Columns["Nhiemvu"].HeaderText = "Nhiệm vụ";
+            dtgDanhSachGV.Columns["Anh"].HeaderText = "ẢNH";
+            dtgDanhSachGV.Columns["ma"].Width = 60;
+            dtgDanhSachGV.Columns["ten"].Width = 150;
+            dtgDanhSachGV.Columns["email"].Width = 150;
+            dtgDanhSachGV.Columns["gioitinh"].Width = 50;
+            dtgDanhSachGV.Columns["ngaysinh"].Width = 100;
+            dtgDanhSachGV.Columns["Bomonma"].Width = 150;
+            dtgDanhSachGV.DataSource = control.getListGiaoVien();
+        }
+        private void Load_hs()
+        {
+          
             dtgDanhSachHS.Columns["ma"].HeaderText = "Mã";
             dtgDanhSachHS.Columns["ten"].HeaderText = "Họ tên";
             dtgDanhSachHS.Columns["ngaysinh"].HeaderText = "Ngày sinh";
@@ -40,29 +75,8 @@ namespace QuanLyHocSinh
             dtgDanhSachHS.Columns["gioitinh"].Width = 50;
             dtgDanhSachHS.Columns["ngaysinh"].Width = 100;
             dtgDanhSachHS.Columns["Lopma"].Width = 150;
-
-            //
-            dtgDanhSachGV.DataSource = control.getListGiaoVien();
-            dtgDanhSachGV.Columns["ma"].HeaderText = "Mã";
-            dtgDanhSachGV.Columns["ten"].HeaderText = "Họ tên";
-            dtgDanhSachGV.Columns["ngaysinh"].HeaderText = "Ngày sinh";
-
-            dtgDanhSachGV.Columns["gioitinh"].HeaderText = "Giới tính";
-            dtgDanhSachGV.Columns["vaitro"].HeaderText = "Vai Trò";
-            dtgDanhSachGV.Columns["email"].HeaderText = "Email";
-          //  dtgDanhSachGV.Columns["sodt"].HeaderText = "Điện thoại";
-            dtgDanhSachGV.Columns["Bomonma"].HeaderText = "Mã Bộ Môn";
-            dtgDanhSachGV.Columns["Nhiemvu"].HeaderText = "Nhiệm vụ";
-            dtgDanhSachGV.Columns["Anh"].HeaderText = "ẢNH";
-            dtgDanhSachGV.Columns["ma"].Width = 60;
-            dtgDanhSachGV.Columns["ten"].Width = 150;
-            dtgDanhSachGV.Columns["email"].Width = 150;
-            dtgDanhSachGV.Columns["gioitinh"].Width = 50;
-            dtgDanhSachGV.Columns["ngaysinh"].Width = 100;
-            dtgDanhSachGV.Columns["Bomonma"].Width = 150;
-
+            dtgDanhSachHS.DataSource = control.getListHocSinh();
         }
-
         private void linklabelQLHS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
@@ -150,7 +164,9 @@ namespace QuanLyHocSinh
 
         private void btnThemDSGV_Click(object sender, EventArgs e)
         {
-
+            frm_AddGV = new AddGV(this);
+            frm_AddGV.ShowDialog();
+            update_FormMain();
         }
 
         private void btnXoaDSGV_Click(object sender, EventArgs e)
@@ -250,6 +266,41 @@ namespace QuanLyHocSinh
         {
             frmSearch frm = new frmSearch("2");
             frm.ShowDialog();
+        }
+
+        
+
+        private string st { get; set; }
+       
+        private void dtgDanhSachGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GiaoVien gv = new GiaoVien();
+            gv.Ma = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[0].Value.ToString().Trim();
+            gv.Ten = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[1].Value.ToString().Trim();
+            gv.NgaySinh = DateTime.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[3].Value.ToString().Trim());
+            gv.GioiTinh = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[2].Value.ToString().Trim());
+            gv.Email = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[4].Value.ToString().Trim();
+            gv.VaiTro = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[5].Value.ToString().Trim();
+            gv.Luong = float.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[6].Value.ToString().Trim());
+            gv.BoMonMa = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[7].Value.ToString().Trim();
+            gv.TrangThai = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[8].Value.ToString().Trim());
+            st = gv.Ma + gv.Ten + gv.GioiTinh + gv.NgaySinh + gv.Email + gv.VaiTro + gv.Luong + gv.BoMonMa + gv.TrangThai;
+        }
+
+        private void linklabelHD_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            tabControlChinh.SelectedTab = tpHuongDan;
+        }
+
+        private void tvStile_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            TreeNode nName = e.Node;
+            string webPage = "";
+            webPage = $"{Application.StartupPath}\\HeThong.html";
+            if (webPage != "")
+            {
+                wbStile.Navigate(webPage);
+            }
         }
     }
 }

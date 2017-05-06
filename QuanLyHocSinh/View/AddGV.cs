@@ -28,22 +28,30 @@ namespace QuanLyHocSinh
             if (checkAdd())
             {
                 GiaoVien gv = new GiaoVien();
-                gv.Ma = txtMaGV.Text.ToString().Trim();
                 gv.Ten = txtHoTenGV.Text.ToString().Trim();
                 if ( rbdNam.Checked) gv.GioiTinh = 1;
                 else gv.GioiTinh = 0;
                 gv.NgaySinh = DateTime.Parse(dtpNgaySinh.Value.ToShortDateString());
                 gv.Email = txtEmail.Text.ToString().Trim();
+                gv.Anh = txtanh.Text.ToString().Trim();
+                gv.Luong = double.Parse(txtluong.Text.ToString().Trim());
+                gv.NhiemVu = txtnhiemvu.Text.ToString().Trim();
                 gv.VaiTro = txtVaiTro.Text.ToString().Trim();
                 gv.BoMonMa = txtBoMon.Text.ToString().Trim();
-
-                if (control.ThemGV(gv))
+                gv.TrangThai = int.Parse(txttrangthai.Text.ToString().Trim());
+                
+                (new Controllers()).ThemGV(gv);
+                DialogResult result = MessageBox.Show("Thành công", "Chỉnh sửa", MessageBoxButtons.OK);
+                if (result == DialogResult.OK)
                 {
-                    this.Close();
-                    this.form1.Visible = true;
+                    btnThoat_Click(sender, e);
+                    form1 = new Form1();
                 }
+
+                
             }
         }
+    //    ma, ten, gioitinh, ngaysinh , Email,anh , luong , nhiemvu, Vaitro, Bomonma , trangthai
 
 
         private bool checkAdd()

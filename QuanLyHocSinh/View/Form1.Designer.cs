@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Hướng Dẫn");
             this.tpQLGV = new System.Windows.Forms.TabPage();
             this.dtgDanhSachGV = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,14 +62,18 @@
             this.btnThemDSHS = new System.Windows.Forms.Button();
             this.btnXemDSHS = new System.Windows.Forms.Button();
             this.tpQLGiangDay = new System.Windows.Forms.TabPage();
+            this.tpHuongDan = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tvStile = new System.Windows.Forms.TreeView();
+            this.wbStile = new System.Windows.Forms.WebBrowser();
             this.tpQLGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSachGV)).BeginInit();
             this.tpTrangChu.SuspendLayout();
             this.tabControlChinh.SuspendLayout();
             this.tpDSHS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSachHS)).BeginInit();
+            this.tpHuongDan.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,9 +88,9 @@
             this.tpQLGV.Controls.Add(this.btnSuaDSGV);
             this.tpQLGV.Controls.Add(this.btnThemDSGV);
             this.tpQLGV.Controls.Add(this.btnXemDSGV);
-            this.tpQLGV.Location = new System.Drawing.Point(4, 22);
+            this.tpQLGV.Location = new System.Drawing.Point(4, 23);
             this.tpQLGV.Name = "tpQLGV";
-            this.tpQLGV.Size = new System.Drawing.Size(962, 502);
+            this.tpQLGV.Size = new System.Drawing.Size(962, 542);
             this.tpQLGV.TabIndex = 2;
             this.tpQLGV.Text = "Quản lý giáo viên";
             this.tpQLGV.UseVisualStyleBackColor = true;
@@ -94,10 +99,11 @@
             // 
             this.dtgDanhSachGV.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dtgDanhSachGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDanhSachGV.Location = new System.Drawing.Point(3, 18);
+            this.dtgDanhSachGV.Location = new System.Drawing.Point(3, 19);
             this.dtgDanhSachGV.Name = "dtgDanhSachGV";
-            this.dtgDanhSachGV.Size = new System.Drawing.Size(956, 397);
+            this.dtgDanhSachGV.Size = new System.Drawing.Size(956, 428);
             this.dtgDanhSachGV.TabIndex = 35;
+            this.dtgDanhSachGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDanhSachGV_CellContentClick);
             // 
             // label2
             // 
@@ -114,9 +120,9 @@
             // 
             this.btnTimKiemDSGV.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemDSGV.Image")));
             this.btnTimKiemDSGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiemDSGV.Location = new System.Drawing.Point(699, 435);
+            this.btnTimKiemDSGV.Location = new System.Drawing.Point(699, 468);
             this.btnTimKiemDSGV.Name = "btnTimKiemDSGV";
-            this.btnTimKiemDSGV.Size = new System.Drawing.Size(80, 40);
+            this.btnTimKiemDSGV.Size = new System.Drawing.Size(80, 43);
             this.btnTimKiemDSGV.TabIndex = 42;
             this.btnTimKiemDSGV.Text = "Tìm kiếm";
             this.btnTimKiemDSGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -127,9 +133,9 @@
             // 
             this.btnThoatDSGV.Image = ((System.Drawing.Image)(resources.GetObject("btnThoatDSGV.Image")));
             this.btnThoatDSGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoatDSGV.Location = new System.Drawing.Point(856, 435);
+            this.btnThoatDSGV.Location = new System.Drawing.Point(856, 468);
             this.btnThoatDSGV.Name = "btnThoatDSGV";
-            this.btnThoatDSGV.Size = new System.Drawing.Size(80, 40);
+            this.btnThoatDSGV.Size = new System.Drawing.Size(80, 43);
             this.btnThoatDSGV.TabIndex = 41;
             this.btnThoatDSGV.Text = "Thoát";
             this.btnThoatDSGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -140,9 +146,9 @@
             // 
             this.btnLuuDSGV.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuDSGV.Image")));
             this.btnLuuDSGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuuDSGV.Location = new System.Drawing.Point(777, 435);
+            this.btnLuuDSGV.Location = new System.Drawing.Point(777, 468);
             this.btnLuuDSGV.Name = "btnLuuDSGV";
-            this.btnLuuDSGV.Size = new System.Drawing.Size(80, 40);
+            this.btnLuuDSGV.Size = new System.Drawing.Size(80, 43);
             this.btnLuuDSGV.TabIndex = 40;
             this.btnLuuDSGV.Text = "Lưu";
             this.btnLuuDSGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -152,9 +158,9 @@
             // 
             this.btnXoaDSGV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDSGV.Image")));
             this.btnXoaDSGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaDSGV.Location = new System.Drawing.Point(620, 435);
+            this.btnXoaDSGV.Location = new System.Drawing.Point(620, 468);
             this.btnXoaDSGV.Name = "btnXoaDSGV";
-            this.btnXoaDSGV.Size = new System.Drawing.Size(80, 40);
+            this.btnXoaDSGV.Size = new System.Drawing.Size(80, 43);
             this.btnXoaDSGV.TabIndex = 39;
             this.btnXoaDSGV.Text = "Xóa";
             this.btnXoaDSGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -165,9 +171,9 @@
             // 
             this.btnSuaDSGV.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaDSGV.Image")));
             this.btnSuaDSGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDSGV.Location = new System.Drawing.Point(541, 435);
+            this.btnSuaDSGV.Location = new System.Drawing.Point(541, 468);
             this.btnSuaDSGV.Name = "btnSuaDSGV";
-            this.btnSuaDSGV.Size = new System.Drawing.Size(80, 40);
+            this.btnSuaDSGV.Size = new System.Drawing.Size(80, 43);
             this.btnSuaDSGV.TabIndex = 38;
             this.btnSuaDSGV.Text = "Sửa";
             this.btnSuaDSGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -178,9 +184,9 @@
             // 
             this.btnThemDSGV.Image = ((System.Drawing.Image)(resources.GetObject("btnThemDSGV.Image")));
             this.btnThemDSGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDSGV.Location = new System.Drawing.Point(463, 435);
+            this.btnThemDSGV.Location = new System.Drawing.Point(463, 468);
             this.btnThemDSGV.Name = "btnThemDSGV";
-            this.btnThemDSGV.Size = new System.Drawing.Size(80, 40);
+            this.btnThemDSGV.Size = new System.Drawing.Size(80, 43);
             this.btnThemDSGV.TabIndex = 37;
             this.btnThemDSGV.Text = "Thêm";
             this.btnThemDSGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -191,9 +197,9 @@
             // 
             this.btnXemDSGV.Image = ((System.Drawing.Image)(resources.GetObject("btnXemDSGV.Image")));
             this.btnXemDSGV.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnXemDSGV.Location = new System.Drawing.Point(384, 435);
+            this.btnXemDSGV.Location = new System.Drawing.Point(384, 468);
             this.btnXemDSGV.Name = "btnXemDSGV";
-            this.btnXemDSGV.Size = new System.Drawing.Size(80, 40);
+            this.btnXemDSGV.Size = new System.Drawing.Size(80, 43);
             this.btnXemDSGV.TabIndex = 36;
             this.btnXemDSGV.Text = "Xem ";
             this.btnXemDSGV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -211,10 +217,10 @@
             this.tpTrangChu.Controls.Add(this.btnGV);
             this.tpTrangChu.Controls.Add(this.button1);
             this.tpTrangChu.Controls.Add(this.label4);
-            this.tpTrangChu.Location = new System.Drawing.Point(4, 22);
+            this.tpTrangChu.Location = new System.Drawing.Point(4, 23);
             this.tpTrangChu.Name = "tpTrangChu";
             this.tpTrangChu.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTrangChu.Size = new System.Drawing.Size(962, 502);
+            this.tpTrangChu.Size = new System.Drawing.Size(962, 542);
             this.tpTrangChu.TabIndex = 0;
             this.tpTrangChu.Text = "Trang Chủ";
             // 
@@ -222,18 +228,19 @@
             // 
             this.linklabelHD.AutoSize = true;
             this.linklabelHD.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.linklabelHD.Location = new System.Drawing.Point(523, 396);
+            this.linklabelHD.Location = new System.Drawing.Point(523, 426);
             this.linklabelHD.Name = "linklabelHD";
             this.linklabelHD.Size = new System.Drawing.Size(76, 16);
             this.linklabelHD.TabIndex = 14;
             this.linklabelHD.TabStop = true;
             this.linklabelHD.Text = "Hướng Dẫn";
+            this.linklabelHD.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklabelHD_LinkClicked);
             // 
             // linklabelQLGD
             // 
             this.linklabelQLGD.AutoSize = true;
             this.linklabelQLGD.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.linklabelQLGD.Location = new System.Drawing.Point(365, 396);
+            this.linklabelQLGD.Location = new System.Drawing.Point(365, 426);
             this.linklabelQLGD.Name = "linklabelQLGD";
             this.linklabelQLGD.Size = new System.Drawing.Size(122, 16);
             this.linklabelQLGD.TabIndex = 13;
@@ -244,9 +251,9 @@
             // button3
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(489, 265);
+            this.button3.Location = new System.Drawing.Point(489, 285);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 125);
+            this.button3.Size = new System.Drawing.Size(133, 135);
             this.button3.TabIndex = 1;
             this.button3.UseVisualStyleBackColor = false;
             // 
@@ -254,7 +261,7 @@
             // 
             this.linklabelQLGV.AutoSize = true;
             this.linklabelQLGV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.linklabelQLGV.Location = new System.Drawing.Point(486, 216);
+            this.linklabelQLGV.Location = new System.Drawing.Point(486, 233);
             this.linklabelQLGV.Name = "linklabelQLGV";
             this.linklabelQLGV.Size = new System.Drawing.Size(118, 16);
             this.linklabelQLGV.TabIndex = 12;
@@ -265,9 +272,9 @@
             // btnGiangDay
             // 
             this.btnGiangDay.Image = ((System.Drawing.Image)(resources.GetObject("btnGiangDay.Image")));
-            this.btnGiangDay.Location = new System.Drawing.Point(356, 265);
+            this.btnGiangDay.Location = new System.Drawing.Point(356, 285);
             this.btnGiangDay.Name = "btnGiangDay";
-            this.btnGiangDay.Size = new System.Drawing.Size(133, 125);
+            this.btnGiangDay.Size = new System.Drawing.Size(133, 135);
             this.btnGiangDay.TabIndex = 2;
             this.btnGiangDay.UseVisualStyleBackColor = true;
             this.btnGiangDay.Click += new System.EventHandler(this.btnGiangDay_Click);
@@ -276,7 +283,7 @@
             // 
             this.linklabelQLHS.AutoSize = true;
             this.linklabelQLHS.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.linklabelQLHS.Location = new System.Drawing.Point(366, 216);
+            this.linklabelQLHS.Location = new System.Drawing.Point(366, 233);
             this.linklabelQLHS.Name = "linklabelQLHS";
             this.linklabelQLHS.Size = new System.Drawing.Size(114, 16);
             this.linklabelQLHS.TabIndex = 11;
@@ -287,9 +294,9 @@
             // btnGV
             // 
             this.btnGV.Image = ((System.Drawing.Image)(resources.GetObject("btnGV.Image")));
-            this.btnGV.Location = new System.Drawing.Point(484, 86);
+            this.btnGV.Location = new System.Drawing.Point(484, 93);
             this.btnGV.Name = "btnGV";
-            this.btnGV.Size = new System.Drawing.Size(133, 127);
+            this.btnGV.Size = new System.Drawing.Size(133, 137);
             this.btnGV.TabIndex = 1;
             this.btnGV.UseVisualStyleBackColor = false;
             this.btnGV.Click += new System.EventHandler(this.btnGV_Click);
@@ -297,9 +304,9 @@
             // button1
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(356, 86);
+            this.button1.Location = new System.Drawing.Point(356, 93);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 125);
+            this.button1.Size = new System.Drawing.Size(127, 135);
             this.button1.TabIndex = 1;
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
@@ -309,9 +316,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(402, 44);
+            this.label4.Location = new System.Drawing.Point(402, 47);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(187, 16);
+            this.label4.Size = new System.Drawing.Size(189, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Quản Lý Học Sinh,Giáo Viên";
             // 
@@ -321,11 +328,12 @@
             this.tabControlChinh.Controls.Add(this.tpDSHS);
             this.tabControlChinh.Controls.Add(this.tpQLGV);
             this.tabControlChinh.Controls.Add(this.tpQLGiangDay);
+            this.tabControlChinh.Controls.Add(this.tpHuongDan);
             this.tabControlChinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlChinh.Location = new System.Drawing.Point(0, 0);
             this.tabControlChinh.Name = "tabControlChinh";
             this.tabControlChinh.SelectedIndex = 0;
-            this.tabControlChinh.Size = new System.Drawing.Size(970, 528);
+            this.tabControlChinh.Size = new System.Drawing.Size(970, 569);
             this.tabControlChinh.TabIndex = 4;
             // 
             // tpDSHS
@@ -340,10 +348,10 @@
             this.tpDSHS.Controls.Add(this.btnSuaDSHS);
             this.tpDSHS.Controls.Add(this.btnThemDSHS);
             this.tpDSHS.Controls.Add(this.btnXemDSHS);
-            this.tpDSHS.Location = new System.Drawing.Point(4, 22);
+            this.tpDSHS.Location = new System.Drawing.Point(4, 23);
             this.tpDSHS.Name = "tpDSHS";
             this.tpDSHS.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDSHS.Size = new System.Drawing.Size(962, 502);
+            this.tpDSHS.Size = new System.Drawing.Size(962, 542);
             this.tpDSHS.TabIndex = 1;
             this.tpDSHS.Text = "Danh sách học sinh";
             // 
@@ -351,9 +359,9 @@
             // 
             this.dtgDanhSachHS.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dtgDanhSachHS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDanhSachHS.Location = new System.Drawing.Point(2, 24);
+            this.dtgDanhSachHS.Location = new System.Drawing.Point(2, 26);
             this.dtgDanhSachHS.Name = "dtgDanhSachHS";
-            this.dtgDanhSachHS.Size = new System.Drawing.Size(954, 406);
+            this.dtgDanhSachHS.Size = new System.Drawing.Size(954, 437);
             this.dtgDanhSachHS.TabIndex = 42;
             this.dtgDanhSachHS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDanhSach_CellContentClick);
             // 
@@ -372,9 +380,9 @@
             // 
             this.btnTimKiemDSHS.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemDSHS.Image")));
             this.btnTimKiemDSHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiemDSHS.Location = new System.Drawing.Point(705, 456);
+            this.btnTimKiemDSHS.Location = new System.Drawing.Point(705, 491);
             this.btnTimKiemDSHS.Name = "btnTimKiemDSHS";
-            this.btnTimKiemDSHS.Size = new System.Drawing.Size(80, 40);
+            this.btnTimKiemDSHS.Size = new System.Drawing.Size(80, 43);
             this.btnTimKiemDSHS.TabIndex = 50;
             this.btnTimKiemDSHS.Text = "Tìm kiếm";
             this.btnTimKiemDSHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -385,9 +393,9 @@
             // 
             this.btnThoatDSHS.Image = ((System.Drawing.Image)(resources.GetObject("btnThoatDSHS.Image")));
             this.btnThoatDSHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoatDSHS.Location = new System.Drawing.Point(862, 456);
+            this.btnThoatDSHS.Location = new System.Drawing.Point(862, 491);
             this.btnThoatDSHS.Name = "btnThoatDSHS";
-            this.btnThoatDSHS.Size = new System.Drawing.Size(80, 40);
+            this.btnThoatDSHS.Size = new System.Drawing.Size(80, 43);
             this.btnThoatDSHS.TabIndex = 49;
             this.btnThoatDSHS.Text = "Thoát";
             this.btnThoatDSHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -398,9 +406,9 @@
             // 
             this.btnLuuDSHS.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuDSHS.Image")));
             this.btnLuuDSHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuuDSHS.Location = new System.Drawing.Point(783, 456);
+            this.btnLuuDSHS.Location = new System.Drawing.Point(783, 491);
             this.btnLuuDSHS.Name = "btnLuuDSHS";
-            this.btnLuuDSHS.Size = new System.Drawing.Size(80, 40);
+            this.btnLuuDSHS.Size = new System.Drawing.Size(80, 43);
             this.btnLuuDSHS.TabIndex = 48;
             this.btnLuuDSHS.Text = "Lưu";
             this.btnLuuDSHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -411,9 +419,9 @@
             // 
             this.btnXoaDSHS.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDSHS.Image")));
             this.btnXoaDSHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaDSHS.Location = new System.Drawing.Point(626, 456);
+            this.btnXoaDSHS.Location = new System.Drawing.Point(626, 491);
             this.btnXoaDSHS.Name = "btnXoaDSHS";
-            this.btnXoaDSHS.Size = new System.Drawing.Size(80, 40);
+            this.btnXoaDSHS.Size = new System.Drawing.Size(80, 43);
             this.btnXoaDSHS.TabIndex = 47;
             this.btnXoaDSHS.Text = "Xóa";
             this.btnXoaDSHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -424,9 +432,9 @@
             // 
             this.btnSuaDSHS.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaDSHS.Image")));
             this.btnSuaDSHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDSHS.Location = new System.Drawing.Point(547, 456);
+            this.btnSuaDSHS.Location = new System.Drawing.Point(547, 491);
             this.btnSuaDSHS.Name = "btnSuaDSHS";
-            this.btnSuaDSHS.Size = new System.Drawing.Size(80, 40);
+            this.btnSuaDSHS.Size = new System.Drawing.Size(80, 43);
             this.btnSuaDSHS.TabIndex = 46;
             this.btnSuaDSHS.Text = "Sửa";
             this.btnSuaDSHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -437,9 +445,9 @@
             // 
             this.btnThemDSHS.Image = ((System.Drawing.Image)(resources.GetObject("btnThemDSHS.Image")));
             this.btnThemDSHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDSHS.Location = new System.Drawing.Point(469, 456);
+            this.btnThemDSHS.Location = new System.Drawing.Point(469, 491);
             this.btnThemDSHS.Name = "btnThemDSHS";
-            this.btnThemDSHS.Size = new System.Drawing.Size(80, 40);
+            this.btnThemDSHS.Size = new System.Drawing.Size(80, 43);
             this.btnThemDSHS.TabIndex = 45;
             this.btnThemDSHS.Text = "Thêm";
             this.btnThemDSHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -450,9 +458,9 @@
             // 
             this.btnXemDSHS.Image = ((System.Drawing.Image)(resources.GetObject("btnXemDSHS.Image")));
             this.btnXemDSHS.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnXemDSHS.Location = new System.Drawing.Point(390, 456);
+            this.btnXemDSHS.Location = new System.Drawing.Point(390, 491);
             this.btnXemDSHS.Name = "btnXemDSHS";
-            this.btnXemDSHS.Size = new System.Drawing.Size(80, 40);
+            this.btnXemDSHS.Size = new System.Drawing.Size(80, 43);
             this.btnXemDSHS.TabIndex = 44;
             this.btnXemDSHS.Text = "Xem";
             this.btnXemDSHS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -460,12 +468,24 @@
             // 
             // tpQLGiangDay
             // 
-            this.tpQLGiangDay.Location = new System.Drawing.Point(4, 22);
+            this.tpQLGiangDay.Location = new System.Drawing.Point(4, 23);
             this.tpQLGiangDay.Name = "tpQLGiangDay";
-            this.tpQLGiangDay.Size = new System.Drawing.Size(962, 502);
+            this.tpQLGiangDay.Size = new System.Drawing.Size(962, 542);
             this.tpQLGiangDay.TabIndex = 3;
             this.tpQLGiangDay.Text = "QL Giảng dạy";
             this.tpQLGiangDay.UseVisualStyleBackColor = true;
+            // 
+            // tpHuongDan
+            // 
+            this.tpHuongDan.Controls.Add(this.wbStile);
+            this.tpHuongDan.Controls.Add(this.tvStile);
+            this.tpHuongDan.Location = new System.Drawing.Point(4, 23);
+            this.tpHuongDan.Name = "tpHuongDan";
+            this.tpHuongDan.Padding = new System.Windows.Forms.Padding(3);
+            this.tpHuongDan.Size = new System.Drawing.Size(962, 542);
+            this.tpHuongDan.TabIndex = 4;
+            this.tpHuongDan.Text = "Hướng Dẫn";
+            this.tpHuongDan.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -473,7 +493,7 @@
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(295, 16);
+            this.label1.Size = new System.Drawing.Size(287, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Copyright by Nhom 4 -THUC TAP NHOM 2017";
             // 
@@ -482,17 +502,41 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 528);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 569);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(970, 25);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(970, 27);
             this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // tvStile
+            // 
+            this.tvStile.BackColor = System.Drawing.SystemColors.Info;
+            this.tvStile.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tvStile.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.tvStile.Location = new System.Drawing.Point(3, 3);
+            this.tvStile.Name = "tvStile";
+            treeNode1.Name = "HuongDan";
+            treeNode1.Text = "Hướng Dẫn";
+            this.tvStile.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            this.tvStile.Size = new System.Drawing.Size(188, 536);
+            this.tvStile.TabIndex = 0;
+            this.tvStile.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvStile_NodeMouseClick);
+            // 
+            // wbStile
+            // 
+            this.wbStile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wbStile.Location = new System.Drawing.Point(191, 3);
+            this.wbStile.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbStile.Name = "wbStile";
+            this.wbStile.Size = new System.Drawing.Size(768, 536);
+            this.wbStile.TabIndex = 1;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(970, 553);
+            this.ClientSize = new System.Drawing.Size(970, 596);
             this.Controls.Add(this.tabControlChinh);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Form1";
@@ -508,6 +552,7 @@
             this.tpDSHS.ResumeLayout(false);
             this.tpDSHS.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSachHS)).EndInit();
+            this.tpHuongDan.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -550,6 +595,9 @@
         private System.Windows.Forms.Button btnThemDSGV;
         private System.Windows.Forms.Button btnXemDSGV;
         private System.Windows.Forms.TabPage tpQLGiangDay;
+        private System.Windows.Forms.TabPage tpHuongDan;
+        private System.Windows.Forms.WebBrowser wbStile;
+        private System.Windows.Forms.TreeView tvStile;
     }
 }
 

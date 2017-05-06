@@ -31,7 +31,6 @@ namespace QuanLyHocSinh
             if (checkAdd())
             {
                 HocSinh hs = new HocSinh();
-                hs.Ma = txtMaHS.Text.ToString().Trim();
                 hs.Ten = txtHoTenHS.Text.ToString().Trim();
                 hs.LopMa = txtLop.Text.ToString().Trim();
                 hs.NgaySinh = DateTime.Parse(dtpNgaySinh.Value.ToShortDateString());
@@ -39,15 +38,23 @@ namespace QuanLyHocSinh
                 else hs.GioiTinh = 0;
                 hs.DanToc = txtDanToc.Text.ToString().Trim();
                 hs.DiaChi = txtDiaChi.Text.ToString().Trim();
+                hs.Email = txtEmail.Text.ToString().Trim();
+                hs.DienThoai = txtSDT.Text.ToString().Trim();
 
-
-                if (control.ThemHS(hs))
+                //    ma, ten, gioitinh, ngaysinh , Email,anh , luong , nhiemvu, Vaitro, Bomonma , trangthai
+                (new Controllers()).ThemHS(hs);
+                DialogResult result = MessageBox.Show("Thành công", "Chỉnh sửa", MessageBoxButtons.OK);
+            
+                if (result == DialogResult.OK)
                 {
-                    this.Close();
-                    this.form1.Visible = true;
+                    btnThoat_Click(sender, e);
+                    form1 = new Form1();
                 }
 
+
+               
             }
+
         }
 
         private bool checkAdd()
@@ -55,6 +62,6 @@ namespace QuanLyHocSinh
             return true;
         }
 
-        
+       
     }
 }

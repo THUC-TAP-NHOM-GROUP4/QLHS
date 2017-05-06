@@ -10,7 +10,7 @@ namespace QuanLyHocSinh.Model
 {
     class DataAccess
     {
-        static string constr = @"Data Source=DESKTOP-4KR3HIP\SQLEXPRESS;Initial Catalog=TTN_QLHS;Integrated Security=True";
+        static string constr = @"Data Source=ADMINISTRATOR;Initial Catalog=TTN_QLHS;Integrated Security=True";
         private static SqlConnection con = new SqlConnection(constr);
         public DataTable Query(string sql, params SqlParameter[] pr)
         {
