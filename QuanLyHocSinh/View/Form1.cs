@@ -35,7 +35,8 @@ namespace QuanLyHocSinh
         private void Form1_Load(object sender, EventArgs e)
         {
             dtgDanhSachGV.DataSource = control.getListGiaoVien();
-            
+            dtgDanhSachHS.DataSource = control.getListHocSinh();
+
         }
         private void Load_gv()
         {

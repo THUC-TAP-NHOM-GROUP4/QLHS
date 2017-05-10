@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddHocSinh));
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -52,6 +53,20 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
+            this.erpten = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpLop = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpGioiTinh = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpDanToc = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpDiaChi = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpEmail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpSDT = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.erpten)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpLop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpGioiTinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDanToc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDiaChi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpSDT)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThoat
@@ -266,9 +281,10 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(143, 337);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(186, 20);
+            this.txtEmail.Size = new System.Drawing.Size(186, 21);
             this.txtEmail.TabIndex = 92;
             // 
             // txtSDT
@@ -277,6 +293,34 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(186, 20);
             this.txtSDT.TabIndex = 93;
+            // 
+            // erpten
+            // 
+            this.erpten.ContainerControl = this;
+            // 
+            // erpLop
+            // 
+            this.erpLop.ContainerControl = this;
+            // 
+            // erpGioiTinh
+            // 
+            this.erpGioiTinh.ContainerControl = this;
+            // 
+            // erpDanToc
+            // 
+            this.erpDanToc.ContainerControl = this;
+            // 
+            // erpDiaChi
+            // 
+            this.erpDiaChi.ContainerControl = this;
+            // 
+            // erpEmail
+            // 
+            this.erpEmail.ContainerControl = this;
+            // 
+            // erpSDT
+            // 
+            this.erpSDT.ContainerControl = this;
             // 
             // AddHocSinh
             // 
@@ -308,6 +352,14 @@
             this.Controls.Add(this.label1);
             this.Name = "AddHocSinh";
             this.Text = "AddHocSinh";
+            this.Load += new System.EventHandler(this.AddHocSinh_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.erpten)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpLop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpGioiTinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDanToc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDiaChi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpSDT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,5 +390,12 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.ErrorProvider erpten;
+        private System.Windows.Forms.ErrorProvider erpLop;
+        private System.Windows.Forms.ErrorProvider erpGioiTinh;
+        private System.Windows.Forms.ErrorProvider erpDanToc;
+        private System.Windows.Forms.ErrorProvider erpDiaChi;
+        private System.Windows.Forms.ErrorProvider erpEmail;
+        private System.Windows.Forms.ErrorProvider erpSDT;
     }
 }

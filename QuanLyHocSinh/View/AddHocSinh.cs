@@ -49,19 +49,62 @@ namespace QuanLyHocSinh
                 {
                     btnThoat_Click(sender, e);
                     form1 = new Form1();
+
                 }
 
 
-               
+
             }
 
         }
 
         private bool checkAdd()
         {
+
+            if (txtHoTenHS.Text.Trim().Equals(""))
+            {
+                erpten.SetError(txtHoTenHS, "Phải nhập họ tên");
+            }
+
+            erpten.Clear();
+            if (txtLop.Text.Trim().Equals(""))
+            {
+                erpLop.SetError(txtLop, "Phải nhập Lớp");
+            }
+            erpLop.Clear();
+            if (!(rdbnam.Checked || rdbNu.Checked))
+            {
+                erpGioiTinh.SetError(rdbnam, "Chưa nhập Giới Tính");
+                return false;
+            }
+            erpGioiTinh.Clear();
+
+            if (txtDanToc.Text.Trim().Equals(""))
+            {
+                erpDanToc.SetError(txtDanToc, "Phải nhập Dân Tộc");
+            }
+            erpDanToc.Clear();
+            if (txtDiaChi.Text.Trim().Equals(""))
+            {
+                erpDiaChi.SetError(txtDiaChi, "Phải nhập Địa Chỉ");
+            }
+            erpDiaChi.Clear();
+            if (txtEmail.Text.Trim().Equals(""))
+            {
+                erpEmail.SetError(txtEmail, "Phải nhập Email");
+            }
+            erpEmail.Clear();
+            if (txtSDT.Text.Trim().Equals(""))
+            {
+                erpSDT.SetError(txtSDT, "Phải nhập Số Điện Thoại");
+            }
+            erpSDT.Clear();
             return true;
         }
 
-       
+        private void AddHocSinh_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
