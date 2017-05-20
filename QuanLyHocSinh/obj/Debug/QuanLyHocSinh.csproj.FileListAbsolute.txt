@@ -1,0 +1,2 @@
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache

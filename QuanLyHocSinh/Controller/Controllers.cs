@@ -21,7 +21,8 @@ namespace QuanLyHocSinh.Controller
             //DataTable table = da.Query("select hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh , hs.Email, hs.DanToc, hs.Lopma ,"
             //   + " hs.Sodienthoai, hs.Diachi from Hocsinh hs");
 
-            DataTable table = da.Query("select hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.Sodienthoai , hs.Email,hs.DanToc,hs.DiaChi, hs.Sodienthoai, lhp.ma as [Lopma] from Hocsinh hs inner join Lophocphan lhp on hs.Lopma = lhp.ma where hs.Trangthai=1");
+            DataTable table = da.Query("select hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.Sodienthoai , hs.Email,hs.DanToc, "
+                + "hs.DiaChi, hs.Sodienthoai, lhp.ma as [Lopma] from Hocsinh hs inner join Lophocphan lhp on hs.Lopma = lhp.ma where hs.Trangthai=1");
 
             int n = table.Rows.Count;
             int i;
@@ -62,11 +63,12 @@ namespace QuanLyHocSinh.Controller
             //+ " gv.nhiemvu, gv.anh, gv.trangthai from GiaoVien gv ");
             //DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma , "
             //    + " gv.nhiemvu, gv.anh,bm.ma as [Bomonma], gv.trangthai from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma ");
-            DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma , gv.nhiemvu, gv.anh,bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where gv.trangthai=1");
+            DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma ,"
+                + " gv.nhiemvu,bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where gv.trangthai=1");
 
             int n = table.Rows.Count;
             int i;
-            if (n == 0) return null;
+            if (n == 0) return new GiaoVien[0];
             GiaoVien[] list = new GiaoVien[n];
             for (i = 0; i < n; i++)
             {
@@ -96,7 +98,7 @@ namespace QuanLyHocSinh.Controller
             gv.VaiTro = row["VaiTro"].ToString().Trim();
             gv.BoMonMa = row["BoMonMa"].ToString().Trim();
             gv.NhiemVu = row["NhiemVu"].ToString().Trim();
-            gv.Anh = row["anh"].ToString().Trim();
+            //gv.Anh = row["anh"].ToString().Trim();
             //bool i = bool.Parse(row["trangthai"].ToString().Trim());
             //if (i)
             //    gv.TrangThai = 1;
@@ -104,6 +106,36 @@ namespace QuanLyHocSinh.Controller
             return gv;
         }
 
+        public LopHocPhan[] getList_Lophophan()
+        {
+            DataTable table = da.Query("select l.ma, l.Hocki, l.Namhoc, l.Siso, l.Thu, mh.ma as monma, mh.Ten as monten, "
+                + " gv.ma as giaovienma, gv.ten as giaovienten from Lophocphan l inner  join monhoc mh on l.monma = mh.ma "
+                + " inner join giaovien gv on gv.ma = l.Giaovienma");
+            int n = table.Rows.Count;
+
+            int i;
+            if (n == 0) return new LopHocPhan[0];
+            LopHocPhan[] list = new LopHocPhan[n];
+            for(i =0; i< n; i++)
+            {
+                list[i] = getLopHocPhan(table.Rows[i]);
+            }
+            return list;
+        }
+        private LopHocPhan getLopHocPhan(DataRow row)
+        {
+            LopHocPhan l = new LopHocPhan();
+            l.Ma = row["ma"].ToString().Trim();
+            l.HocKy = int.Parse(row["hocki"].ToString().Trim());
+            l.NamHoc = row["namhoc"].ToString().Trim();
+            l.Thu = row["thu"].ToString().Trim();
+            l.MonHocMa = row["monma"].ToString().Trim();
+            l.MonHocTen = row["monten"].ToString().Trim();
+            l.GiaoVienMa = row["giaovienma"].ToString().Trim();
+            l.GiaoVienTen = row["giaovienten"].ToString().Trim();
+            l.SiSo = int.Parse(row["siso"].ToString().Trim());
+            return l;
+        }
         public void update_hs(HocSinh hs)
         {
             SqlParameter[] para =
@@ -181,7 +213,7 @@ namespace QuanLyHocSinh.Controller
                 new SqlParameter("gioitinh", gv.GioiTinh),
                 new SqlParameter("ngaysinh",gv.NgaySinh),
                 new SqlParameter("email", gv.Email),
-                new SqlParameter("anh" , gv.Anh),
+               // new SqlParameter("anh" , gv.Anh),
                 new SqlParameter("luong" , gv.Luong),
                 new SqlParameter("nhiemvu" , gv.NhiemVu),
                 new SqlParameter("vaitro", gv.VaiTro),

@@ -49,11 +49,15 @@
     <Compile Include="Controller\Controllers.cs" />
     <Compile Include="Controller\DataAccess.cs" />
     <Compile Include="Model\LopHocPhan.cs" />
-    <Compile Include="View\frmSearch.cs" />
+    <Compile Include="View\frmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\frmSearch.Designer.cs">
       <DependentUpon>frmSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmSua.cs" />
+    <Compile Include="View\frmSua.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\frmSua.Designer.cs">
       <DependentUpon>frmSua.cs</DependentUpon>
     </Compile>
