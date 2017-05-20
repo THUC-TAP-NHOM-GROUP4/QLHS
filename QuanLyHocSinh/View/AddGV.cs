@@ -33,7 +33,7 @@ namespace QuanLyHocSinh
                 else gv.GioiTinh = 0;
                 gv.NgaySinh = DateTime.Parse(dtpNgaySinh.Value.ToShortDateString());
                 gv.Email = txtEmail.Text.ToString().Trim();
-                gv.Anh = txtanh.Text.ToString().Trim();
+               // gv.Anh = txtanh.Text.ToString().Trim();
                 gv.Luong = double.Parse(txtluong.Text.ToString().Trim());
                 gv.NhiemVu = txtnhiemvu.Text.ToString().Trim();
                 gv.VaiTro = txtVaiTro.Text.ToString().Trim();

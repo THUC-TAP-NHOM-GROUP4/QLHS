@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controller\Controllers.cs" />
     <Compile Include="Controller\DataAccess.cs" />
+    <Compile Include="Model\LopHocPhan.cs" />
     <Compile Include="View\frmSearch.cs">
       <SubType>Form</SubType>
     </Compile>

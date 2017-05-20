@@ -15,7 +15,7 @@ namespace QuanLyHocSinh
 {
     public partial class Form1 : Form
     {
-        Controllers control = new Controllers();
+        Controllers _control = new Controllers();
         frmSua frmSua = new frmSua();
         frmUpdate_gv frmUpdate_gv = new frmUpdate_gv();
         AddHocSinh frm_AddHS;
@@ -23,8 +23,8 @@ namespace QuanLyHocSinh
         public Form1()
         {
             InitializeComponent();
-            dtgDanhSachGV.DataSource = control.getListGiaoVien();
-            dtgDanhSachHS.DataSource = control.getListHocSinh();
+            dtgDanhSachGV.DataSource = _control.getListGiaoVien();
+            dtgDanhSachHS.DataSource = _control.getListHocSinh();
         
         }
         public void Loadd()
@@ -34,8 +34,10 @@ namespace QuanLyHocSinh
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            dtgDanhSachGV.DataSource = control.getListGiaoVien();
-            
+            dtgDanhSachGV.DataSource = _control.getListGiaoVien();
+            Load_gv();
+            Load_hs();
+            Load_quanly();
         }
         private void Load_gv()
         {
@@ -50,14 +52,16 @@ namespace QuanLyHocSinh
             //  dtgDanhSachGV.Columns["sodt"].HeaderText = "Điện thoại";
             dtgDanhSachGV.Columns["Bomonma"].HeaderText = "Mã Bộ Môn";
             dtgDanhSachGV.Columns["Nhiemvu"].HeaderText = "Nhiệm vụ";
-            dtgDanhSachGV.Columns["Anh"].HeaderText = "ẢNH";
-            dtgDanhSachGV.Columns["ma"].Width = 60;
-            dtgDanhSachGV.Columns["ten"].Width = 150;
+          //  dtgDanhSachGV.Columns["Anh"].HeaderText = "ẢNH";
+            dtgDanhSachGV.Columns["ma"].Width = 100;
+            dtgDanhSachGV.Columns["ten"].Width = 200;
             dtgDanhSachGV.Columns["email"].Width = 150;
-            dtgDanhSachGV.Columns["gioitinh"].Width = 50;
+            dtgDanhSachGV.Columns["gioitinh"].Width = 100;
             dtgDanhSachGV.Columns["ngaysinh"].Width = 100;
-            dtgDanhSachGV.Columns["Bomonma"].Width = 150;
-            dtgDanhSachGV.DataSource = control.getListGiaoVien();
+            dtgDanhSachGV.Columns["Bomonma"].Width = 100;
+            dtgDanhSachGV.Columns["vaitro"].Width = 150;
+           
+            dtgDanhSachGV.DataSource = _control.getListGiaoVien();
         }
         private void Load_hs()
         {
@@ -66,16 +70,41 @@ namespace QuanLyHocSinh
             dtgDanhSachHS.Columns["ten"].HeaderText = "Họ tên";
             dtgDanhSachHS.Columns["ngaysinh"].HeaderText = "Ngày sinh";
             dtgDanhSachHS.Columns["gioitinh"].HeaderText = "Giới tính";
+            dtgDanhSachHS.Columns["DiaChi"].HeaderText = "Địa chỉ";
             dtgDanhSachHS.Columns["Lopma"].HeaderText = "Mã lớp học phần";
             dtgDanhSachHS.Columns["email"].HeaderText = "Email";
             dtgDanhSachHS.Columns["DienThoai"].HeaderText = "Điện thoại";
-            dtgDanhSachHS.Columns["ma"].Width = 60;
-            dtgDanhSachHS.Columns["ten"].Width = 150;
-            dtgDanhSachHS.Columns["email"].Width = 150;
-            dtgDanhSachHS.Columns["gioitinh"].Width = 50;
+            dtgDanhSachHS.Columns["ma"].Width = 100;
+            dtgDanhSachHS.Columns["ten"].Width = 200;
+            dtgDanhSachHS.Columns["email"].Width = 200;
+            dtgDanhSachHS.Columns["gioitinh"].Width = 90;
             dtgDanhSachHS.Columns["ngaysinh"].Width = 100;
             dtgDanhSachHS.Columns["Lopma"].Width = 150;
-            dtgDanhSachHS.DataSource = control.getListHocSinh();
+            dtgDanhSachHS.Columns["DiaChi"].Width = 150;
+            dtgDanhSachHS.DataSource = _control.getListHocSinh();
+        }
+        private void Load_quanly()
+        {
+            dtgQuanLy.DataSource = _control.getList_Lophophan();
+            dtgQuanLy.Columns["ma"].HeaderText = "Mã lớp học phần";
+            dtgQuanLy.Columns["monhocten"].HeaderText = "Tên môn học";
+            dtgQuanLy.Columns["monhocma"].HeaderText = "Mã môn học";
+            dtgQuanLy.Columns["hocky"].HeaderText = "Học kỳ";
+            dtgQuanLy.Columns["namhoc"].HeaderText = "Năm học";
+            dtgQuanLy.Columns["siso"].HeaderText = "Sĩ số";
+            dtgQuanLy.Columns["thu"].HeaderText = "Thứ";
+            dtgQuanLy.Columns["tiet"].HeaderText = "Tiết";
+            dtgQuanLy.Columns["ngaybatdau"].HeaderText = "Ngày bắt đầu";
+            dtgQuanLy.Columns["ngayketthuc"].HeaderText = "Ngày kết thúc";
+            dtgQuanLy.Columns["ngaythi"].HeaderText = "Ngày thi";
+            dtgQuanLy.Columns["giaovienma"].HeaderText = "Giáo viên mã";
+            dtgQuanLy.Columns["giaovienten"].HeaderText = "Giáo viên";
+            dtgQuanLy.Columns["hocky"].Width = 70;
+            dtgQuanLy.Columns["siso"].Width = 55;
+            dtgQuanLy.Columns["thu"].Width = 45;
+            dtgQuanLy.Columns["tiet"].Width = 45;
+            dtgQuanLy.Columns["giaovienten"].Width = 150;
+            dtgQuanLy.Columns["monhocten"].Width = 150;
         }
         private void linklabelQLHS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -159,7 +188,7 @@ namespace QuanLyHocSinh
 
             frmUpdate_gv = new frmUpdate_gv(gv, this);
             frmUpdate_gv.ShowDialog();
-            dtgDanhSachGV.DataSource = control.getListGiaoVien();
+            dtgDanhSachGV.DataSource = _control.getListGiaoVien();
         }
 
         private void btnThemDSGV_Click(object sender, EventArgs e)
@@ -180,8 +209,8 @@ namespace QuanLyHocSinh
                 if (MessageBox.Show("Ban co chac  chan  xoa  giao vien ma "+rowID+"", "Xoa giao vien", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                    
-                    control.XoaGV(rowID);
-                    dtgDanhSachGV.DataSource = control.getListGiaoVien();
+                    _control.XoaGV(rowID);
+                    dtgDanhSachGV.DataSource = _control.getListGiaoVien();
                 }
             }
         }
@@ -218,12 +247,12 @@ namespace QuanLyHocSinh
             hs.DiaChi  = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[8].Value.ToString();
             frmSua = new frmSua(hs, this);
             frmSua.ShowDialog();
-            dtgDanhSachHS.DataSource = control.getListHocSinh();
+            dtgDanhSachHS.DataSource = _control.getListHocSinh();
         }
 
         public void update_FormMain()
         {
-            dtgDanhSachHS.DataSource = control.getListHocSinh();
+            dtgDanhSachHS.DataSource = _control.getListHocSinh();
         }
 
         private void btnThemDSHS_Click(object sender, EventArgs e)
@@ -244,7 +273,7 @@ namespace QuanLyHocSinh
                 string rowID = dtgDanhSachHS[0, selectedIndex].Value.ToString();
                 if (MessageBox.Show("Ban co chac  chan  xoa  hoc sinh ma "+rowID+"", "Xoa hoc sinh", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    control.XoaHS(rowID);
+                    _control.XoaHS(rowID);
                     update_FormMain();
                 }
             }
