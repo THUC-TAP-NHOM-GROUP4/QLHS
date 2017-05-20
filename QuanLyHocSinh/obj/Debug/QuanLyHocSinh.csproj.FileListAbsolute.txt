@@ -45,3 +45,4 @@ E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Vie
 E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.Cache
 E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
 E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache
