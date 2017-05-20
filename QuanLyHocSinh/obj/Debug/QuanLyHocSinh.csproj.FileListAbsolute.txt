@@ -1,2 +1,18 @@
 E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+<<<<<<< HEAD
+=======
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.View.frmSearch.resources
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmSua.resources
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.AddGV.resources
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.AddHocSinh.resources
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DangNhap.resources
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Form1.resources
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.View.frmUpdate_gv.resources
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.Cache
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+>>>>>>> 68474e96da31a0298427b3dec219c2aa67df0326
 E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache
