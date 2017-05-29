@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyHocSinh.Model
 {
-    class GiaoVien
+    public class GiaoVien
     {
         public String Ma { get; set; }
         public String Ten { get; set; }
@@ -17,12 +17,7 @@ namespace QuanLyHocSinh.Model
         public double Luong { get; set; }
         public String NhiemVu { get; set; }
         public String VaiTro { get; set; }
-        public String TaiKhoan { get; set; }
-        public String MatKhau { get; set; }
-        public String HocHam { get; set; }
-        public String HocVi { get; set; }
-        public String SoDienThoai { get; set; }
-        public String DiaChi { get; set; }
         public String BoMonMa { get; set; }
+        public int TrangThai { get; set; }
     }
 }

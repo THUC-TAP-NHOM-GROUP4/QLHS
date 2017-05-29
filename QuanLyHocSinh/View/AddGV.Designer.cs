@@ -34,7 +34,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.txtBoMon = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtVaiTro = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -53,15 +52,34 @@
             this.erpEmail = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpVaiTro = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpBoMon = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtanh = new System.Windows.Forms.TextBox();
+            this.lbl = new System.Windows.Forms.Label();
+            this.txtluong = new System.Windows.Forms.TextBox();
+            this.txtnhiemvu = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txttrangthai = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbbBoMon = new System.Windows.Forms.ComboBox();
+            this.erpGioiTinh = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpNhiemVu = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpTrangthai = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpLuong = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpAnh = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.erptxtTen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpVaiTro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpBoMon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpGioiTinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpNhiemVu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpTrangthai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpAnh)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(230, 426);
+            this.btnThoat.Location = new System.Drawing.Point(248, 506);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
             this.btnThoat.TabIndex = 69;
@@ -71,7 +89,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(87, 426);
+            this.btnAdd.Location = new System.Drawing.Point(105, 506);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 68;
@@ -99,19 +117,11 @@
             this.dtpNgaySinh.Size = new System.Drawing.Size(186, 22);
             this.dtpNgaySinh.TabIndex = 64;
             // 
-            // txtBoMon
-            // 
-            this.txtBoMon.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBoMon.Location = new System.Drawing.Point(134, 345);
-            this.txtBoMon.Name = "txtBoMon";
-            this.txtBoMon.Size = new System.Drawing.Size(186, 22);
-            this.txtBoMon.TabIndex = 63;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(24, 352);
+            this.label8.Location = new System.Drawing.Point(25, 421);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 16);
             this.label8.TabIndex = 62;
@@ -120,7 +130,7 @@
             // txtVaiTro
             // 
             this.txtVaiTro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtVaiTro.Location = new System.Drawing.Point(134, 293);
+            this.txtVaiTro.Location = new System.Drawing.Point(134, 384);
             this.txtVaiTro.Name = "txtVaiTro";
             this.txtVaiTro.Size = new System.Drawing.Size(186, 22);
             this.txtVaiTro.TabIndex = 61;
@@ -128,7 +138,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtEmail.Location = new System.Drawing.Point(134, 247);
+            this.txtEmail.Location = new System.Drawing.Point(134, 233);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(186, 22);
             this.txtEmail.TabIndex = 60;
@@ -154,7 +164,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(25, 299);
+            this.label7.Location = new System.Drawing.Point(25, 384);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 16);
             this.label7.TabIndex = 57;
@@ -238,7 +248,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(25, 247);
+            this.label6.Location = new System.Drawing.Point(25, 239);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 16);
             this.label6.TabIndex = 72;
@@ -260,11 +270,120 @@
             // 
             this.erpBoMon.ContainerControl = this;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label10.Location = new System.Drawing.Point(25, 272);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 16);
+            this.label10.TabIndex = 74;
+            this.label10.Text = "Ảnh";
+            // 
+            // txtanh
+            // 
+            this.txtanh.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtanh.Location = new System.Drawing.Point(134, 266);
+            this.txtanh.Name = "txtanh";
+            this.txtanh.Size = new System.Drawing.Size(186, 22);
+            this.txtanh.TabIndex = 73;
+            // 
+            // lbl
+            // 
+            this.lbl.AutoSize = true;
+            this.lbl.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl.Location = new System.Drawing.Point(25, 310);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(47, 16);
+            this.lbl.TabIndex = 76;
+            this.lbl.Text = "Lương";
+            // 
+            // txtluong
+            // 
+            this.txtluong.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtluong.Location = new System.Drawing.Point(134, 310);
+            this.txtluong.Name = "txtluong";
+            this.txtluong.Size = new System.Drawing.Size(186, 22);
+            this.txtluong.TabIndex = 75;
+            // 
+            // txtnhiemvu
+            // 
+            this.txtnhiemvu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtnhiemvu.Location = new System.Drawing.Point(134, 347);
+            this.txtnhiemvu.Name = "txtnhiemvu";
+            this.txtnhiemvu.Size = new System.Drawing.Size(186, 22);
+            this.txtnhiemvu.TabIndex = 77;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label11.Location = new System.Drawing.Point(25, 347);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 16);
+            this.label11.TabIndex = 78;
+            this.label11.Text = "Nhiệm Vụ";
+            // 
+            // txttrangthai
+            // 
+            this.txttrangthai.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txttrangthai.Location = new System.Drawing.Point(134, 465);
+            this.txttrangthai.Name = "txttrangthai";
+            this.txttrangthai.Size = new System.Drawing.Size(186, 22);
+            this.txttrangthai.TabIndex = 80;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label12.Location = new System.Drawing.Point(25, 465);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 16);
+            this.label12.TabIndex = 79;
+            this.label12.Text = "Trạng Thái";
+            // 
+            // cbbBoMon
+            // 
+            this.cbbBoMon.FormattingEnabled = true;
+            this.cbbBoMon.Location = new System.Drawing.Point(134, 415);
+            this.cbbBoMon.Name = "cbbBoMon";
+            this.cbbBoMon.Size = new System.Drawing.Size(186, 22);
+            this.cbbBoMon.TabIndex = 81;
+            // 
+            // erpGioiTinh
+            // 
+            this.erpGioiTinh.ContainerControl = this;
+            // 
+            // erpNhiemVu
+            // 
+            this.erpNhiemVu.ContainerControl = this;
+            // 
+            // erpTrangthai
+            // 
+            this.erpTrangthai.ContainerControl = this;
+            // 
+            // erpLuong
+            // 
+            this.erpLuong.ContainerControl = this;
+            // 
+            // erpAnh
+            // 
+            this.erpAnh.ContainerControl = this;
+            // 
             // AddGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 507);
+            this.ClientSize = new System.Drawing.Size(362, 541);
+            this.Controls.Add(this.cbbBoMon);
+            this.Controls.Add(this.txttrangthai);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtnhiemvu);
+            this.Controls.Add(this.lbl);
+            this.Controls.Add(this.txtluong);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtanh);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.rbdNu);
             this.Controls.Add(this.rbdNam);
@@ -272,7 +391,6 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dtpNgaySinh);
-            this.Controls.Add(this.txtBoMon);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtVaiTro);
             this.Controls.Add(this.txtEmail);
@@ -286,10 +404,16 @@
             this.Controls.Add(this.label1);
             this.Name = "AddGV";
             this.Text = "AddGV";
+            this.Load += new System.EventHandler(this.AddGV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erptxtTen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpVaiTro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpBoMon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpGioiTinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpNhiemVu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpTrangthai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpAnh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,7 +425,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
-        private System.Windows.Forms.TextBox txtBoMon;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtVaiTro;
         private System.Windows.Forms.TextBox txtEmail;
@@ -320,5 +443,19 @@
         private System.Windows.Forms.ErrorProvider erpEmail;
         private System.Windows.Forms.ErrorProvider erpVaiTro;
         private System.Windows.Forms.ErrorProvider erpBoMon;
+        private System.Windows.Forms.TextBox txttrangthai;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtnhiemvu;
+        private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.TextBox txtluong;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtanh;
+        private System.Windows.Forms.ComboBox cbbBoMon;
+        private System.Windows.Forms.ErrorProvider erpGioiTinh;
+        private System.Windows.Forms.ErrorProvider erpNhiemVu;
+        private System.Windows.Forms.ErrorProvider erpTrangthai;
+        private System.Windows.Forms.ErrorProvider erpLuong;
+        private System.Windows.Forms.ErrorProvider erpAnh;
     }
 }

@@ -31,7 +31,6 @@ namespace QuanLyHocSinh
             if (checkAdd())
             {
                 HocSinh hs = new HocSinh();
-                hs.Ma = txtMaHS.Text.ToString().Trim();
                 hs.Ten = txtHoTenHS.Text.ToString().Trim();
                 hs.LopMa = txtLop.Text.ToString().Trim();
                 hs.NgaySinh = DateTime.Parse(dtpNgaySinh.Value.ToShortDateString());
@@ -39,22 +38,73 @@ namespace QuanLyHocSinh
                 else hs.GioiTinh = 0;
                 hs.DanToc = txtDanToc.Text.ToString().Trim();
                 hs.DiaChi = txtDiaChi.Text.ToString().Trim();
+                hs.Email = txtEmail.Text.ToString().Trim();
+                hs.DienThoai = txtSDT.Text.ToString().Trim();
 
-
-                if (control.ThemHS(hs))
+                //    ma, ten, gioitinh, ngaysinh , Email,anh , luong , nhiemvu, Vaitro, Bomonma , trangthai
+                (new Controllers()).ThemHS(hs);
+                DialogResult result = MessageBox.Show("Thành công", "Chỉnh sửa", MessageBoxButtons.OK);
+            
+                if (result == DialogResult.OK)
                 {
-                    this.Close();
-                    this.form1.Visible = true;
+                    btnThoat_Click(sender, e);
+                    form1 = new Form1();
+
                 }
 
+
+
             }
+
         }
 
         private bool checkAdd()
         {
+
+            if (txtHoTenHS.Text.Trim().Equals(""))
+            {
+                erpten.SetError(txtHoTenHS, "Phải nhập họ tên");
+            }
+
+            erpten.Clear();
+            if (txtLop.Text.Trim().Equals(""))
+            {
+                erpLop.SetError(txtLop, "Phải nhập Lớp");
+            }
+            erpLop.Clear();
+            if (!(rdbnam.Checked || rdbNu.Checked))
+            {
+                erpGioiTinh.SetError(rdbnam, "Chưa nhập Giới Tính");
+                return false;
+            }
+            erpGioiTinh.Clear();
+
+            if (txtDanToc.Text.Trim().Equals(""))
+            {
+                erpDanToc.SetError(txtDanToc, "Phải nhập Dân Tộc");
+            }
+            erpDanToc.Clear();
+            if (txtDiaChi.Text.Trim().Equals(""))
+            {
+                erpDiaChi.SetError(txtDiaChi, "Phải nhập Địa Chỉ");
+            }
+            erpDiaChi.Clear();
+            if (txtEmail.Text.Trim().Equals(""))
+            {
+                erpEmail.SetError(txtEmail, "Phải nhập Email");
+            }
+            erpEmail.Clear();
+            if (txtSDT.Text.Trim().Equals(""))
+            {
+                erpSDT.SetError(txtSDT, "Phải nhập Số Điện Thoại");
+            }
+            erpSDT.Clear();
             return true;
         }
 
-        
+        private void AddHocSinh_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
