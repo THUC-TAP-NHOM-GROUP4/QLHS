@@ -38,7 +38,7 @@ namespace QuanLyHocSinh
                 gv.NhiemVu = txtnhiemvu.Text.ToString().Trim();
                 gv.VaiTro = txtVaiTro.Text.ToString().Trim();
                 gv.BoMonMa = control.getMaBoMon(cbbBoMon.Text);
-                gv.TrangThai = int.Parse(txttrangthai.Text.ToString().Trim());
+                //gv.TrangThai = int.Parse(txttrangthai.Text.ToString().Trim());
                 
                 (new Controllers()).ThemGV(gv);
                 DialogResult result = MessageBox.Show("Thành công", "Chỉnh sửa", MessageBoxButtons.OK);
