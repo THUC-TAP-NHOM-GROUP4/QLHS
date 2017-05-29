@@ -103,13 +103,15 @@ namespace QuanLyHocSinh
         {
             hc.Ma = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[0].Value.ToString().Trim();
             hc.Ten = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[1].Value.ToString().Trim();
-              hc.NgaySinh = DateTime.Parse(dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[3].Value.ToString().Trim());
-            hc.GioiTinh = int.Parse(dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[2].Value.ToString().Trim());
-            hc.Email= dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[4].Value.ToString().Trim();
-            hc.DienThoai = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[6].Value.ToString().Trim();
-            hc.LopMa = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[7].Value.ToString().Trim();
+            hc.LopMa = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[2].Value.ToString().Trim();
+            hc.NgaySinh = DateTime.Parse(dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[3].Value.ToString().Trim());
+            hc.GioiTinh = int.Parse(dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[4].Value.ToString().Trim());
+            hc.DanToc = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[5].Value.ToString().Trim();
+            hc.DiaChi = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[6].Value.ToString().Trim();
+            hc.Email= dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[7].Value.ToString().Trim();
+            hc.DienThoai = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[8].Value.ToString().Trim();
           
-            str = hc.Ma + hc.Ten +hc.GioiTinh+hc.NgaySinh+ hc.Email +hc.DienThoai+hc.LopMa;
+            str = hc.Ma + hc.Ten +hc.LopMa + hc.NgaySinh +hc.GioiTinh+ hc.DanToc +hc.DiaChi + hc.Email +hc.DienThoai;
             
         }
 
