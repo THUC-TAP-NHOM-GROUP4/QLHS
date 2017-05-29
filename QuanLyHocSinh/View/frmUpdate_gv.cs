@@ -15,7 +15,6 @@ namespace QuanLyHocSinh.View
     public partial class frmUpdate_gv : Form
     {
         private Form1 frmMain;
-        private Controllers control;
         private GiaoVien gv;
         //private String str;
         public frmUpdate_gv()

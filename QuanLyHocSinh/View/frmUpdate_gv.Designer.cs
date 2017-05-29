@@ -50,8 +50,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTrangThai = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -250,29 +248,11 @@
             this.label1.TabIndex = 170;
             this.label1.Text = "Mã giáo viên";
             // 
-            // txtTrangThai
-            // 
-            this.txtTrangThai.Location = new System.Drawing.Point(250, 339);
-            this.txtTrangThai.Name = "txtTrangThai";
-            this.txtTrangThai.Size = new System.Drawing.Size(225, 20);
-            this.txtTrangThai.TabIndex = 185;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(173, 336);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 186;
-            this.label6.Text = "Trạng thái";
-            // 
             // frmUpdate_gv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 440);
-            this.Controls.Add(this.txtTrangThai);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.cbbBoMon);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtVaiTro);
@@ -333,7 +313,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTrangThai;
-        private System.Windows.Forms.Label label6;
     }
 }
