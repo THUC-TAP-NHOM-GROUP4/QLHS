@@ -38,6 +38,9 @@ namespace QuanLyHocSinh
             Load_gv();
             Load_hs();
             Load_quanly();
+            dtgDanhSachGV.DataSource = _control.getListGiaoVien();
+            dtgDanhSachHS.DataSource = _control.getListHocSinh();
+            
         }
         private void Load_gv()
         {
@@ -234,12 +237,12 @@ namespace QuanLyHocSinh
             int gioitinh = int.Parse(dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[2].Value.ToString());
 
             DateTime ns = DateTime.Now;
-            if (DateTime.TryParse(dtgDanhSachGV.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[3].Value.ToString(), out ns))
+            if (DateTime.TryParse(dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[3].Value.ToString(), out ns))
             {
                 hs.NgaySinh = ns;
             }
             hs.NgaySinh = ns;
-            hs.Email = dtgDanhSachGV.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[4].Value.ToString();
+            hs.Email = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[4].Value.ToString();
             hs.DanToc =  dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[5].Value.ToString();
            
             hs.DienThoai = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[6].Value.ToString();

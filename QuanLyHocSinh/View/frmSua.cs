@@ -41,7 +41,7 @@ namespace QuanLyHocSinh
             hs.Email = txtEmail.Text.ToString().Trim();
             hs.DanToc = txtDantoc.Text.ToString().Trim();
             hs.DiaChi = txtDiaChi.Text.ToString().Trim();
-
+           
             (new Controllers()).update_hs(hs);
             DialogResult result = MessageBox.Show("Thành công", "Chỉnh sửa", MessageBoxButtons.OK);
             if (result == DialogResult.OK)

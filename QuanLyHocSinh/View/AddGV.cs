@@ -37,7 +37,7 @@ namespace QuanLyHocSinh
                 gv.Luong = double.Parse(txtluong.Text.ToString().Trim());
                 gv.NhiemVu = txtnhiemvu.Text.ToString().Trim();
                 gv.VaiTro = txtVaiTro.Text.ToString().Trim();
-                gv.BoMonMa = txtBoMon.Text.ToString().Trim();
+                gv.BoMonMa = control.getMaBoMon(cbbBoMon.Text);
                 gv.TrangThai = int.Parse(txttrangthai.Text.ToString().Trim());
                 
                 (new Controllers()).ThemGV(gv);
@@ -56,32 +56,74 @@ namespace QuanLyHocSinh
 
         private bool checkAdd()
         {
-            if(txtBoMon.Text.Trim().Equals(""))
-            {
-                erpBoMon.SetError(txtBoMon, "Phải Nhập Bộ Môn");
-                return false;
-            }
-            if(txtHoTenGV.Text.Trim().Equals(""))
+
+            if (txtHoTenGV.Text.Trim().Equals(""))
             {
                 erptxtTen.SetError(txtHoTenGV, "Phải nhập họ tên");
+                return false;
             }
+            erptxtTen.Clear();
+
+            if (!(rbdNam.Checked || rbdNu.Checked))
+            {
+                erpGioiTinh.SetError(rbdNam, "Chưa nhập Giới Tính");
+                return false;
+            }
+            erpGioiTinh.Clear();
 
             if (txtEmail.Text.Trim().Equals(""))
             {
                 erpEmail.SetError(txtEmail, "Phải nhập Email");
+                return false;
             }
+            erpEmail.Clear();
+
+            if (txtanh.Text.Trim().Equals(""))
+            {
+                erpAnh.SetError(txtanh, "Phải nhập Ảnh");
+                return false;
+
+            }
+            erpAnh.Clear();
+            if (txtluong.Text.Trim().Equals(""))
+            {
+                erpLuong.SetError(txtluong, "Phải nhập Lương bằng số");
+                return false;
+            }
+            erpLuong.Clear();
+            if (txtnhiemvu.Text.Trim().Equals(""))
+            {
+                erpNhiemVu.SetError(txtnhiemvu, "Phải nhập Nhiệm vụ");
+                return false;
+            }
+            erpNhiemVu.Clear();
             if (txtVaiTro.Text.Trim().Equals(""))
             {
                 erpVaiTro.SetError(txtVaiTro, "Phải nhập Vai Trò");
+                return false;
             }
-
+            erpVaiTro.Clear();
+            if (txttrangthai.Text.Trim().Equals(""))
+            {
+                erpTrangthai.SetError(txttrangthai, "Phải nhập Trạng thái là 0 hoặc 1");
+                return false;
+            }
+            erpTrangthai.Clear();
             return true;
+
         }
 
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AddGV_Load(object sender, EventArgs e)
+        {
+
+            cbbBoMon.DataSource = control.getBoMon();
+
         }
     }
 }
