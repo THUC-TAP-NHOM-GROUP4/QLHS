@@ -1,1 +1,1 @@
-﻿-Chọn nhân viên cần xóa->bấm xóa
+﻿-Chọn học sinh cần xóa->bấm xóa
