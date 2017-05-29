@@ -34,7 +34,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.txtBoMon = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtVaiTro = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -61,10 +60,21 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txttrangthai = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.cbbBoMon = new System.Windows.Forms.ComboBox();
+            this.erpGioiTinh = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpNhiemVu = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpTrangthai = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpLuong = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpAnh = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.erptxtTen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpVaiTro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpBoMon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpGioiTinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpNhiemVu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpTrangthai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpAnh)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThoat
@@ -106,14 +116,6 @@
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(186, 22);
             this.dtpNgaySinh.TabIndex = 64;
-            // 
-            // txtBoMon
-            // 
-            this.txtBoMon.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBoMon.Location = new System.Drawing.Point(134, 421);
-            this.txtBoMon.Name = "txtBoMon";
-            this.txtBoMon.Size = new System.Drawing.Size(186, 22);
-            this.txtBoMon.TabIndex = 63;
             // 
             // label8
             // 
@@ -340,11 +342,40 @@
             this.label12.TabIndex = 79;
             this.label12.Text = "Trạng Thái";
             // 
+            // cbbBoMon
+            // 
+            this.cbbBoMon.FormattingEnabled = true;
+            this.cbbBoMon.Location = new System.Drawing.Point(134, 415);
+            this.cbbBoMon.Name = "cbbBoMon";
+            this.cbbBoMon.Size = new System.Drawing.Size(186, 22);
+            this.cbbBoMon.TabIndex = 81;
+            // 
+            // erpGioiTinh
+            // 
+            this.erpGioiTinh.ContainerControl = this;
+            // 
+            // erpNhiemVu
+            // 
+            this.erpNhiemVu.ContainerControl = this;
+            // 
+            // erpTrangthai
+            // 
+            this.erpTrangthai.ContainerControl = this;
+            // 
+            // erpLuong
+            // 
+            this.erpLuong.ContainerControl = this;
+            // 
+            // erpAnh
+            // 
+            this.erpAnh.ContainerControl = this;
+            // 
             // AddGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 541);
+            this.Controls.Add(this.cbbBoMon);
             this.Controls.Add(this.txttrangthai);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -360,7 +391,6 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dtpNgaySinh);
-            this.Controls.Add(this.txtBoMon);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtVaiTro);
             this.Controls.Add(this.txtEmail);
@@ -374,10 +404,16 @@
             this.Controls.Add(this.label1);
             this.Name = "AddGV";
             this.Text = "AddGV";
+            this.Load += new System.EventHandler(this.AddGV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erptxtTen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpVaiTro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpBoMon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpGioiTinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpNhiemVu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpTrangthai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpAnh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,7 +425,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
-        private System.Windows.Forms.TextBox txtBoMon;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtVaiTro;
         private System.Windows.Forms.TextBox txtEmail;
@@ -416,5 +451,11 @@
         private System.Windows.Forms.TextBox txtluong;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtanh;
+        private System.Windows.Forms.ComboBox cbbBoMon;
+        private System.Windows.Forms.ErrorProvider erpGioiTinh;
+        private System.Windows.Forms.ErrorProvider erpNhiemVu;
+        private System.Windows.Forms.ErrorProvider erpTrangthai;
+        private System.Windows.Forms.ErrorProvider erpLuong;
+        private System.Windows.Forms.ErrorProvider erpAnh;
     }
 }
