@@ -34,12 +34,10 @@ namespace QuanLyHocSinh
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            dtgDanhSachGV.DataSource = _control.getListGiaoVien();
             Load_gv();
             Load_hs();
             Load_quanly();
-            dtgDanhSachGV.DataSource = _control.getListGiaoVien();
-            dtgDanhSachHS.DataSource = _control.getListHocSinh();
+          
             
         }
         private void Load_gv()
@@ -55,7 +53,7 @@ namespace QuanLyHocSinh
             //  dtgDanhSachGV.Columns["sodt"].HeaderText = "Điện thoại";
             dtgDanhSachGV.Columns["Bomonma"].HeaderText = "Mã Bộ Môn";
             dtgDanhSachGV.Columns["Nhiemvu"].HeaderText = "Nhiệm vụ";
-          //  dtgDanhSachGV.Columns["Anh"].HeaderText = "ẢNH";
+            dtgDanhSachGV.Columns["Luong"].HeaderText = "Lương";
             dtgDanhSachGV.Columns["ma"].Width = 100;
             dtgDanhSachGV.Columns["ten"].Width = 200;
             dtgDanhSachGV.Columns["email"].Width = 150;
@@ -76,6 +74,7 @@ namespace QuanLyHocSinh
             dtgDanhSachHS.Columns["DiaChi"].HeaderText = "Địa chỉ";
             dtgDanhSachHS.Columns["Lopma"].HeaderText = "Mã lớp học phần";
             dtgDanhSachHS.Columns["email"].HeaderText = "Email";
+            dtgDanhSachHS.Columns["dantoc"].HeaderText = "Dân Tộc";
             dtgDanhSachHS.Columns["DienThoai"].HeaderText = "Điện thoại";
             dtgDanhSachHS.Columns["ma"].Width = 100;
             dtgDanhSachHS.Columns["ten"].Width = 200;
@@ -184,7 +183,7 @@ namespace QuanLyHocSinh
             gv.NhiemVu = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[6].Value.ToString();
             gv.VaiTro = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[7].Value.ToString();
             gv.BoMonMa = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[8].Value.ToString();
-            gv.TrangThai = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[9].Value.ToString());
+           // gv.TrangThai = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[9].Value.ToString());
            
 
             //ma, ten, gioitinh, ngaysinh, email, anh, luong, nhiemvu, vaitro, taikhoan, matkhau, hocham, hocvi, sodt, diachi, bomonma
@@ -315,8 +314,8 @@ namespace QuanLyHocSinh
             gv.VaiTro = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[5].Value.ToString().Trim();
             gv.Luong = float.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[6].Value.ToString().Trim());
             gv.BoMonMa = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[7].Value.ToString().Trim();
-            gv.TrangThai = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[8].Value.ToString().Trim());
-            st = gv.Ma + gv.Ten + gv.GioiTinh + gv.NgaySinh + gv.Email + gv.VaiTro + gv.Luong + gv.BoMonMa + gv.TrangThai;
+          //  gv.TrangThai = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[8].Value.ToString().Trim());
+            st = gv.Ma + gv.Ten + gv.GioiTinh + gv.NgaySinh + gv.Email + gv.VaiTro + gv.Luong + gv.BoMonMa;
         }
 
         private void linklabelHD_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

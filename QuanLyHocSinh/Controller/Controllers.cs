@@ -67,13 +67,13 @@ namespace QuanLyHocSinh.Controller
             //+ " gv.nhiemvu, gv.anh, gv.trangthai from GiaoVien gv ");
             //DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma , "
             //    + " gv.nhiemvu, gv.anh,bm.ma as [Bomonma], gv.trangthai from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma ");
-//<<<<<<< HEAD
+
 //            DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma ,"
 //                + " gv.nhiemvu,bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where gv.trangthai=1");
-//=======
+
             DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.luong, gv.Vaitro , gv.Bomonma , gv.nhiemvu, "
              + " gv.anh,bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where gv.trangthai=1");
-//>>>>>>> 62440c2b927b403c2b74c7968b4d4de2fddb1bbb
+
 
             int n = table.Rows.Count;
             int i;
@@ -107,20 +107,16 @@ namespace QuanLyHocSinh.Controller
             gv.VaiTro = row["VaiTro"].ToString().Trim();
             gv.BoMonMa = row["BoMonMa"].ToString().Trim();
             gv.NhiemVu = row["NhiemVu"].ToString().Trim();
-//<<<<<<< HEAD
+
             //gv.Anh = row["anh"].ToString().Trim();
-//=======
+
           //  gv.Anh = row["anh"].ToString().Trim();
             Double luong = 0;
             if (Double.TryParse(row["luong"].ToString().Trim(), out luong))
             {
                 gv.Luong = luong;
             }
-//>>>>>>> 62440c2b927b403c2b74c7968b4d4de2fddb1bbb
-            //bool i = bool.Parse(row["trangthai"].ToString().Trim());
-            //if (i)
-            //    gv.TrangThai = 1;
-            //else gv.TrangThai = 0;
+
             return gv;
         }
 
@@ -251,7 +247,7 @@ namespace QuanLyHocSinh.Controller
                 new SqlParameter("nhiemvu" , gv.NhiemVu),
                 new SqlParameter("vaitro", gv.VaiTro),
                 new SqlParameter("bomonma" , gv.BoMonMa),
-                new SqlParameter("trangthai" , gv.TrangThai)
+               // new SqlParameter("trangthai" , gv.TrangThai)
     };
             da.Query("proc_insertGV", paraGV);
             return true;

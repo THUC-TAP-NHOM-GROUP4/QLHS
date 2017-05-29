@@ -18,6 +18,6 @@ namespace QuanLyHocSinh.Model
         public String NhiemVu { get; set; }
         public String VaiTro { get; set; }
         public String BoMonMa { get; set; }
-        public int TrangThai { get; set; }
+      //  public int TrangThai { get; set; }
     }
 }
