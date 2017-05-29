@@ -315,8 +315,8 @@ namespace QuanLyHocSinh
             gv.VaiTro = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[5].Value.ToString().Trim();
             gv.Luong = float.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[6].Value.ToString().Trim());
             gv.BoMonMa = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[7].Value.ToString().Trim();
-            gv.TrangThai = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[8].Value.ToString().Trim());
-            st = gv.Ma + gv.Ten + gv.GioiTinh + gv.NgaySinh + gv.Email + gv.VaiTro + gv.Luong + gv.BoMonMa + gv.TrangThai;
+          //  gv.TrangThai = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[8].Value.ToString().Trim());
+            st = gv.Ma + gv.Ten + gv.GioiTinh + gv.NgaySinh + gv.Email + gv.VaiTro + gv.Luong + gv.BoMonMa;
         }
 
         private void linklabelHD_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

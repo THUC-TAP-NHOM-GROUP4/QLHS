@@ -67,13 +67,13 @@ namespace QuanLyHocSinh.Controller
             //+ " gv.nhiemvu, gv.anh, gv.trangthai from GiaoVien gv ");
             //DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma , "
             //    + " gv.nhiemvu, gv.anh,bm.ma as [Bomonma], gv.trangthai from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma ");
-//<<<<<<< HEAD
+
 //            DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma ,"
 //                + " gv.nhiemvu,bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where gv.trangthai=1");
-//=======
+
             DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.luong, gv.Vaitro , gv.Bomonma , gv.nhiemvu, "
              + " gv.anh,bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where gv.trangthai=1");
-//>>>>>>> 62440c2b927b403c2b74c7968b4d4de2fddb1bbb
+
 
             int n = table.Rows.Count;
             int i;

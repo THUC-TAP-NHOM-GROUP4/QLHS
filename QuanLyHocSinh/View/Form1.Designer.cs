@@ -113,7 +113,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(375, -3);
+            this.label2.Location = new System.Drawing.Point(556, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 18);
             this.label2.TabIndex = 34;
@@ -321,7 +321,7 @@
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(542, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(187, 16);
+            this.label4.Size = new System.Drawing.Size(188, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Quản Lý Học Sinh,Giáo Viên";
             // 
