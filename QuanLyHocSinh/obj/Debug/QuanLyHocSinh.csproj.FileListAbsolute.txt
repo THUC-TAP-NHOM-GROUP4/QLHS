@@ -1,6 +1,7 @@
 E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
 E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
 E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache
 E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.View.frmSearch.resources
 E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmSua.resources
 E:\HOC_KY_6\ThucTapNhom\PRO\hsinh\QLHS\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.AddGV.resources
