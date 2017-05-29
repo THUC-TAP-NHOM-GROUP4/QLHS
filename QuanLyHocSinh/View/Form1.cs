@@ -67,22 +67,22 @@ namespace QuanLyHocSinh
         private void Load_hs()
         {
           
-            dtgDanhSachHS.Columns["ma"].HeaderText = "Mã";
-            dtgDanhSachHS.Columns["ten"].HeaderText = "Họ tên";
-            dtgDanhSachHS.Columns["ngaysinh"].HeaderText = "Ngày sinh";
-            dtgDanhSachHS.Columns["gioitinh"].HeaderText = "Giới tính";
-            dtgDanhSachHS.Columns["DiaChi"].HeaderText = "Địa chỉ";
-            dtgDanhSachHS.Columns["Lopma"].HeaderText = "Mã lớp học phần";
-            dtgDanhSachHS.Columns["email"].HeaderText = "Email";
-            dtgDanhSachHS.Columns["dantoc"].HeaderText = "Dân Tộc";
-            dtgDanhSachHS.Columns["DienThoai"].HeaderText = "Điện thoại";
-            dtgDanhSachHS.Columns["ma"].Width = 100;
-            dtgDanhSachHS.Columns["ten"].Width = 200;
-            dtgDanhSachHS.Columns["email"].Width = 200;
-            dtgDanhSachHS.Columns["gioitinh"].Width = 90;
-            dtgDanhSachHS.Columns["ngaysinh"].Width = 100;
-            dtgDanhSachHS.Columns["Lopma"].Width = 150;
-            dtgDanhSachHS.Columns["DiaChi"].Width = 150;
+            //dtgDanhSachHS.Columns["ma"].HeaderText = "Mã";
+            //dtgDanhSachHS.Columns["ten"].HeaderText = "Họ tên";
+            //dtgDanhSachHS.Columns["ngaysinh"].HeaderText = "Ngày sinh";
+            //dtgDanhSachHS.Columns["gioitinh"].HeaderText = "Giới tính";
+            //dtgDanhSachHS.Columns["DiaChi"].HeaderText = "Địa chỉ";
+            //dtgDanhSachHS.Columns["Lopma"].HeaderText = "Mã lớp học phần";
+            //dtgDanhSachHS.Columns["email"].HeaderText = "Email";
+            //dtgDanhSachHS.Columns["dantoc"].HeaderText = "Dân Tộc";
+            //dtgDanhSachHS.Columns["DienThoai"].HeaderText = "Điện thoại";
+            //dtgDanhSachHS.Columns["ma"].Width = 100;
+            //dtgDanhSachHS.Columns["ten"].Width = 200;
+            //dtgDanhSachHS.Columns["email"].Width = 200;
+            //dtgDanhSachHS.Columns["gioitinh"].Width = 90;
+            //dtgDanhSachHS.Columns["ngaysinh"].Width = 100;
+            //dtgDanhSachHS.Columns["Lopma"].Width = 150;
+            //dtgDanhSachHS.Columns["DiaChi"].Width = 150;
             dtgDanhSachHS.DataSource = _control.getListHocSinh();
         }
         private void Load_quanly()
