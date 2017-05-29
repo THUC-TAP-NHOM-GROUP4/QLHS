@@ -51,9 +51,8 @@ namespace QuanLyHocSinh.View
                 cbbSearch.Items.Add("Tìm kiếm theo mã");
                 cbbSearch.Items.Add("Tìm kiếm theo tên");
                 cbbSearch.Items.Add("Tìm kiếm theo bộ môn");
-                cbbSearch.Items.Add("Tìm kiếm theo dân tộc");
+               
                 cbbSearch.Items.Add("Tìm kiếm theo giới tính");
-                cbbSearch.Items.Add("Tìm kiếm theo địa chỉ");
                
             }
         }
@@ -118,15 +117,9 @@ namespace QuanLyHocSinh.View
                     lbma.Text = "Họ và tên";
                    
                     da = new DataAccess();
-                    dgvdstimkiem.DataSource = da.Query("DSGVTHEOTEN", new System.Data.SqlClient.SqlParameter("@ma", TXTma.Text));
+                    dgvdstimkiem.DataSource = da.Query("DSGVTHEOTEN", new System.Data.SqlClient.SqlParameter("@ten", TXTma.Text));
                 }
-                else if (cbbSearch.Text.Equals("Tìm kiếm theo dân tộc"))
-                {
-
-                    lbma.Text = "Dân tộc";
-                    da = new DataAccess();
-                    dgvdstimkiem.DataSource = da.Query("DSGVTHEODANTOC");
-                }
+                
                 else if (cbbSearch.Text.Equals("Tìm kiếm theo giới tính"))
                 {
                     ;
@@ -134,13 +127,7 @@ namespace QuanLyHocSinh.View
                     da = new DataAccess();
                     dgvdstimkiem.DataSource = da.Query("DSGVTHEOGIOITINH", new System.Data.SqlClient.SqlParameter("@gioitinh", TXTma.Text));
                 }
-                else if (cbbSearch.Text.Equals("Tìm kiếm theo địa chỉ"))
-                {
-
-                    lbma.Text = "Địa chỉ";
-                    da = new DataAccess();
-                    dgvdstimkiem.DataSource = da.Query("DSGVTHEODIACHI", new System.Data.SqlClient.SqlParameter("@diachi", TXTma.Text));
-                }
+               
                 else if (cbbSearch.Text.Equals("Tìm kiếm theo bộ môn"))
                 {
 

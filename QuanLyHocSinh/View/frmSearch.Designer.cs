@@ -49,11 +49,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(165, 162);
+            this.label2.Location = new System.Drawing.Point(209, 163);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 13);
+            this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Danh sách học sinh";
+            this.label2.Text = "Danh sách ";
             // 
             // cbbSearch
             // 
@@ -76,7 +76,7 @@
             // 
             // TXTma
             // 
-            this.TXTma.Location = new System.Drawing.Point(136, 79);
+            this.TXTma.Location = new System.Drawing.Point(141, 76);
             this.TXTma.Name = "TXTma";
             this.TXTma.Size = new System.Drawing.Size(165, 20);
             this.TXTma.TabIndex = 5;
