@@ -65,6 +65,8 @@ namespace QuanLyHocSinh
             dtgDanhSachGV.Columns["Bomonma"].Width = 100;
             dtgDanhSachGV.Columns["vaitro"].Width = 150;
 
+            dtgDanhSachGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             dtgDanhSachGV.DataSource = _control.getListGiaoVien();
         }
         private void Load_hs()
@@ -79,13 +81,14 @@ namespace QuanLyHocSinh
             dtgDanhSachHS.Columns["email"].HeaderText = "Email";
             dtgDanhSachHS.Columns["dantoc"].HeaderText = "Dân Tộc";
             dtgDanhSachHS.Columns["DienThoai"].HeaderText = "Điện thoại";
-            dtgDanhSachHS.Columns["ma"].Width = 100;
-            dtgDanhSachHS.Columns["ten"].Width = 200;
-            dtgDanhSachHS.Columns["email"].Width = 200;
-            dtgDanhSachHS.Columns["gioitinh"].Width = 90;
-            dtgDanhSachHS.Columns["ngaysinh"].Width = 100;
-            dtgDanhSachHS.Columns["Lopma"].Width = 150;
-            dtgDanhSachHS.Columns["DiaChi"].Width = 150;
+            dtgDanhSachHS.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //dtgDanhSachHS.Columns["ma"].Width = 100;
+            //dtgDanhSachHS.Columns["ten"].Width = 200;
+            //dtgDanhSachHS.Columns["email"].Width = 200;
+            //dtgDanhSachHS.Columns["gioitinh"].Width = 90;
+            //dtgDanhSachHS.Columns["ngaysinh"].Width = 100;
+            //dtgDanhSachHS.Columns["Lopma"].Width = 150;
+            //dtgDanhSachHS.Columns["DiaChi"].Width = 150;
             dtgDanhSachHS.DataSource = _control.getListHocSinh();
         }
         private void Load_quanly()

@@ -35,11 +35,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnTimKiemDSGV = new System.Windows.Forms.Button();
             this.btnThoatDSGV = new System.Windows.Forms.Button();
-            this.btnLuuDSGV = new System.Windows.Forms.Button();
             this.btnXoaDSGV = new System.Windows.Forms.Button();
             this.btnSuaDSGV = new System.Windows.Forms.Button();
             this.btnThemDSGV = new System.Windows.Forms.Button();
-            this.btnXemDSGV = new System.Windows.Forms.Button();
             this.tpTrangChu = new System.Windows.Forms.TabPage();
             this.linklabelHD = new System.Windows.Forms.LinkLabel();
             this.linklabelQLGD = new System.Windows.Forms.LinkLabel();
@@ -56,11 +54,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnTimKiemDSHS = new System.Windows.Forms.Button();
             this.btnThoatDSHS = new System.Windows.Forms.Button();
-            this.btnLuuDSHS = new System.Windows.Forms.Button();
             this.btnXoaDSHS = new System.Windows.Forms.Button();
             this.btnSuaDSHS = new System.Windows.Forms.Button();
             this.btnThemDSHS = new System.Windows.Forms.Button();
-            this.btnXemDSHS = new System.Windows.Forms.Button();
             this.tpQLGiangDay = new System.Windows.Forms.TabPage();
             this.dtgQuanLy = new System.Windows.Forms.DataGridView();
             this.tpHuongDan = new System.Windows.Forms.TabPage();
@@ -120,11 +116,9 @@
             this.tpQLGV.Controls.Add(this.label2);
             this.tpQLGV.Controls.Add(this.btnTimKiemDSGV);
             this.tpQLGV.Controls.Add(this.btnThoatDSGV);
-            this.tpQLGV.Controls.Add(this.btnLuuDSGV);
             this.tpQLGV.Controls.Add(this.btnXoaDSGV);
             this.tpQLGV.Controls.Add(this.btnSuaDSGV);
             this.tpQLGV.Controls.Add(this.btnThemDSGV);
-            this.tpQLGV.Controls.Add(this.btnXemDSGV);
             this.tpQLGV.Location = new System.Drawing.Point(4, 22);
             this.tpQLGV.Name = "tpQLGV";
             this.tpQLGV.Size = new System.Drawing.Size(1253, 527);
@@ -157,7 +151,7 @@
             // 
             this.btnTimKiemDSGV.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemDSGV.Image")));
             this.btnTimKiemDSGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiemDSGV.Location = new System.Drawing.Point(979, 474);
+            this.btnTimKiemDSGV.Location = new System.Drawing.Point(1085, 474);
             this.btnTimKiemDSGV.Name = "btnTimKiemDSGV";
             this.btnTimKiemDSGV.Size = new System.Drawing.Size(80, 40);
             this.btnTimKiemDSGV.TabIndex = 42;
@@ -179,23 +173,11 @@
             this.btnThoatDSGV.UseVisualStyleBackColor = true;
             this.btnThoatDSGV.Click += new System.EventHandler(this.btnThoatDSGV_Click);
             // 
-            // btnLuuDSGV
-            // 
-            this.btnLuuDSGV.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuDSGV.Image")));
-            this.btnLuuDSGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuuDSGV.Location = new System.Drawing.Point(1072, 474);
-            this.btnLuuDSGV.Name = "btnLuuDSGV";
-            this.btnLuuDSGV.Size = new System.Drawing.Size(80, 40);
-            this.btnLuuDSGV.TabIndex = 40;
-            this.btnLuuDSGV.Text = "Lưu";
-            this.btnLuuDSGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuuDSGV.UseVisualStyleBackColor = true;
-            // 
             // btnXoaDSGV
             // 
             this.btnXoaDSGV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDSGV.Image")));
             this.btnXoaDSGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaDSGV.Location = new System.Drawing.Point(886, 474);
+            this.btnXoaDSGV.Location = new System.Drawing.Point(1006, 474);
             this.btnXoaDSGV.Name = "btnXoaDSGV";
             this.btnXoaDSGV.Size = new System.Drawing.Size(80, 40);
             this.btnXoaDSGV.TabIndex = 39;
@@ -208,7 +190,7 @@
             // 
             this.btnSuaDSGV.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaDSGV.Image")));
             this.btnSuaDSGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDSGV.Location = new System.Drawing.Point(793, 474);
+            this.btnSuaDSGV.Location = new System.Drawing.Point(926, 474);
             this.btnSuaDSGV.Name = "btnSuaDSGV";
             this.btnSuaDSGV.Size = new System.Drawing.Size(80, 40);
             this.btnSuaDSGV.TabIndex = 38;
@@ -221,7 +203,7 @@
             // 
             this.btnThemDSGV.Image = ((System.Drawing.Image)(resources.GetObject("btnThemDSGV.Image")));
             this.btnThemDSGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDSGV.Location = new System.Drawing.Point(700, 474);
+            this.btnThemDSGV.Location = new System.Drawing.Point(847, 474);
             this.btnThemDSGV.Name = "btnThemDSGV";
             this.btnThemDSGV.Size = new System.Drawing.Size(80, 40);
             this.btnThemDSGV.TabIndex = 37;
@@ -229,18 +211,6 @@
             this.btnThemDSGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemDSGV.UseVisualStyleBackColor = true;
             this.btnThemDSGV.Click += new System.EventHandler(this.btnThemDSGV_Click);
-            // 
-            // btnXemDSGV
-            // 
-            this.btnXemDSGV.Image = ((System.Drawing.Image)(resources.GetObject("btnXemDSGV.Image")));
-            this.btnXemDSGV.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnXemDSGV.Location = new System.Drawing.Point(607, 474);
-            this.btnXemDSGV.Name = "btnXemDSGV";
-            this.btnXemDSGV.Size = new System.Drawing.Size(80, 40);
-            this.btnXemDSGV.TabIndex = 36;
-            this.btnXemDSGV.Text = "Xem ";
-            this.btnXemDSGV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXemDSGV.UseVisualStyleBackColor = true;
             // 
             // tpTrangChu
             // 
@@ -380,11 +350,9 @@
             this.tpDSHS.Controls.Add(this.label3);
             this.tpDSHS.Controls.Add(this.btnTimKiemDSHS);
             this.tpDSHS.Controls.Add(this.btnThoatDSHS);
-            this.tpDSHS.Controls.Add(this.btnLuuDSHS);
             this.tpDSHS.Controls.Add(this.btnXoaDSHS);
             this.tpDSHS.Controls.Add(this.btnSuaDSHS);
             this.tpDSHS.Controls.Add(this.btnThemDSHS);
-            this.tpDSHS.Controls.Add(this.btnXemDSHS);
             this.tpDSHS.Location = new System.Drawing.Point(4, 22);
             this.tpDSHS.Name = "tpDSHS";
             this.tpDSHS.Padding = new System.Windows.Forms.Padding(3);
@@ -407,7 +375,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(370, 3);
+            this.label3.Location = new System.Drawing.Point(596, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 18);
             this.label3.TabIndex = 41;
@@ -417,9 +385,9 @@
             // 
             this.btnTimKiemDSHS.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemDSHS.Image")));
             this.btnTimKiemDSHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiemDSHS.Location = new System.Drawing.Point(991, 481);
+            this.btnTimKiemDSHS.Location = new System.Drawing.Point(1071, 481);
             this.btnTimKiemDSHS.Name = "btnTimKiemDSHS";
-            this.btnTimKiemDSHS.Size = new System.Drawing.Size(80, 40);
+            this.btnTimKiemDSHS.Size = new System.Drawing.Size(95, 40);
             this.btnTimKiemDSHS.TabIndex = 50;
             this.btnTimKiemDSHS.Text = "Tìm kiếm";
             this.btnTimKiemDSHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -432,33 +400,20 @@
             this.btnThoatDSHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoatDSHS.Location = new System.Drawing.Point(1165, 481);
             this.btnThoatDSHS.Name = "btnThoatDSHS";
-            this.btnThoatDSHS.Size = new System.Drawing.Size(80, 40);
+            this.btnThoatDSHS.Size = new System.Drawing.Size(88, 40);
             this.btnThoatDSHS.TabIndex = 49;
             this.btnThoatDSHS.Text = "Thoát";
             this.btnThoatDSHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThoatDSHS.UseVisualStyleBackColor = true;
             this.btnThoatDSHS.Click += new System.EventHandler(this.btnThoatDSHS_Click);
             // 
-            // btnLuuDSHS
-            // 
-            this.btnLuuDSHS.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuDSHS.Image")));
-            this.btnLuuDSHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuuDSHS.Location = new System.Drawing.Point(1078, 481);
-            this.btnLuuDSHS.Name = "btnLuuDSHS";
-            this.btnLuuDSHS.Size = new System.Drawing.Size(80, 40);
-            this.btnLuuDSHS.TabIndex = 48;
-            this.btnLuuDSHS.Text = "Lưu";
-            this.btnLuuDSHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuuDSHS.UseVisualStyleBackColor = true;
-            this.btnLuuDSHS.Click += new System.EventHandler(this.btnLuuDSHS_Click);
-            // 
             // btnXoaDSHS
             // 
             this.btnXoaDSHS.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDSHS.Image")));
             this.btnXoaDSHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaDSHS.Location = new System.Drawing.Point(904, 481);
+            this.btnXoaDSHS.Location = new System.Drawing.Point(984, 481);
             this.btnXoaDSHS.Name = "btnXoaDSHS";
-            this.btnXoaDSHS.Size = new System.Drawing.Size(80, 40);
+            this.btnXoaDSHS.Size = new System.Drawing.Size(88, 40);
             this.btnXoaDSHS.TabIndex = 47;
             this.btnXoaDSHS.Text = "Xóa";
             this.btnXoaDSHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -469,7 +424,7 @@
             // 
             this.btnSuaDSHS.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaDSHS.Image")));
             this.btnSuaDSHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDSHS.Location = new System.Drawing.Point(817, 481);
+            this.btnSuaDSHS.Location = new System.Drawing.Point(905, 481);
             this.btnSuaDSHS.Name = "btnSuaDSHS";
             this.btnSuaDSHS.Size = new System.Drawing.Size(80, 40);
             this.btnSuaDSHS.TabIndex = 46;
@@ -482,26 +437,14 @@
             // 
             this.btnThemDSHS.Image = ((System.Drawing.Image)(resources.GetObject("btnThemDSHS.Image")));
             this.btnThemDSHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDSHS.Location = new System.Drawing.Point(730, 481);
+            this.btnThemDSHS.Location = new System.Drawing.Point(819, 481);
             this.btnThemDSHS.Name = "btnThemDSHS";
-            this.btnThemDSHS.Size = new System.Drawing.Size(80, 40);
+            this.btnThemDSHS.Size = new System.Drawing.Size(88, 40);
             this.btnThemDSHS.TabIndex = 45;
             this.btnThemDSHS.Text = "Thêm";
             this.btnThemDSHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemDSHS.UseVisualStyleBackColor = true;
             this.btnThemDSHS.Click += new System.EventHandler(this.btnThemDSHS_Click);
-            // 
-            // btnXemDSHS
-            // 
-            this.btnXemDSHS.Image = ((System.Drawing.Image)(resources.GetObject("btnXemDSHS.Image")));
-            this.btnXemDSHS.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnXemDSHS.Location = new System.Drawing.Point(643, 481);
-            this.btnXemDSHS.Name = "btnXemDSHS";
-            this.btnXemDSHS.Size = new System.Drawing.Size(80, 40);
-            this.btnXemDSHS.TabIndex = 44;
-            this.btnXemDSHS.Text = "Xem";
-            this.btnXemDSHS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXemDSHS.UseVisualStyleBackColor = true;
             // 
             // tpQLGiangDay
             // 
@@ -572,7 +515,7 @@
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(295, 16);
+            this.label1.Size = new System.Drawing.Size(287, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Copyright by Nhom 4 -THUC TAP NHOM 2017";
             // 
@@ -910,22 +853,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnTimKiemDSHS;
         private System.Windows.Forms.Button btnThoatDSHS;
-        private System.Windows.Forms.Button btnLuuDSHS;
         private System.Windows.Forms.Button btnXoaDSHS;
         private System.Windows.Forms.Button btnSuaDSHS;
         private System.Windows.Forms.Button btnThemDSHS;
-        private System.Windows.Forms.Button btnXemDSHS;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView dtgDanhSachGV;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnTimKiemDSGV;
         private System.Windows.Forms.Button btnThoatDSGV;
-        private System.Windows.Forms.Button btnLuuDSGV;
         private System.Windows.Forms.Button btnXoaDSGV;
         private System.Windows.Forms.Button btnSuaDSGV;
         private System.Windows.Forms.Button btnThemDSGV;
-        private System.Windows.Forms.Button btnXemDSGV;
         private System.Windows.Forms.TabPage tpQLGiangDay;
         private System.Windows.Forms.TabPage tpHuongDan;
         private System.Windows.Forms.WebBrowser wbStile;
