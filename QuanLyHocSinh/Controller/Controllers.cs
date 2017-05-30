@@ -20,13 +20,13 @@ namespace QuanLyHocSinh.Controller
             //    + " hs.Sodienthoai, lhp.ma as [Lopma], hs.Diachi from Hocsinh hs inner join Lophocphan lhp on hs.Lopma = lhp.ma");
             //DataTable table = da.Query("select hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh , hs.Email, hs.DanToc, hs.Lopma ,"
             //   + " hs.Sodienthoai, hs.Diachi from Hocsinh hs");
-//<<<<<<< HEAD
+            //<<<<<<< HEAD
 
             DataTable table = da.Query("select hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.Sodienthoai , hs.Email,hs.DanToc, "
                 + "hs.DiaChi, hs.Sodienthoai, lhp.ma as [Lopma] from Hocsinh hs inner join Lophocphan lhp on hs.Lopma = lhp.ma where hs.Trangthai=1");
-//=======
-//            DataTable table = da.Query("select hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.Sodienthoai , hs.Email,hs.DanToc,hs.DiaChi, hs.Sodienthoai, lhp.ma as [Lopma] from Hocsinh hs inner join Lophocphan lhp on hs.Lopma = lhp.ma where hs.Trangthai=1");
-//>>>>>>> 62440c2b927b403c2b74c7968b4d4de2fddb1bbb
+            //=======
+            //            DataTable table = da.Query("select hs.Ma, hs.Ten, hs.GioiTinh, hs.NgaySinh, hs.Sodienthoai , hs.Email,hs.DanToc,hs.DiaChi, hs.Sodienthoai, lhp.ma as [Lopma] from Hocsinh hs inner join Lophocphan lhp on hs.Lopma = lhp.ma where hs.Trangthai=1");
+            //>>>>>>> 62440c2b927b403c2b74c7968b4d4de2fddb1bbb
 
             int n = table.Rows.Count;
             int i;
@@ -68,8 +68,8 @@ namespace QuanLyHocSinh.Controller
             //DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma , "
             //    + " gv.nhiemvu, gv.anh,bm.ma as [Bomonma], gv.trangthai from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma ");
 
-//            DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma ,"
-//                + " gv.nhiemvu,bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where gv.trangthai=1");
+            //            DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.Vaitro , gv.Bomonma ,"
+            //                + " gv.nhiemvu,bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where gv.trangthai=1");
 
             DataTable table = da.Query("select gv.Ma, gv.Ten, gv.GioiTinh, gv.NgaySinh, gv.Email, gv.luong, gv.Vaitro , gv.Bomonma , gv.nhiemvu, "
              + " gv.anh,bm.ma as [Bomonma] from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where gv.trangthai=1");
@@ -86,7 +86,7 @@ namespace QuanLyHocSinh.Controller
             return list;
 
         }
-       
+
 
         public GiaoVien getGiaoVien(DataRow row)
         {
@@ -110,7 +110,7 @@ namespace QuanLyHocSinh.Controller
 
             //gv.Anh = row["anh"].ToString().Trim();
 
-          //  gv.Anh = row["anh"].ToString().Trim();
+            //  gv.Anh = row["anh"].ToString().Trim();
             Double luong = 0;
             if (Double.TryParse(row["luong"].ToString().Trim(), out luong))
             {
@@ -122,15 +122,16 @@ namespace QuanLyHocSinh.Controller
 
         public LopHocPhan[] getList_Lophophan()
         {
-            DataTable table = da.Query("select l.ma, l.Hocki, l.Namhoc, l.Siso, l.Thu, mh.ma as monma, mh.Ten as monten, "
-                + " gv.ma as giaovienma, gv.ten as giaovienten from Lophocphan l inner  join monhoc mh on l.monma = mh.ma "
+            DataTable table = da.Query("select l.ma, l.Hocki, l.Namhoc, l.Siso, l.Thu, l.NgayBD, l.NgayKT, l.Ngaythi, "
+                + " mh.ma as monma, mh.Ten as monten, gv.ma as giaovienma, gv.ten as giaovienten "
+                + " from Lophocphan l inner join monhoc mh on l.monma = mh.ma "
                 + " inner join giaovien gv on gv.ma = l.Giaovienma");
             int n = table.Rows.Count;
 
             int i;
             if (n == 0) return new LopHocPhan[0];
             LopHocPhan[] list = new LopHocPhan[n];
-            for(i =0; i< n; i++)
+            for (i = 0; i < n; i++)
             {
                 list[i] = getLopHocPhan(table.Rows[i]);
             }
@@ -165,6 +166,10 @@ namespace QuanLyHocSinh.Controller
             l.GiaoVienMa = row["giaovienma"].ToString().Trim();
             l.GiaoVienTen = row["giaovienten"].ToString().Trim();
             l.SiSo = int.Parse(row["siso"].ToString().Trim());
+            l.NgayBatDau = DateTime.Parse(row["ngayBD"].ToString().Trim());
+            l.NgayKetThuc = DateTime.Parse(row["ngayKT"].ToString().Trim());
+            l.NgayThi = DateTime.Parse(row["ngaythi"].ToString().Trim());
+
             return l;
         }
         public void update_hs(HocSinh hs)
@@ -198,19 +203,19 @@ namespace QuanLyHocSinh.Controller
                 new SqlParameter("vaitro",gv.VaiTro),
                 new SqlParameter("bomonma", gv.BoMonMa),
             };
-          
+
             da.Query("updateGV", para);
         }
         public void XoaHS(string ma)
         {
             da.NonQuery("update Hocsinh set trangthai=0 where ma='" + ma + "'");
         }
-     
+
         public void XoaGV(string ma)
         {
-            da.NonQuery("update GiaoVien set trangthai=0 where  ma='" + ma+"'");
+            da.NonQuery("update GiaoVien set trangthai=0 where  ma='" + ma + "'");
         }
-      
+
         public bool ThemHS(HocSinh hs)
         {
 
@@ -226,8 +231,8 @@ namespace QuanLyHocSinh.Controller
                 new SqlParameter("sodienthoai",hs.DienThoai)
 
 
-               
-           
+
+
         };
             da.Query("proc_insertHS", paraHS);
             return true;
@@ -236,8 +241,7 @@ namespace QuanLyHocSinh.Controller
         public bool ThemGV(GiaoVien gv)
         {
 
-            SqlParameter[] paraGV =
-                       {
+            SqlParameter[] paraGV ={
                 new SqlParameter("ten", gv.Ten),
                 new SqlParameter("gioitinh", gv.GioiTinh),
                 new SqlParameter("ngaysinh",gv.NgaySinh),
@@ -248,7 +252,7 @@ namespace QuanLyHocSinh.Controller
                 new SqlParameter("vaitro", gv.VaiTro),
                 new SqlParameter("bomonma" , gv.BoMonMa),
                // new SqlParameter("trangthai" , gv.TrangThai)
-    };
+             };
             da.Query("proc_insertGV", paraGV);
             return true;
         }
@@ -291,5 +295,28 @@ namespace QuanLyHocSinh.Controller
 
             return "";
         }
+
+        public bool isChecked_GV(String magiaovien, String tengiaovien)
+        {
+            if (magiaovien == "") return false;
+            DataTable table = da.Query("Select ma from giaovien gv where gv.ma = '" + magiaovien + "'");
+            if (table.Rows.Count != 1)
+                return false;
+            return true;
+        }
+        public bool UpdateLopHocPhan(LopHocPhan lophocphan)
+        {
+            SqlParameter[] para ={
+                new SqlParameter("ma", lophocphan.Ma),
+                new SqlParameter("hocky", lophocphan.HocKy),
+                new SqlParameter("ngaybatdau", lophocphan.NgayBatDau),
+                new SqlParameter("ngayketthuc", lophocphan.NgayKetThuc),
+                new SqlParameter("ngaythi", lophocphan.NgayThi),
+                new SqlParameter("siso", lophocphan.SiSo),
+                new SqlParameter("giaovienma", lophocphan.GiaoVienMa)
+        };
+        da.Query("UpdateLopHocPhan", para);
+            return true;
+        } 
     }
 }

@@ -20,12 +20,15 @@ namespace QuanLyHocSinh
         frmUpdate_gv frmUpdate_gv = new frmUpdate_gv();
         AddHocSinh frm_AddHS;
         AddGV frm_AddGV;
+
+        LopHocPhan _lophocphan = new LopHocPhan();
+
         public Form1()
         {
             InitializeComponent();
             dtgDanhSachGV.DataSource = _control.getListGiaoVien();
             dtgDanhSachHS.DataSource = _control.getListHocSinh();
-        
+
         }
         public void Loadd()
         {
@@ -37,12 +40,12 @@ namespace QuanLyHocSinh
             Load_gv();
             Load_hs();
             Load_quanly();
-          
-            
+
+
         }
         private void Load_gv()
         {
-           
+
             dtgDanhSachGV.Columns["ma"].HeaderText = "Mã";
             dtgDanhSachGV.Columns["ten"].HeaderText = "Họ tên";
             dtgDanhSachGV.Columns["ngaysinh"].HeaderText = "Ngày sinh";
@@ -61,12 +64,12 @@ namespace QuanLyHocSinh
             dtgDanhSachGV.Columns["ngaysinh"].Width = 100;
             dtgDanhSachGV.Columns["Bomonma"].Width = 100;
             dtgDanhSachGV.Columns["vaitro"].Width = 150;
-           
+
             dtgDanhSachGV.DataSource = _control.getListGiaoVien();
         }
         private void Load_hs()
         {
-          
+
             dtgDanhSachHS.Columns["ma"].HeaderText = "Mã";
             dtgDanhSachHS.Columns["ten"].HeaderText = "Họ tên";
             dtgDanhSachHS.Columns["ngaysinh"].HeaderText = "Ngày sinh";
@@ -133,14 +136,14 @@ namespace QuanLyHocSinh
         {
             hc.Ma = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[0].Value.ToString().Trim();
             hc.Ten = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[1].Value.ToString().Trim();
-              hc.NgaySinh = DateTime.Parse(dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[3].Value.ToString().Trim());
+            hc.NgaySinh = DateTime.Parse(dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[3].Value.ToString().Trim());
             hc.GioiTinh = int.Parse(dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[2].Value.ToString().Trim());
-            hc.Email= dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[4].Value.ToString().Trim();
+            hc.Email = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[4].Value.ToString().Trim();
             hc.DienThoai = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[6].Value.ToString().Trim();
             hc.LopMa = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[7].Value.ToString().Trim();
-          
-            str = hc.Ma + hc.Ten +hc.GioiTinh+hc.NgaySinh+ hc.Email +hc.DienThoai+hc.LopMa;
-            
+
+            str = hc.Ma + hc.Ten + hc.GioiTinh + hc.NgaySinh + hc.Email + hc.DienThoai + hc.LopMa;
+
         }
 
         private void btnThoatDSHS_Click(object sender, EventArgs e)
@@ -183,8 +186,8 @@ namespace QuanLyHocSinh
             gv.NhiemVu = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[6].Value.ToString();
             gv.VaiTro = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[7].Value.ToString();
             gv.BoMonMa = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[8].Value.ToString();
-           // gv.TrangThai = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[9].Value.ToString());
-           
+            // gv.TrangThai = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[9].Value.ToString());
+
 
             //ma, ten, gioitinh, ngaysinh, email, anh, luong, nhiemvu, vaitro, taikhoan, matkhau, hocham, hocvi, sodt, diachi, bomonma
 
@@ -208,15 +211,15 @@ namespace QuanLyHocSinh
 
                 int selectedIndex = dtgDanhSachGV.SelectedRows[0].Index;
                 string rowID = dtgDanhSachGV[0, selectedIndex].Value.ToString();
-                if (MessageBox.Show("Ban co chac  chan  xoa  giao vien ma "+rowID+"", "Xoa giao vien", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Ban co chac  chan  xoa  giao vien ma " + rowID + "", "Xoa giao vien", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                   
+
                     _control.XoaGV(rowID);
                     dtgDanhSachGV.DataSource = _control.getListGiaoVien();
                 }
             }
         }
-        
+
         private void linklabelQLGD_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             tabControlChinh.SelectTab(tpQLGiangDay);
@@ -242,11 +245,11 @@ namespace QuanLyHocSinh
             }
             hs.NgaySinh = ns;
             hs.Email = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[4].Value.ToString();
-            hs.DanToc =  dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[5].Value.ToString();
-           
+            hs.DanToc = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[5].Value.ToString();
+
             hs.DienThoai = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[6].Value.ToString();
             hs.LopMa = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[7].Value.ToString();
-            hs.DiaChi  = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[8].Value.ToString();
+            hs.DiaChi = dtgDanhSachHS.Rows[dtgDanhSachHS.CurrentRow.Index].Cells[8].Value.ToString();
             frmSua = new frmSua(hs, this);
             frmSua.ShowDialog();
             dtgDanhSachHS.DataSource = _control.getListHocSinh();
@@ -273,19 +276,19 @@ namespace QuanLyHocSinh
 
                 int selectedIndex = dtgDanhSachHS.SelectedRows[0].Index;
                 string rowID = dtgDanhSachHS[0, selectedIndex].Value.ToString();
-                if (MessageBox.Show("Ban co chac  chan  xoa  hoc sinh ma "+rowID+"", "Xoa hoc sinh", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Ban co chac  chan  xoa  hoc sinh ma " + rowID + "", "Xoa hoc sinh", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     _control.XoaHS(rowID);
                     update_FormMain();
                 }
             }
-            
+
         }
 
         private void btnTimKiemDSHS_Click(object sender, EventArgs e)
         {
             frmSearch frm = new frmSearch("1");
-                frm.ShowDialog();
+            frm.ShowDialog();
         }
 
         private void btnLuuDSHS_Click(object sender, EventArgs e)
@@ -299,10 +302,10 @@ namespace QuanLyHocSinh
             frm.ShowDialog();
         }
 
-        
+
 
         private string st { get; set; }
-       
+
         private void dtgDanhSachGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             GiaoVien gv = new GiaoVien();
@@ -314,7 +317,7 @@ namespace QuanLyHocSinh
             gv.VaiTro = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[5].Value.ToString().Trim();
             gv.Luong = float.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[6].Value.ToString().Trim());
             gv.BoMonMa = dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[7].Value.ToString().Trim();
-          //  gv.TrangThai = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[8].Value.ToString().Trim());
+            //  gv.TrangThai = int.Parse(dtgDanhSachGV.Rows[dtgDanhSachGV.CurrentRow.Index].Cells[8].Value.ToString().Trim());
             st = gv.Ma + gv.Ten + gv.GioiTinh + gv.NgaySinh + gv.Email + gv.VaiTro + gv.Luong + gv.BoMonMa;
         }
 
@@ -332,6 +335,100 @@ namespace QuanLyHocSinh
             {
                 wbStile.Navigate(webPage);
             }
+        }
+
+        private void dtgQuanLy_DoubleClick(object sender, EventArgs e)
+        {
+            _lophocphan = new LopHocPhan();
+            _lophocphan.Ma = dtgQuanLy.Rows[dtgQuanLy.CurrentRow.Index].Cells[0].Value.ToString().Trim();
+            _lophocphan.MonHocTen = dtgQuanLy.Rows[dtgQuanLy.CurrentRow.Index].Cells[1].Value.ToString().Trim();
+            _lophocphan.MonHocMa = dtgQuanLy.Rows[dtgQuanLy.CurrentRow.Index].Cells[2].Value.ToString().Trim();
+            _lophocphan.HocKy = int.Parse(dtgQuanLy.Rows[dtgQuanLy.CurrentRow.Index].Cells[3].Value.ToString().Trim());
+            _lophocphan.NamHoc = dtgQuanLy.Rows[dtgQuanLy.CurrentRow.Index].Cells[4].Value.ToString().Trim();
+            _lophocphan.SiSo = int.Parse(dtgQuanLy.Rows[dtgQuanLy.CurrentRow.Index].Cells[5].Value.ToString().Trim());
+            _lophocphan.Thu = dtgQuanLy.Rows[dtgQuanLy.CurrentRow.Index].Cells[6].Value.ToString().Trim();
+            _lophocphan.Tiet = int.Parse(dtgQuanLy.Rows[dtgQuanLy.CurrentRow.Index].Cells[7].Value.ToString().Trim());
+            _lophocphan.NgayBatDau = DateTime.Parse(dtgQuanLy.Rows[dtgQuanLy.CurrentRow.Index].Cells[8].Value.ToString().Trim());
+            _lophocphan.NgayKetThuc = DateTime.Parse(dtgQuanLy.Rows[dtgQuanLy.CurrentRow.Index].Cells[9].Value.ToString().Trim());
+            _lophocphan.NgayThi = DateTime.Parse(dtgQuanLy.Rows[dtgQuanLy.CurrentRow.Index].Cells[10].Value.ToString().Trim());
+            _lophocphan.GiaoVienMa = dtgQuanLy.Rows[dtgQuanLy.CurrentRow.Index].Cells[11].Value.ToString().Trim();
+            _lophocphan.GiaoVienTen = dtgQuanLy.Rows[dtgQuanLy.CurrentRow.Index].Cells[12].Value.ToString().Trim();
+
+            tbQuanLyGD_MaLHP.Text = _lophocphan.Ma;
+            tbQuanLyGD_TenMonHoc.Text = _lophocphan.MonHocTen;
+            tbQuanLyGD_HocKy.Text = _lophocphan.HocKy + "";
+            tbQuanLyGD_SiSo.Text = _lophocphan.SiSo + "";
+            tbQuanLyGD_NamHoc.Text = _lophocphan.NamHoc;
+            tbQuanLyGD_ThuTiet.Text = "Thứ" + _lophocphan.Thu + " " + _lophocphan.Tiet;
+            tbQuanLyGD_NgayBatDau.Text = _lophocphan.NgayBatDau.ToShortDateString();
+            tbQuanLyGD_NgayKetThuc.Text = _lophocphan.NgayKetThuc.ToShortDateString();
+            tbQuanLyGD_NgayThi.Text = _lophocphan.NgayThi.ToShortDateString();
+            tbQuanLyGD_GiaoVienMa.Text = _lophocphan.GiaoVienMa;
+            tbQuanLyGD_GiaoVienTen.Text = _lophocphan.GiaoVienTen;
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            LopHocPhan lhp = new LopHocPhan();
+            _lophocphan.NgayBatDau = DateTime.Parse(tbQuanLyGD_NgayBatDau.Text.ToString());
+            _lophocphan.NgayKetThuc = DateTime.Parse(tbQuanLyGD_NgayKetThuc.Text.ToString());
+            _lophocphan.NgayThi = DateTime.Parse(tbQuanLyGD_NgayThi.Text.ToString());
+            _lophocphan.SiSo = int.Parse(tbQuanLyGD_SiSo.Text.ToString());
+            String magiaovien = tbQuanLyGD_GiaoVienMa.Text.ToString();
+            String tengiaovien = tbQuanLyGD_GiaoVienTen.Text.ToString();
+            if(isChecked(magiaovien, tengiaovien))
+            {
+                _lophocphan.GiaoVienMa = magiaovien;
+                _lophocphan.GiaoVienTen = tengiaovien;
+            }
+            if (MessageBox.Show("Cập nhật lớp học phần? ", "Cập nhật thông tin", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                _control.UpdateLopHocPhan(_lophocphan);
+                dtgQuanLy.DataSource = _control.getList_Lophophan();
+            }
+          
+        }
+
+        private bool isChecked(String magiaovien, String tengiaovien)
+        {
+            return _control.isChecked_GV(magiaovien, tengiaovien);
+        }
+        //thoát khỏi danh sách  quản lý
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            tabControlChinh.SelectTab(tpTrangChu);
+        }
+
+        private void tbQuanLyGD_SiSo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+       (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbQuanLyGD_TinChi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }

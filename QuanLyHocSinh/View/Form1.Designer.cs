@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Hướng Dẫn");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Hướng Dẫn");
             this.tpQLGV = new System.Windows.Forms.TabPage();
             this.dtgDanhSachGV = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,6 +68,33 @@
             this.tvStile = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbQuanLyGD_MaLHP = new System.Windows.Forms.TextBox();
+            this.tbQuanLyGD_NamHoc = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbQuanLyGD_HocKy = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbQuanLyGD_TenMonHoc = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbQuanLyGD_SiSo = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbQuanLyGD_GiaoVienMa = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tbQuanLyGD_GiaoVienTen = new System.Windows.Forms.TextBox();
+            this.tbQuanLyGD_ThuTiet = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tbQuanLyGD_TinChi = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.tbQuanLyGD_NgayBatDau = new DevExpress.XtraEditors.DateEdit();
+            this.tbQuanLyGD_NgayThi = new DevExpress.XtraEditors.DateEdit();
+            this.tbQuanLyGD_NgayKetThuc = new DevExpress.XtraEditors.DateEdit();
             this.tpQLGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSachGV)).BeginInit();
             this.tpTrangChu.SuspendLayout();
@@ -78,6 +105,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgQuanLy)).BeginInit();
             this.tpHuongDan.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuanLyGD_NgayBatDau.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuanLyGD_NgayBatDau.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuanLyGD_NgayThi.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuanLyGD_NgayThi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuanLyGD_NgayKetThuc.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuanLyGD_NgayKetThuc.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tpQLGV
@@ -321,7 +355,7 @@
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(542, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(188, 16);
+            this.label4.Size = new System.Drawing.Size(187, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Quản Lý Học Sinh,Giáo Viên";
             // 
@@ -471,6 +505,7 @@
             // 
             // tpQLGiangDay
             // 
+            this.tpQLGiangDay.Controls.Add(this.panel1);
             this.tpQLGiangDay.Controls.Add(this.dtgQuanLy);
             this.tpQLGiangDay.Location = new System.Drawing.Point(4, 22);
             this.tpQLGiangDay.Name = "tpQLGiangDay";
@@ -493,6 +528,7 @@
             this.dtgQuanLy.ReadOnly = true;
             this.dtgQuanLy.Size = new System.Drawing.Size(1261, 334);
             this.dtgQuanLy.TabIndex = 0;
+            this.dtgQuanLy.DoubleClick += new System.EventHandler(this.dtgQuanLy_DoubleClick);
             // 
             // tpHuongDan
             // 
@@ -522,10 +558,10 @@
             this.tvStile.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.tvStile.Location = new System.Drawing.Point(3, 3);
             this.tvStile.Name = "tvStile";
-            treeNode1.Name = "HuongDan";
-            treeNode1.Text = "Hướng Dẫn";
+            treeNode5.Name = "HuongDan";
+            treeNode5.Text = "Hướng Dẫn";
             this.tvStile.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode5});
             this.tvStile.Size = new System.Drawing.Size(188, 521);
             this.tvStile.TabIndex = 0;
             this.tvStile.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvStile_NodeMouseClick);
@@ -549,6 +585,273 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1261, 25);
             this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tbQuanLyGD_NgayKetThuc);
+            this.panel1.Controls.Add(this.tbQuanLyGD_NgayThi);
+            this.panel1.Controls.Add(this.tbQuanLyGD_NgayBatDau);
+            this.panel1.Controls.Add(this.btnThoat);
+            this.panel1.Controls.Add(this.btnCapNhat);
+            this.panel1.Controls.Add(this.tbQuanLyGD_TinChi);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.tbQuanLyGD_ThuTiet);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.tbQuanLyGD_GiaoVienTen);
+            this.panel1.Controls.Add(this.tbQuanLyGD_TenMonHoc);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.tbQuanLyGD_HocKy);
+            this.panel1.Controls.Add(this.tbQuanLyGD_SiSo);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.tbQuanLyGD_GiaoVienMa);
+            this.panel1.Controls.Add(this.tbQuanLyGD_NamHoc);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.tbQuanLyGD_MaLHP);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1265, 198);
+            this.panel1.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(53, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Mã lớp học phần";
+            // 
+            // tbQuanLyGD_MaLHP
+            // 
+            this.tbQuanLyGD_MaLHP.Location = new System.Drawing.Point(146, 21);
+            this.tbQuanLyGD_MaLHP.Name = "tbQuanLyGD_MaLHP";
+            this.tbQuanLyGD_MaLHP.ReadOnly = true;
+            this.tbQuanLyGD_MaLHP.Size = new System.Drawing.Size(200, 20);
+            this.tbQuanLyGD_MaLHP.TabIndex = 1;
+            // 
+            // tbQuanLyGD_NamHoc
+            // 
+            this.tbQuanLyGD_NamHoc.Location = new System.Drawing.Point(146, 114);
+            this.tbQuanLyGD_NamHoc.Name = "tbQuanLyGD_NamHoc";
+            this.tbQuanLyGD_NamHoc.ReadOnly = true;
+            this.tbQuanLyGD_NamHoc.Size = new System.Drawing.Size(200, 20);
+            this.tbQuanLyGD_NamHoc.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(53, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Năm học";
+            // 
+            // tbQuanLyGD_HocKy
+            // 
+            this.tbQuanLyGD_HocKy.Location = new System.Drawing.Point(146, 83);
+            this.tbQuanLyGD_HocKy.Name = "tbQuanLyGD_HocKy";
+            this.tbQuanLyGD_HocKy.ReadOnly = true;
+            this.tbQuanLyGD_HocKy.Size = new System.Drawing.Size(200, 20);
+            this.tbQuanLyGD_HocKy.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(53, 84);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Học kỳ";
+            // 
+            // tbQuanLyGD_TenMonHoc
+            // 
+            this.tbQuanLyGD_TenMonHoc.Location = new System.Drawing.Point(146, 52);
+            this.tbQuanLyGD_TenMonHoc.Name = "tbQuanLyGD_TenMonHoc";
+            this.tbQuanLyGD_TenMonHoc.ReadOnly = true;
+            this.tbQuanLyGD_TenMonHoc.Size = new System.Drawing.Size(200, 20);
+            this.tbQuanLyGD_TenMonHoc.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(53, 54);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Tên môn học";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(480, 86);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Ngày bắt đầu";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(480, 56);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Thứ- tiết";
+            // 
+            // tbQuanLyGD_SiSo
+            // 
+            this.tbQuanLyGD_SiSo.Location = new System.Drawing.Point(570, 22);
+            this.tbQuanLyGD_SiSo.Name = "tbQuanLyGD_SiSo";
+            this.tbQuanLyGD_SiSo.Size = new System.Drawing.Size(200, 20);
+            this.tbQuanLyGD_SiSo.TabIndex = 3;
+            this.tbQuanLyGD_SiSo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbQuanLyGD_SiSo_KeyPress);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(480, 146);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 13);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Ngày thi";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(480, 116);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(74, 13);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Ngày kết thúc";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(869, 25);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Mã giáo viên";
+            // 
+            // tbQuanLyGD_GiaoVienMa
+            // 
+            this.tbQuanLyGD_GiaoVienMa.Location = new System.Drawing.Point(969, 22);
+            this.tbQuanLyGD_GiaoVienMa.Name = "tbQuanLyGD_GiaoVienMa";
+            this.tbQuanLyGD_GiaoVienMa.Size = new System.Drawing.Size(200, 20);
+            this.tbQuanLyGD_GiaoVienMa.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(869, 55);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(72, 13);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Tên giáo viên";
+            // 
+            // tbQuanLyGD_GiaoVienTen
+            // 
+            this.tbQuanLyGD_GiaoVienTen.Location = new System.Drawing.Point(969, 52);
+            this.tbQuanLyGD_GiaoVienTen.Name = "tbQuanLyGD_GiaoVienTen";
+            this.tbQuanLyGD_GiaoVienTen.Size = new System.Drawing.Size(200, 20);
+            this.tbQuanLyGD_GiaoVienTen.TabIndex = 7;
+            // 
+            // tbQuanLyGD_ThuTiet
+            // 
+            this.tbQuanLyGD_ThuTiet.Location = new System.Drawing.Point(570, 53);
+            this.tbQuanLyGD_ThuTiet.Name = "tbQuanLyGD_ThuTiet";
+            this.tbQuanLyGD_ThuTiet.ReadOnly = true;
+            this.tbQuanLyGD_ThuTiet.Size = new System.Drawing.Size(200, 20);
+            this.tbQuanLyGD_ThuTiet.TabIndex = 9;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(480, 26);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(33, 13);
+            this.label17.TabIndex = 8;
+            this.label17.Text = "Sĩ số";
+            // 
+            // tbQuanLyGD_TinChi
+            // 
+            this.tbQuanLyGD_TinChi.Location = new System.Drawing.Point(146, 145);
+            this.tbQuanLyGD_TinChi.Name = "tbQuanLyGD_TinChi";
+            this.tbQuanLyGD_TinChi.Size = new System.Drawing.Size(200, 20);
+            this.tbQuanLyGD_TinChi.TabIndex = 11;
+            this.tbQuanLyGD_TinChi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbQuanLyGD_TinChi_KeyPress);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(53, 144);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(41, 13);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Tín chỉ";
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.Location = new System.Drawing.Point(969, 111);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(200, 23);
+            this.btnCapNhat.TabIndex = 12;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(969, 146);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(200, 23);
+            this.btnThoat.TabIndex = 12;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // tbQuanLyGD_NgayBatDau
+            // 
+            this.tbQuanLyGD_NgayBatDau.EditValue = null;
+            this.tbQuanLyGD_NgayBatDau.Location = new System.Drawing.Point(570, 83);
+            this.tbQuanLyGD_NgayBatDau.Name = "tbQuanLyGD_NgayBatDau";
+            this.tbQuanLyGD_NgayBatDau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tbQuanLyGD_NgayBatDau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tbQuanLyGD_NgayBatDau.Size = new System.Drawing.Size(200, 20);
+            this.tbQuanLyGD_NgayBatDau.TabIndex = 13;
+            // 
+            // tbQuanLyGD_NgayThi
+            // 
+            this.tbQuanLyGD_NgayThi.EditValue = null;
+            this.tbQuanLyGD_NgayThi.Location = new System.Drawing.Point(570, 145);
+            this.tbQuanLyGD_NgayThi.Name = "tbQuanLyGD_NgayThi";
+            this.tbQuanLyGD_NgayThi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tbQuanLyGD_NgayThi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tbQuanLyGD_NgayThi.Size = new System.Drawing.Size(200, 20);
+            this.tbQuanLyGD_NgayThi.TabIndex = 14;
+            // 
+            // tbQuanLyGD_NgayKetThuc
+            // 
+            this.tbQuanLyGD_NgayKetThuc.EditValue = null;
+            this.tbQuanLyGD_NgayKetThuc.Location = new System.Drawing.Point(570, 115);
+            this.tbQuanLyGD_NgayKetThuc.Name = "tbQuanLyGD_NgayKetThuc";
+            this.tbQuanLyGD_NgayKetThuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tbQuanLyGD_NgayKetThuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tbQuanLyGD_NgayKetThuc.Size = new System.Drawing.Size(200, 20);
+            this.tbQuanLyGD_NgayKetThuc.TabIndex = 15;
             // 
             // Form1
             // 
@@ -576,6 +879,14 @@
             this.tpHuongDan.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuanLyGD_NgayBatDau.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuanLyGD_NgayBatDau.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuanLyGD_NgayThi.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuanLyGD_NgayThi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuanLyGD_NgayKetThuc.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuanLyGD_NgayKetThuc.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -620,6 +931,33 @@
         private System.Windows.Forms.WebBrowser wbStile;
         private System.Windows.Forms.TreeView tvStile;
         private System.Windows.Forms.DataGridView dtgQuanLy;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox tbQuanLyGD_MaLHP;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbQuanLyGD_TenMonHoc;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tbQuanLyGD_HocKy;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tbQuanLyGD_NamHoc;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox tbQuanLyGD_SiSo;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox tbQuanLyGD_GiaoVienTen;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox tbQuanLyGD_GiaoVienMa;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tbQuanLyGD_ThuTiet;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox tbQuanLyGD_TinChi;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnCapNhat;
+        private DevExpress.XtraEditors.DateEdit tbQuanLyGD_NgayBatDau;
+        private DevExpress.XtraEditors.DateEdit tbQuanLyGD_NgayKetThuc;
+        private DevExpress.XtraEditors.DateEdit tbQuanLyGD_NgayThi;
     }
 }
 
